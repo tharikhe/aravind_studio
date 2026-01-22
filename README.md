@@ -1,40 +1,36 @@
-# Jomor Design Clone
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A clean and responsive landing page inspired by Jomor Design — built as a design agency website clone featuring modern layout and visual aesthetics.
+## Getting Started
 
-## 📖 Overview
+First, run the development server:
 
-![Preview](./README/light-preview.gif)
-![Preview](./README/dark-preview.gif)
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-This project replicates the structure and style of Jomor Design’s landing page. It focuses on showcasing agency services, portfolio highlights, and contact information using a sleek, minimal user interface. Developed using HTML, CSS, and JavaScript, the page is fully responsive and optimized for all device sizes.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## ⚙️ Tech Stack
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- HTML
-- CSS
-- Javascript
+## Learn More
 
-## 🔋 Features
+To learn more about Next.js, take a look at the following resources:
 
-- Hero Section with a bold headline, brief introduction.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- Services Section presenting key offerings such as branding, graphic designing, UI/UX design, and marketing.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-- Project Showcase to display featured work, case studies, or portfolio items.
+## Deploy on Vercel
 
-- Scroll Animations for smooth, engaging transitions as users navigate the page.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-- Dark and Light Mode toggle allowing users to switch themes easily.
-
-- Fully Responsive Layout ensuring consistent appearance on desktop, tablet, and mobile.
-
-- Modern UI Elements including flexible grid layouts, hover effects, and layered visuals.
-
-- Clean and maintainable codebase ready for customization or further development.
-
-and many more, including code architecture and reusability
-
-## 📄 License
-> This project is licensed under the MIT License.
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
