@@ -61,10 +61,10 @@ const Footer = () => {
             <div id="scroller">
                 <div id="scroll2">
                     <div id="scroll-line2">
-                        <h2>Showcase <img src="/icons/Arrow right.png" alt="" style={{ filter: "invert()", width: "5vw", padding: "1vw" }} loading="lazy" /> Showcase <img src="/icons/Arrow right.png" alt="" style={{ filter: "invert()", width: "5vw", padding: "1vw" }} loading="lazy" /> Showcase <img src="/icons/Arrow right.png" alt="" style={{ filter: "invert()", width: "5vw", padding: "1vw" }} loading="lazy" /></h2>
+                        <h2>Showcase <img src="/icons/Arrow right.png" alt="" style={{ filter: "invert()", width: "5vw", padding: "1vw" }} loading="lazy" decoding="async" /> Showcase <img src="/icons/Arrow right.png" alt="" style={{ filter: "invert()", width: "5vw", padding: "1vw" }} loading="lazy" decoding="async" /> Showcase <img src="/icons/Arrow right.png" alt="" style={{ filter: "invert()", width: "5vw", padding: "1vw" }} loading="lazy" decoding="async" /></h2>
                     </div>
                     <div id="scroll-line3">
-                        <h2>Vercel <img src="/icons/Arrow right.png" alt="" style={{ filter: "invert()", width: "5vw", padding: "1vw" }} loading="lazy" /> Ranboo <img src="/icons/Arrow right.png" alt="" style={{ filter: "invert()", width: "5vw", padding: "1vw" }} loading="lazy" /> Dynaboard <img src="/icons/Arrow right.png" alt="" style={{ filter: "invert()", width: "5vw", padding: "1vw" }} loading="lazy" /></h2>
+                        <h2>Vercel <img src="/icons/Arrow right.png" alt="" style={{ filter: "invert()", width: "5vw", padding: "1vw" }} loading="lazy" decoding="async" /> Ranboo <img src="/icons/Arrow right.png" alt="" style={{ filter: "invert()", width: "5vw", padding: "1vw" }} loading="lazy" decoding="async" /> Dynaboard <img src="/icons/Arrow right.png" alt="" style={{ filter: "invert()", width: "5vw", padding: "1vw" }} loading="lazy" decoding="async" /></h2>
                     </div>
                 </div>
             </div>

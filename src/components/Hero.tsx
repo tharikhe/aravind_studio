@@ -151,12 +151,14 @@ const Hero = () => {
                     src="/images/hero-new.png"
                     alt=""
                     loading="lazy"
+                    decoding="async"
                 />
                 <img
                     id="img2"
                     src="/images/fashion.jpg"
                     alt=""
                     loading="lazy"
+                    decoding="async"
                 />
                 <div id="image-2">
                     <img
@@ -164,12 +166,14 @@ const Hero = () => {
                         src="/images/amish-thakkar-7O422yG_b80-unsplash.jpg"
                         alt=""
                         loading="lazy"
+                        decoding="async"
                     />
                     <img
                         id="img4"
                         src="/images/anik-das-wbLCos9rVLQ-unsplash.jpg"
                         alt=""
                         loading="lazy"
+                        decoding="async"
                     />
                 </div>
             </div>

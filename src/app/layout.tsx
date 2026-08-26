@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ThemeToggle from "@/components/ThemeToggle";
 import Loader from "@/components/Loader";
 import Cursor from "@/components/Cursor";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
   title: "gwastudioX - Best Photography Services in Bangalore",
@@ -48,10 +48,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <SmoothScroll />
         <div id="global">
           <Cursor />
           <Loader />
-          <ThemeToggle />
           <Navbar />
         </div>
         <div id="main">
@@ -59,9 +59,8 @@ export default function RootLayout({
           <Footer />
         </div>
         <WhatsAppButton />
-
-        {/* Scripts for smooth scroll if needed, or rely on GSAP */}
       </body>
     </html>
   );
 }
+

@@ -58,7 +58,7 @@ const Portfolio = () => {
         <div id="page8-1" ref={portfolioRef}>
             <div id="page8">
                 <div className="image1">
-                    <img src="/images/amish-thakkar-7O422yG_b80-unsplash.jpg" alt="Wedding Photography" loading="lazy" />
+                    <img src="/images/amish-thakkar-7O422yG_b80-unsplash.jpg" alt="Wedding Photography" loading="lazy" decoding="async" />
                     <div className="overlay">
                         <div className="text">
                             <h2>1/4</h2>
@@ -67,7 +67,7 @@ const Portfolio = () => {
                     </div>
                 </div>
                 <div className="images">
-                    <img src="/images/anik-das-wbLCos9rVLQ-unsplash.jpg" alt="Pre-wedding Photography" loading="lazy" />
+                    <img src="/images/anik-das-wbLCos9rVLQ-unsplash.jpg" alt="Pre-wedding Photography" loading="lazy" decoding="async" />
                     <div className="overlay">
                         <div className="text">
                             <h2>2/4</h2>
@@ -76,7 +76,7 @@ const Portfolio = () => {
                     </div>
                 </div>
                 <div className="images">
-                    <img src="/images/fashion.jpg" alt="Fashion Photography Model" loading="lazy" />
+                    <img src="/images/fashion.jpg" alt="Fashion Photography Model" loading="lazy" decoding="async" />
                     <div className="overlay">
                         <div className="text">
                             <h2>3/4</h2>
@@ -85,7 +85,7 @@ const Portfolio = () => {
                     </div>
                 </div>
                 <div className="images">
-                    <img src="/images/arto-suraj-YTEj-9pUH_k-unsplash.jpg" alt="Event Photography" loading="lazy" />
+                    <img src="/images/arto-suraj-YTEj-9pUH_k-unsplash.jpg" alt="Event Photography" loading="lazy" decoding="async" />
                     <div className="overlay">
                         <div className="text">
                             <h2>4/4</h2>
