@@ -87,7 +87,7 @@ const Services = () => {
                 <h2>*<span>
                     <p>Specializing in Weddings, Pre-wedding, Fashion, Birthday, Maternity, and Corporate events.</p>
                 </span></h2>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gwastudioX is a
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Aravind Studio is a
                     creative photography agency focused on capturing emotions. With every single one of our clients, we bring forth
                     a deep passion for storytelling — which is what we deliver in the form of timeless and
                     memorable photographs.</p>

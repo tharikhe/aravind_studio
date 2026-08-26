@@ -11,4 +11,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://gwastudiox.com/sitemap.xml
+Sitemap: https://aravindstudio.com/sitemap.xml

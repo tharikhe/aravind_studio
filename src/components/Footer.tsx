@@ -71,10 +71,10 @@ const Footer = () => {
 
             <div id="logoText">
                 <h1>AESTHETIC<span>&</span>TIMELESS PHOTOGRAPHY</h1>
-                <h3 style={{ textAlign: "center", color: "var(--white)", marginTop: "2vw", fontFamily: "gilroy" }}>gwastudiox@gmail.com</h3>
+                <h3 style={{ textAlign: "center", color: "var(--white)", marginTop: "2vw", fontFamily: "gilroy" }}>aravindstudio@gmail.com</h3>
             </div>
 
-            <p>©{new Date().getFullYear()} gwastudioX Inc. - All Rights Reserved <span style={{ textDecoration: "underline" }}>@gwastudioX</span></p>
+            <p>©{new Date().getFullYear()} Aravind Studio Inc. - All Rights Reserved <span style={{ textDecoration: "underline" }}>@AravindStudio</span></p>
         </div>
     );
 };
