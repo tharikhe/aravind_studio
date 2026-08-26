@@ -10,9 +10,8 @@ const Hero = () => {
     const heroRef = useRef<HTMLDivElement>(null);
     const videoIndexRef = useRef(0);
     const videoList = [
-        "/new-main-video.webm",
-        "/new-main-video-1.webm",
-        "/new-main-video2.webm"
+        "/video/new-main-video-1.mp4",
+        "/video/new-main-video2.mp4"
     ];
 
     useGSAP(() => {
