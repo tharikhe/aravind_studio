@@ -75,10 +75,10 @@ export default function Hero({ onOpenModal }: HeroProps) {
 
   return (
     <section
-      className="home-hero backlight-bottom"
+      className="home-hero"
       style={{
-        paddingTop: 'clamp(1.5rem, 3vw, 3rem)',
-        paddingBottom: 'clamp(2rem, 4vw, 4rem)',
+        paddingTop: 'clamp(1.5rem, 2.5vw, 2.5rem)',
+        paddingBottom: 'clamp(1.25rem, 2.5vw, 2.5rem)',
         position: 'relative',
       }}
     >
@@ -87,7 +87,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
           className="stg-row"
           style={{
             alignItems: 'center',
-            rowGap: '2.5rem',
+            rowGap: '2rem',
           }}
         >
           {/* Left Column: Thesis & Proposition */}
@@ -107,9 +107,9 @@ export default function Hero({ onOpenModal }: HeroProps) {
                 gap: '0.5rem',
                 padding: '0.35rem 0.85rem',
                 borderRadius: '999px',
-                background: 'rgba(255, 255, 255, 0.04)',
+                background: 'rgba(255, 255, 255, 0.05)',
                 border: '1px solid rgba(255, 255, 255, 0.12)',
-                marginBottom: '1.25rem',
+                marginBottom: '1rem',
               }}
             >
               <span
@@ -137,11 +137,11 @@ export default function Hero({ onOpenModal }: HeroProps) {
             {/* Headline with deliberate typographic contrast */}
             <h1
               style={{
-                fontSize: 'clamp(2.4rem, 4.2vw, 3.5rem)',
+                fontSize: 'clamp(2.3rem, 3.8vw, 3.3rem)',
                 fontWeight: 700,
-                lineHeight: 1.1,
-                letterSpacing: '-0.04em',
-                marginBottom: '1.25rem',
+                lineHeight: 1.12,
+                letterSpacing: '-0.035em',
+                marginBottom: '1rem',
                 color: '#F5F7FA',
               }}
             >
@@ -161,10 +161,10 @@ export default function Hero({ onOpenModal }: HeroProps) {
             <p
               className="bringer-large-text"
               style={{
-                fontSize: 'clamp(1rem, 1.25vw, 1.15rem)',
-                lineHeight: 1.6,
+                fontSize: 'clamp(0.95rem, 1.2vw, 1.1rem)',
+                lineHeight: 1.55,
                 color: 'rgba(255, 255, 255, 0.78)',
-                marginBottom: '1.75rem',
+                marginBottom: '1.5rem',
                 maxWidth: '440px',
               }}
             >
@@ -179,7 +179,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
                 alignItems: 'center',
                 gap: '0.85rem',
                 width: '100%',
-                marginBottom: '1.75rem',
+                marginBottom: '1.5rem',
               }}
             >
               <button
@@ -190,9 +190,9 @@ export default function Hero({ onOpenModal }: HeroProps) {
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '0.5rem',
-                  padding: '0.85rem 1.85rem',
-                  fontSize: '0.95rem',
-                  minHeight: '48px',
+                  padding: '0.8rem 1.6rem',
+                  fontSize: '0.92rem',
+                  minHeight: '46px',
                 }}
               >
                 <span>Book a Session</span>
@@ -203,9 +203,9 @@ export default function Hero({ onOpenModal }: HeroProps) {
                 href="#podcast-setups"
                 className="bringer-button is-secondary"
                 style={{
-                  padding: '0.85rem 1.6rem',
-                  fontSize: '0.95rem',
-                  minHeight: '48px',
+                  padding: '0.8rem 1.5rem',
+                  fontSize: '0.92rem',
+                  minHeight: '46px',
                 }}
               >
                 Explore 10 Setups
@@ -217,8 +217,8 @@ export default function Hero({ onOpenModal }: HeroProps) {
               style={{
                 display: 'flex',
                 flexWrap: 'wrap',
-                gap: '0.75rem 1.25rem',
-                paddingTop: '1.25rem',
+                gap: '0.65rem 1.15rem',
+                paddingTop: '1rem',
                 borderTop: '1px solid rgba(255, 255, 255, 0.08)',
                 width: '100%',
                 fontSize: '0.82rem',
@@ -237,7 +237,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
             </div>
 
             {/* Direct Contact Phone Link */}
-            <div style={{ marginTop: '0.85rem' }}>
+            <div style={{ marginTop: '0.75rem' }}>
               <a
                 href="tel:+919605533366"
                 style={{
@@ -266,9 +266,9 @@ export default function Hero({ onOpenModal }: HeroProps) {
                 width: '100%',
                 borderRadius: '16px',
                 padding: '8px',
-                background: 'linear-gradient(145deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%)',
-                border: '1px solid rgba(255, 255, 255, 0.12)',
-                boxShadow: '0 24px 60px rgba(0, 0, 0, 0.75)',
+                background: 'linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                boxShadow: '0 20px 50px rgba(0, 0, 0, 0.65)',
               }}
               onMouseEnter={() => setIsAutoPlaying(false)}
               onMouseLeave={() => setIsAutoPlaying(true)}
@@ -341,7 +341,6 @@ export default function Hero({ onOpenModal }: HeroProps) {
                           height: '8px',
                           borderRadius: '50%',
                           backgroundColor: '#EF4444',
-                          animation: 'pulse 1.8s infinite',
                         }}
                       />
                       <span style={{ fontWeight: 700, color: '#fff' }}>REC 4K UHD</span>

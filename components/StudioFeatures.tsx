@@ -149,13 +149,13 @@ export default function StudioFeatures() {
   };
 
   return (
-    <section className="divider-top backlight-both" id="studio-features">
+    <section className="divider-top" id="studio-features">
       <div className="stg-container">
         {/* Head */}
-        <div style={{ textAlign: 'center', marginBottom: 'clamp(1.75rem, 3vw, 2.5rem)' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(1.5rem, 2.5vw, 2.25rem)' }}>
           <p
             style={{
-              margin: '0 0 0.65rem',
+              margin: '0 0 0.5rem',
               fontSize: '0.75rem',
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
@@ -176,7 +176,7 @@ export default function StudioFeatures() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(7, minmax(0, 1fr))',
-            gap: 'clamp(0.85rem, 1.6vw, 1.25rem)',
+            gap: 'clamp(0.75rem, 1.4vw, 1.15rem)',
             width: '100%',
           }}
         >
@@ -187,29 +187,29 @@ export default function StudioFeatures() {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                gap: '0.75rem',
-                padding: '1.15rem 0.65rem 1.15rem',
+                gap: '0.65rem',
+                padding: '1.15rem 0.65rem',
                 textAlign: 'center',
-                background: 'rgba(26, 29, 36, 0.4)',
-                border: '1px solid rgba(255, 255, 255, 0.07)',
-                borderRadius: '10px',
+                background: 'rgba(26, 29, 36, 0.45)',
+                border: '1px solid rgba(255, 255, 255, 0.08)',
+                borderRadius: '12px',
                 transition: 'all 0.25s ease',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(92, 157, 255, 0.35)';
+                e.currentTarget.style.borderColor = 'rgba(92, 157, 255, 0.4)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.background = 'rgba(26, 29, 36, 0.8)';
+                e.currentTarget.style.background = 'rgba(26, 29, 36, 0.85)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.07)';
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.background = 'rgba(26, 29, 36, 0.4)';
+                e.currentTarget.style.background = 'rgba(26, 29, 36, 0.45)';
               }}
             >
               <div
                 style={{
-                  width: '40px',
-                  height: '40px',
+                  width: '38px',
+                  height: '38px',
                   color: 'var(--bringer-s-text-accent)',
                   flexShrink: 0,
                 }}
