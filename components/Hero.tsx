@@ -57,8 +57,8 @@ export default function Hero({ onOpenModal }: HeroProps) {
     <section
       className="home-hero backlight-bottom"
       style={{
-        paddingTop: 'clamp(1.5rem, 3.5vw, 3rem)',
-        paddingBottom: 'clamp(2.5rem, 5vw, 4.5rem)',
+        paddingTop: 'clamp(0.5rem, 1.2vw, 1.25rem)',
+        paddingBottom: 'clamp(1.5rem, 3vw, 2.75rem)',
       }}
     >
       <div className="stg-container">
@@ -66,7 +66,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
           className="stg-row"
           style={{
             alignItems: 'center',
-            rowGap: '2rem',
+            rowGap: '1.5rem',
           }}
         >
           {/* Left Column: Hero Content */}
@@ -78,47 +78,13 @@ export default function Hero({ onOpenModal }: HeroProps) {
               alignItems: 'flex-start',
             }}
           >
-            <div
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.5rem',
-                padding: '0.35rem 0.85rem',
-                borderRadius: '999px',
-                background: 'rgba(92, 157, 255, 0.1)',
-                border: '1px solid rgba(92, 157, 255, 0.25)',
-                marginBottom: '1rem',
-              }}
-            >
-              <span
-                style={{
-                  width: '8px',
-                  height: '8px',
-                  borderRadius: '50%',
-                  backgroundColor: '#5C9DFF',
-                  boxShadow: '0 0 8px #5C9DFF',
-                }}
-              />
-              <span
-                style={{
-                  fontSize: '0.78rem',
-                  fontWeight: 600,
-                  color: '#5C9DFF',
-                  letterSpacing: '0.08em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                ARCC Media Production
-              </span>
-            </div>
-
             <h1
               style={{
-                fontSize: 'clamp(2.35rem, 4.2vw, 3.4rem)',
+                fontSize: 'clamp(2.1rem, 3.6vw, 3.1rem)',
                 fontWeight: 700,
                 lineHeight: 1.12,
                 letterSpacing: '-0.04em',
-                marginBottom: '1.25rem',
+                marginBottom: '0.75rem',
                 color: '#F5F7FA',
               }}
             >
@@ -128,10 +94,10 @@ export default function Hero({ onOpenModal }: HeroProps) {
             <p
               className="bringer-large-text"
               style={{
-                fontSize: 'clamp(1rem, 1.3vw, 1.125rem)',
-                lineHeight: 1.55,
+                fontSize: 'clamp(0.92rem, 1.15vw, 1.05rem)',
+                lineHeight: 1.5,
                 color: 'rgba(255, 255, 255, 0.82)',
-                marginBottom: '1.75rem',
+                marginBottom: '1.15rem',
               }}
             >
               ARCC Media Production is Bengaluru&apos;s premier podcast and video studio offering fully equipped recording spaces,
@@ -144,9 +110,9 @@ export default function Hero({ onOpenModal }: HeroProps) {
               style={{
                 display: 'flex',
                 flexWrap: 'wrap',
-                gap: '0.75rem',
+                gap: '0.65rem',
                 width: '100%',
-                marginBottom: '1.75rem',
+                marginBottom: '1.15rem',
               }}
             >
               <button
@@ -155,8 +121,9 @@ export default function Hero({ onOpenModal }: HeroProps) {
                 onClick={() => onOpenModal('Podcast Production')}
                 style={{
                   flex: '1 1 auto',
-                  minHeight: '48px',
-                  fontSize: '0.9rem',
+                  minHeight: '44px',
+                  fontSize: '0.88rem',
+                  padding: '0.65rem 1.4rem',
                 }}
               >
                 Book a Shoot
@@ -166,8 +133,9 @@ export default function Hero({ onOpenModal }: HeroProps) {
                 className="bringer-button is-secondary"
                 style={{
                   flex: '1 1 auto',
-                  minHeight: '48px',
-                  fontSize: '0.9rem',
+                  minHeight: '44px',
+                  fontSize: '0.88rem',
+                  padding: '0.65rem 1.4rem',
                 }}
               >
                 View Setups
@@ -179,17 +147,17 @@ export default function Hero({ onOpenModal }: HeroProps) {
               className="wf-direct-contact"
               style={{
                 width: '100%',
-                paddingTop: '1.25rem',
+                paddingTop: '0.9rem',
                 borderTop: '1px solid rgba(245, 247, 250, 0.12)',
                 display: 'flex',
                 flexDirection: 'column',
-                gap: '0.35rem',
+                gap: '0.25rem',
               }}
             >
               <p
                 style={{
                   margin: 0,
-                  fontSize: '0.75rem',
+                  fontSize: '0.72rem',
                   letterSpacing: '0.12em',
                   textTransform: 'uppercase',
                   color: '#8A99AD',
@@ -201,11 +169,11 @@ export default function Hero({ onOpenModal }: HeroProps) {
               <a
                 href="tel:+919605533366"
                 style={{
-                  fontSize: 'clamp(1.35rem, 2.2vw, 1.6rem)',
+                  fontSize: 'clamp(1.25rem, 1.9vw, 1.45rem)',
                   fontWeight: 700,
                   color: '#FFFFFF',
                   letterSpacing: '0.02em',
-                  margin: '0.2rem 0 0.5rem',
+                  margin: '0.1rem 0 0.4rem',
                   textDecoration: 'none',
                 }}
               >
@@ -227,9 +195,9 @@ export default function Hero({ onOpenModal }: HeroProps) {
                     alignItems: 'center',
                     justifyContent: 'center',
                     gap: '0.45rem',
-                    minHeight: '42px',
-                    padding: '0.5rem 1rem',
-                    fontSize: '0.875rem',
+                    minHeight: '38px',
+                    padding: '0.45rem 0.85rem',
+                    fontSize: '0.85rem',
                     fontWeight: 600,
                     color: '#5C9DFF',
                     background: 'rgba(63, 110, 233, 0.12)',
@@ -239,7 +207,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
                     transition: 'all 0.2s ease',
                   }}
                 >
-                  <Phone size={16} />
+                  <Phone size={15} />
                   <span>Call</span>
                 </a>
 
@@ -253,9 +221,9 @@ export default function Hero({ onOpenModal }: HeroProps) {
                     alignItems: 'center',
                     justifyContent: 'center',
                     gap: '0.45rem',
-                    minHeight: '42px',
-                    padding: '0.5rem 1rem',
-                    fontSize: '0.875rem',
+                    minHeight: '38px',
+                    padding: '0.45rem 0.85rem',
+                    fontSize: '0.85rem',
                     fontWeight: 600,
                     color: '#25D366',
                     background: 'rgba(37, 211, 102, 0.12)',
@@ -269,8 +237,8 @@ export default function Hero({ onOpenModal }: HeroProps) {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    width="16"
-                    height="16"
+                    width="15"
+                    height="15"
                   >
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                   </svg>
