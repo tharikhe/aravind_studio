@@ -30,8 +30,8 @@ export default function Footer() {
     <footer
       id="bringer-footer"
       style={{
-        borderTop: '1px solid #4D4D4D',
-        background: '#000000',
+        borderTop: '1px solid #E5E7EB',
+        background: '#F8F9FA',
         paddingTop: 'clamp(3rem, 5vw, 4.5rem)',
         paddingBottom: '2.5rem',
       }}
@@ -61,6 +61,7 @@ export default function Footer() {
                   position: 'relative',
                   height: '46px',
                   width: '200px',
+                  filter: 'invert(1)',
                 }}
               >
                 <Image
@@ -79,7 +80,7 @@ export default function Footer() {
               style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
-                color: '#B0B0B0',
+                color: '#4A5568',
                 marginBottom: '1rem',
                 maxWidth: '380px',
               }}
@@ -92,7 +93,7 @@ export default function Footer() {
               style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.5,
-                color: '#7D7D7D',
+                color: '#71717A',
                 marginBottom: '0.5rem',
                 maxWidth: '380px',
               }}
@@ -101,8 +102,8 @@ export default function Footer() {
               stage, Indiranagar, Bengaluru, 560038
             </p>
 
-            <p style={{ fontSize: '0.88rem', marginBottom: '1.25rem' }}>
-              <a href="tel:+919605533366" style={{ color: '#FFFFFF', fontWeight: 600, textDecoration: 'underline' }}>
+            <p style={{ fontSize: '0.95rem', marginBottom: '1.25rem' }}>
+              <a href="tel:+919605533366" style={{ color: '#000000', fontWeight: 700, textDecoration: 'underline' }}>
                 +91 960 55 333 66
               </a>
             </p>
@@ -113,7 +114,7 @@ export default function Footer() {
                 fontSize: '0.75rem',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
-                color: '#7D7D7D',
+                color: '#71717A',
                 marginBottom: '0.65rem',
                 fontWeight: 600,
               }}
@@ -132,23 +133,24 @@ export default function Footer() {
                   width: '36px',
                   height: '36px',
                   borderRadius: '50%',
-                  background: 'rgba(255, 255, 255, 0.06)',
-                  border: '1px solid #4D4D4D',
+                  background: '#FFFFFF',
+                  border: '1px solid #E5E7EB',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: '#fff',
+                  color: '#000000',
+                  boxShadow: '0 2px 6px rgba(0, 0, 0, 0.05)',
                   transition: 'all 0.2s ease',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#FFFFFF';
-                  e.currentTarget.style.color = '#000000';
-                  e.currentTarget.style.borderColor = '#FFFFFF';
+                  e.currentTarget.style.background = '#000000';
+                  e.currentTarget.style.color = '#FFFFFF';
+                  e.currentTarget.style.borderColor = '#000000';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.06)';
-                  e.currentTarget.style.color = '#FFFFFF';
-                  e.currentTarget.style.borderColor = '#4D4D4D';
+                  e.currentTarget.style.background = '#FFFFFF';
+                  e.currentTarget.style.color = '#000000';
+                  e.currentTarget.style.borderColor = '#E5E7EB';
                 }}
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -167,23 +169,24 @@ export default function Footer() {
                   width: '36px',
                   height: '36px',
                   borderRadius: '50%',
-                  background: 'rgba(255, 255, 255, 0.06)',
-                  border: '1px solid #4D4D4D',
+                  background: '#FFFFFF',
+                  border: '1px solid #E5E7EB',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  color: '#fff',
+                  color: '#000000',
+                  boxShadow: '0 2px 6px rgba(0, 0, 0, 0.05)',
                   transition: 'all 0.2s ease',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#FFFFFF';
-                  e.currentTarget.style.color = '#000000';
-                  e.currentTarget.style.borderColor = '#FFFFFF';
+                  e.currentTarget.style.background = '#000000';
+                  e.currentTarget.style.color = '#FFFFFF';
+                  e.currentTarget.style.borderColor = '#000000';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.06)';
-                  e.currentTarget.style.color = '#FFFFFF';
-                  e.currentTarget.style.borderColor = '#4D4D4D';
+                  e.currentTarget.style.background = '#FFFFFF';
+                  e.currentTarget.style.color = '#000000';
+                  e.currentTarget.style.borderColor = '#E5E7EB';
                 }}
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -197,7 +200,7 @@ export default function Footer() {
 
           {/* Explore Links */}
           <div className="stg-col-3 stg-tp-col-6">
-            <h6 style={{ fontSize: '1rem', color: '#FFFFFF', marginBottom: '1.25rem' }}>Explore</h6>
+            <h6 style={{ fontSize: '1rem', color: '#0A0A0A', marginBottom: '1.25rem', fontWeight: 700 }}>Explore</h6>
             <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
               {exploreLinks.map((item, idx) => (
                 <li key={idx}>
@@ -205,11 +208,11 @@ export default function Footer() {
                     href={item.href}
                     style={{
                       fontSize: '0.88rem',
-                      color: '#B0B0B0',
+                      color: '#4A5568',
                       transition: 'color 0.2s ease',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = '#B0B0B0')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#000000')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#4A5568')}
                   >
                     {item.label}
                   </a>
@@ -220,7 +223,7 @@ export default function Footer() {
 
           {/* Resources Links */}
           <div className="stg-col-4 stg-tp-col-6">
-            <h6 style={{ fontSize: '1rem', color: '#FFFFFF', marginBottom: '1.25rem' }}>Resources</h6>
+            <h6 style={{ fontSize: '1rem', color: '#0A0A0A', marginBottom: '1.25rem', fontWeight: 700 }}>Resources</h6>
             <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
               {resourceLinks.map((item, idx) => (
                 <li key={idx}>
@@ -228,11 +231,11 @@ export default function Footer() {
                     href={item.href}
                     style={{
                       fontSize: '0.88rem',
-                      color: '#B0B0B0',
+                      color: '#4A5568',
                       transition: 'color 0.2s ease',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = '#B0B0B0')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#000000')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#4A5568')}
                   >
                     {item.label}
                   </a>
@@ -246,14 +249,14 @@ export default function Footer() {
         <div
           style={{
             paddingTop: '1.75rem',
-            borderTop: '1px solid #4D4D4D',
+            borderTop: '1px solid #E5E7EB',
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'space-between',
             alignItems: 'center',
             gap: '1rem',
             fontSize: '0.85rem',
-            color: '#7D7D7D',
+            color: '#71717A',
           }}
         >
           <div>Made with excellence in Bengaluru.</div>

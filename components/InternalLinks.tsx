@@ -14,8 +14,8 @@ export default function InternalLinks({ onOpenModal }: InternalLinksProps) {
       style={{
         paddingTop: 'clamp(2.5rem, 4.5vw, 3.5rem)',
         paddingBottom: 'clamp(2.5rem, 4.5vw, 3.5rem)',
-        background: '#070707',
-        borderTop: '1px solid #4D4D4D',
+        background: '#F8F9FA',
+        borderTop: '1px solid #E5E7EB',
       }}
     >
       <div className="stg-container">
@@ -26,13 +26,13 @@ export default function InternalLinks({ onOpenModal }: InternalLinksProps) {
               fontSize: '0.75rem',
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              color: '#B0B0B0',
+              color: '#52525B',
               fontWeight: 600,
             }}
           >
             Directory &amp; Overview
           </p>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.2rem)', marginBottom: '1.25rem', color: '#FFFFFF' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.2rem)', marginBottom: '1.25rem', color: '#0A0A0A' }}>
             Explore ARCC Media Production
           </h2>
 
@@ -40,20 +40,20 @@ export default function InternalLinks({ onOpenModal }: InternalLinksProps) {
             style={{
               fontSize: '0.92rem',
               lineHeight: 1.8,
-              color: '#B0B0B0',
+              color: '#4A5568',
               margin: '0 auto 1.5rem',
             }}
           >
             Planning your next series? Check our{' '}
-            <a href="#podcast-setups" style={{ color: '#FFFFFF', textDecoration: 'underline' }}>
+            <a href="#podcast-setups" style={{ color: '#000000', fontWeight: 600, textDecoration: 'underline' }}>
               podcast studio setups
             </a>
             , explore{' '}
-            <a href="#editing-support" style={{ color: '#FFFFFF', textDecoration: 'underline' }}>
+            <a href="#editing-support" style={{ color: '#000000', fontWeight: 600, textDecoration: 'underline' }}>
               post-production editing and reels
             </a>
             , browse{' '}
-            <a href="#what-you-can-create" style={{ color: '#FFFFFF', textDecoration: 'underline' }}>
+            <a href="#what-you-can-create" style={{ color: '#000000', fontWeight: 600, textDecoration: 'underline' }}>
               show formats
             </a>
             , or{' '}
@@ -61,7 +61,7 @@ export default function InternalLinks({ onOpenModal }: InternalLinksProps) {
               type="button"
               onClick={() => onOpenModal('Production Enquiry')}
               style={{
-                color: '#FFFFFF',
+                color: '#000000',
                 background: 'none',
                 border: 'none',
                 textDecoration: 'underline',
@@ -69,7 +69,7 @@ export default function InternalLinks({ onOpenModal }: InternalLinksProps) {
                 fontFamily: 'inherit',
                 fontSize: 'inherit',
                 padding: 0,
-                fontWeight: 600,
+                fontWeight: 700,
               }}
             >
               request a custom quote

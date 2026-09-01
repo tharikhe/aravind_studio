@@ -38,7 +38,7 @@ const EDITING_ITEMS = [
 
 export default function EditingSupport() {
   return (
-    <section className="divider-top" id="editing-support">
+    <section className="divider-top" id="editing-support" style={{ background: '#FFFFFF' }}>
       <div className="stg-container">
         {/* Head */}
         <div style={{ textAlign: 'center', marginBottom: 'clamp(1.75rem, 3vw, 2.5rem)' }}>
@@ -48,13 +48,13 @@ export default function EditingSupport() {
               fontSize: '0.75rem',
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              color: '#B0B0B0',
+              color: '#52525B',
               fontWeight: 600,
             }}
           >
             Post-Production
           </p>
-          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem', color: '#FFFFFF' }}>
+          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem', color: '#0A0A0A' }}>
             Podcast Editing Support
           </h2>
           <p
@@ -64,7 +64,7 @@ export default function EditingSupport() {
               marginLeft: 'auto',
               marginRight: 'auto',
               fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)',
-              color: '#B0B0B0',
+              color: '#52525B',
             }}
           >
             Shoot once and convert the same session into full episodes, reels, shorts, teasers,
@@ -93,21 +93,21 @@ export default function EditingSupport() {
                   gap: '0.75rem',
                   padding: '1.5rem 1.35rem',
                   minHeight: '100%',
-                  background: '#0d0d0d',
-                  border: '1px solid #4D4D4D',
+                  background: '#FFFFFF',
+                  border: '1px solid #E5E7EB',
                   borderRadius: '14px',
                   transition: 'all 0.25s ease',
-                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
+                  boxShadow: '0 2px 10px rgba(0, 0, 0, 0.04)',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#FFFFFF';
+                  e.currentTarget.style.borderColor = '#000000';
                   e.currentTarget.style.transform = 'translateY(-3px)';
-                  e.currentTarget.style.boxShadow = '0 10px 28px rgba(255, 255, 255, 0.08)';
+                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.08)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#4D4D4D';
+                  e.currentTarget.style.borderColor = '#E5E7EB';
                   e.currentTarget.style.transform = 'none';
-                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.4)';
+                  e.currentTarget.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.04)';
                 }}
               >
                 <div
@@ -115,9 +115,9 @@ export default function EditingSupport() {
                     width: '36px',
                     height: '36px',
                     borderRadius: '8px',
-                    background: 'rgba(255, 255, 255, 0.06)',
-                    border: '1px solid #4D4D4D',
-                    color: '#FFFFFF',
+                    background: '#F4F5F7',
+                    border: '1px solid #E5E7EB',
+                    color: '#000000',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -127,10 +127,10 @@ export default function EditingSupport() {
                   <Icon size={18} />
                 </div>
                 <div>
-                  <h4 style={{ fontSize: '1.1rem', marginBottom: '0.4rem', color: '#FFFFFF', fontWeight: 600 }}>
+                  <h4 style={{ fontSize: '1.1rem', marginBottom: '0.4rem', color: '#0A0A0A', fontWeight: 600 }}>
                     {item.title}
                   </h4>
-                  <p style={{ margin: 0, fontSize: '0.86rem', lineHeight: 1.55, color: '#B0B0B0' }}>
+                  <p style={{ margin: 0, fontSize: '0.86rem', lineHeight: 1.55, color: '#52525B' }}>
                     {item.desc}
                   </p>
                 </div>

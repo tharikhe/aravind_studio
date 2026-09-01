@@ -8,7 +8,7 @@ interface StudioLocationProps {
 
 export default function StudioLocation({ onOpenModal }: StudioLocationProps) {
   return (
-    <section className="divider-top" id="studio-location">
+    <section className="divider-top" id="studio-location" style={{ background: '#F8F9FA' }}>
       <div className="stg-container">
         {/* Head */}
         <div style={{ textAlign: 'center', marginBottom: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}>
@@ -18,13 +18,13 @@ export default function StudioLocation({ onOpenModal }: StudioLocationProps) {
               fontSize: '0.75rem',
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              color: '#B0B0B0',
+              color: '#52525B',
               fontWeight: 600,
             }}
           >
             Studio Location
           </p>
-          <h2 style={{ fontSize: 'clamp(1.85rem, 3.5vw, 2.75rem)', marginBottom: '0.85rem', color: '#FFFFFF' }}>
+          <h2 style={{ fontSize: 'clamp(1.85rem, 3.5vw, 2.75rem)', marginBottom: '0.85rem', color: '#0A0A0A' }}>
             Based in Indiranagar, Bengaluru
           </h2>
           <p
@@ -34,7 +34,7 @@ export default function StudioLocation({ onOpenModal }: StudioLocationProps) {
               marginLeft: 'auto',
               marginRight: 'auto',
               fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
-              color: '#B0B0B0',
+              color: '#52525B',
             }}
           >
             Our podcast studio is in Indiranagar, central Bangalore. Studio visits available by
@@ -61,35 +61,36 @@ export default function StudioLocation({ onOpenModal }: StudioLocationProps) {
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 padding: '2rem 1.75rem',
-                background: '#0d0d0d',
-                border: '1px solid #4D4D4D',
+                background: '#FFFFFF',
+                border: '1px solid #E5E7EB',
                 borderRadius: '16px',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.05)',
               }}
             >
               <div>
-                <h5 style={{ fontSize: '1.25rem', marginBottom: '0.75rem', color: '#FFFFFF' }}>
+                <h5 style={{ fontSize: '1.25rem', marginBottom: '0.75rem', color: '#0A0A0A' }}>
                   Address.
                 </h5>
-                <p style={{ fontSize: '0.92rem', lineHeight: 1.6, color: '#B0B0B0', marginBottom: '1.5rem' }}>
+                <p style={{ fontSize: '0.92rem', lineHeight: 1.6, color: '#4A5568', marginBottom: '1.5rem' }}>
                   ARCC Media Production, 2nd floor, 8th main, 80 feet road, next to Bata showroom, HAL 2nd
                   stage, Indiranagar, Bengaluru, 560038
                 </p>
 
-                <h5 style={{ fontSize: '1.25rem', marginBottom: '0.75rem', color: '#FFFFFF' }}>
+                <h5 style={{ fontSize: '1.25rem', marginBottom: '0.75rem', color: '#0A0A0A' }}>
                   Phone.
                 </h5>
-                <p style={{ fontSize: '1.1rem', fontWeight: 600, color: '#fff', margin: 0 }}>
-                  <a href="tel:+919605533366" style={{ color: '#FFFFFF', textDecoration: 'underline' }}>
+                <p style={{ fontSize: '1.1rem', fontWeight: 700, color: '#000000', margin: 0 }}>
+                  <a href="tel:+919605533366" style={{ color: '#000000', textDecoration: 'underline' }}>
                     +91 960 55 333 66
                   </a>
                 </p>
               </div>
 
-              <div style={{ marginTop: '1.5rem', paddingTop: '1.25rem', borderTop: '1px solid #4D4D4D' }}>
-                <span style={{ fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#7D7D7D' }}>
+              <div style={{ marginTop: '1.5rem', paddingTop: '1.25rem', borderTop: '1px solid #E5E7EB' }}>
+                <span style={{ fontSize: '0.78rem', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#71717A', fontWeight: 600 }}>
                   Studio Timings
                 </span>
-                <p style={{ fontSize: '0.9rem', color: '#FFFFFF', margin: '0.25rem 0 0' }}>
+                <p style={{ fontSize: '0.9rem', color: '#18181B', fontWeight: 500, margin: '0.25rem 0 0' }}>
                   Monday – Sunday: 8:00 AM – 10:00 PM
                 </p>
               </div>
@@ -105,15 +106,15 @@ export default function StudioLocation({ onOpenModal }: StudioLocationProps) {
                 minHeight: '340px',
                 borderRadius: '16px',
                 overflow: 'hidden',
-                border: '1px solid #4D4D4D',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.7)',
+                border: '1px solid #E5E7EB',
+                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)',
               }}
             >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3887.9816718600937!2d77.646698!3d12.973023999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDU4JzIyLjkiTiA3N8KwMzgnNDguMSJF!5e0!3m2!1sen!2sin!4v1740675813580!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
-                style={{ border: 0, minHeight: '340px', display: 'block', filter: 'invert(90%) hue-rotate(180deg) brightness(95%) contrast(90%)' }}
+                style={{ border: 0, minHeight: '340px', display: 'block' }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

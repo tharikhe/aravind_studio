@@ -45,11 +45,11 @@ export default function Header({ onOpenModal }: HeaderProps) {
           zIndex: 100,
           transition: 'all 0.3s ease',
           background: isScrolled
-            ? 'rgba(0, 0, 0, 0.95)'
-            : 'rgba(0, 0, 0, 0.8)',
+            ? 'rgba(255, 255, 255, 0.95)'
+            : 'rgba(255, 255, 255, 0.88)',
           backdropFilter: 'blur(16px)',
-          borderBottom: '1px solid #4D4D4D',
-          boxShadow: isScrolled ? '0 10px 30px rgba(0,0,0,0.8)' : 'none',
+          borderBottom: '1px solid #E5E7EB',
+          boxShadow: isScrolled ? '0 4px 20px rgba(0,0,0,0.06)' : 'none',
         }}
       >
         <div
@@ -62,7 +62,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
             transition: 'height 0.3s ease',
           }}
         >
-          {/* Logo Section */}
+          {/* Logo Section (Inverted to Black for Light Theme) */}
           <Link
             href="/"
             style={{
@@ -76,6 +76,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
                 position: 'relative',
                 height: '42px',
                 width: '180px',
+                filter: 'invert(1)',
               }}
             >
               <Image
@@ -116,16 +117,16 @@ export default function Header({ onOpenModal }: HeaderProps) {
                   <a
                     href={link.href}
                     style={{
-                      color: '#B0B0B0',
+                      color: '#4A5568',
                       fontSize: '0.875rem',
                       fontWeight: 500,
                       letterSpacing: '0.02em',
                       textDecoration: 'none',
                       transition: 'color 0.2s ease',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#000000')}
                     onMouseLeave={(e) =>
-                      (e.currentTarget.style.color = '#B0B0B0')
+                      (e.currentTarget.style.color = '#4A5568')
                     }
                   >
                     {link.label}
@@ -176,7 +177,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
                 display: 'block',
                 width: '22px',
                 height: '2px',
-                backgroundColor: '#FFFFFF',
+                backgroundColor: '#000000',
                 transition: 'all 0.3s ease',
                 transform: mobileMenuOpen
                   ? 'rotate(45deg) translate(5px, 5px)'
@@ -188,7 +189,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
                 display: 'block',
                 width: '22px',
                 height: '2px',
-                backgroundColor: '#FFFFFF',
+                backgroundColor: '#000000',
                 transition: 'all 0.3s ease',
                 opacity: mobileMenuOpen ? 0 : 1,
               }}
@@ -198,7 +199,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
                 display: 'block',
                 width: '22px',
                 height: '2px',
-                backgroundColor: '#FFFFFF',
+                backgroundColor: '#000000',
                 transition: 'all 0.3s ease',
                 transform: mobileMenuOpen
                   ? 'rotate(-45deg) translate(5px, -5px)'
@@ -218,12 +219,12 @@ export default function Header({ onOpenModal }: HeaderProps) {
           right: 0,
           bottom: 0,
           width: 'min(320px, 85vw)',
-          backgroundColor: '#000000',
+          backgroundColor: '#FFFFFF',
           zIndex: 1000,
           transform: mobileMenuOpen ? 'translateX(0)' : 'translateX(100%)',
           transition: 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
-          boxShadow: '-10px 0 30px rgba(0, 0, 0, 0.9)',
-          borderLeft: '1px solid #4D4D4D',
+          boxShadow: '-10px 0 30px rgba(0, 0, 0, 0.15)',
+          borderLeft: '1px solid #E5E7EB',
           display: 'flex',
           flexDirection: 'column',
           padding: '2rem 1.5rem',
@@ -237,7 +238,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
             marginBottom: '2rem',
           }}
         >
-          <div style={{ position: 'relative', height: '36px', width: '150px' }}>
+          <div style={{ position: 'relative', height: '36px', width: '150px', filter: 'invert(1)' }}>
             <Image
               src="/logo.png"
               alt="ARCC Media Production"
@@ -250,9 +251,9 @@ export default function Header({ onOpenModal }: HeaderProps) {
             onClick={() => setMobileMenuOpen(false)}
             aria-label="Close menu"
             style={{
-              background: 'rgba(255, 255, 255, 0.1)',
+              background: '#F3F4F6',
               border: 'none',
-              color: '#fff',
+              color: '#000000',
               width: '34px',
               height: '34px',
               borderRadius: '50%',
@@ -282,7 +283,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
                 style={{
-                  color: '#FFFFFF',
+                  color: '#18181B',
                   fontSize: '1.05rem',
                   fontWeight: 500,
                   textDecoration: 'none',
@@ -318,7 +319,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
           style={{
             position: 'fixed',
             inset: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+            backgroundColor: 'rgba(0, 0, 0, 0.4)',
             backdropFilter: 'blur(4px)',
             zIndex: 999,
           }}

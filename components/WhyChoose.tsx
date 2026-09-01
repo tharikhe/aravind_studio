@@ -42,7 +42,7 @@ const WHY_CHOOSE_ITEMS = [
 
 export default function WhyChoose() {
   return (
-    <section className="divider-top" id="why-choose">
+    <section className="divider-top" id="why-choose" style={{ background: '#FFFFFF' }}>
       <div className="stg-container">
         {/* Head */}
         <div style={{ textAlign: 'center', marginBottom: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}>
@@ -52,13 +52,13 @@ export default function WhyChoose() {
               fontSize: '0.75rem',
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              color: '#B0B0B0',
+              color: '#52525B',
               fontWeight: 600,
             }}
           >
             Why ARCC Media Production
           </p>
-          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem', color: '#FFFFFF' }}>
+          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem', color: '#0A0A0A' }}>
             Why Choose ARCC for Your Podcast?
           </h2>
           <p
@@ -68,7 +68,7 @@ export default function WhyChoose() {
               marginLeft: 'auto',
               marginRight: 'auto',
               fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)',
-              color: '#B0B0B0',
+              color: '#52525B',
             }}
           >
             Purpose-built studio infrastructure, on-set production support, and optional post — designed
@@ -94,21 +94,21 @@ export default function WhyChoose() {
                 gap: '0.65rem',
                 padding: '1.5rem 1.35rem',
                 borderRadius: '14px',
-                border: '1px solid #4D4D4D',
-                background: '#0d0d0d',
-                boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
+                border: '1px solid #E5E7EB',
+                background: '#FFFFFF',
+                boxShadow: '0 2px 10px rgba(0, 0, 0, 0.04)',
                 transition: 'all 0.25s ease',
                 gridColumn: idx === 6 ? 'span 3' : 'auto',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#FFFFFF';
+                e.currentTarget.style.borderColor = '#000000';
                 e.currentTarget.style.transform = 'translateY(-3px)';
-                e.currentTarget.style.boxShadow = '0 10px 28px rgba(255, 255, 255, 0.08)';
+                e.currentTarget.style.boxShadow = '0 10px 28px rgba(0, 0, 0, 0.08)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#4D4D4D';
+                e.currentTarget.style.borderColor = '#E5E7EB';
                 e.currentTarget.style.transform = 'none';
-                e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.4)';
+                e.currentTarget.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.04)';
               }}
             >
               <span
@@ -116,13 +116,13 @@ export default function WhyChoose() {
                   fontSize: '0.75rem',
                   letterSpacing: '0.1em',
                   fontFamily: 'ui-monospace, monospace',
-                  color: '#FFFFFF',
+                  color: '#000000',
                   fontWeight: 700,
                 }}
               >
                 {item.index}
               </span>
-              <h4 style={{ margin: 0, fontSize: '1.15rem', color: '#FFFFFF', lineHeight: 1.35, fontWeight: 600 }}>
+              <h4 style={{ margin: 0, fontSize: '1.15rem', color: '#0A0A0A', lineHeight: 1.35, fontWeight: 600 }}>
                 {item.title}
               </h4>
               <p
@@ -130,7 +130,7 @@ export default function WhyChoose() {
                   margin: 0,
                   fontSize: '0.88rem',
                   lineHeight: 1.55,
-                  color: '#B0B0B0',
+                  color: '#52525B',
                 }}
               >
                 {item.desc}

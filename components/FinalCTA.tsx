@@ -12,14 +12,15 @@ export default function FinalCTA({ onOpenModal }: FinalCTAProps) {
       className="divider-top"
       id="home-final-cta"
       style={{
-        paddingTop: 'clamp(3rem, 5vw, 4.5rem)',
-        paddingBottom: 'clamp(3rem, 5vw, 4.5rem)',
+        paddingTop: 'clamp(3.5rem, 6vw, 5rem)',
+        paddingBottom: 'clamp(3.5rem, 6vw, 5rem)',
         textAlign: 'center',
+        background: '#FFFFFF',
       }}
     >
       <div className="stg-container">
         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: 'clamp(2rem, 4.2vw, 3.2rem)', marginBottom: '1rem', color: '#FFFFFF' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 4.2vw, 3.2rem)', marginBottom: '1rem', color: '#0A0A0A' }}>
             Ready to Record Your Podcast?
           </h2>
           <p
@@ -27,7 +28,7 @@ export default function FinalCTA({ onOpenModal }: FinalCTAProps) {
             style={{
               fontSize: 'clamp(1rem, 1.4vw, 1.2rem)',
               lineHeight: 1.6,
-              color: '#B0B0B0',
+              color: '#52525B',
               marginBottom: '2rem',
             }}
           >

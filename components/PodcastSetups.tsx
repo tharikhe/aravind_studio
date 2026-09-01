@@ -52,7 +52,7 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
   };
 
   return (
-    <section className="divider-top" id="podcast-setups">
+    <section className="divider-top" id="podcast-setups" style={{ background: '#FFFFFF' }}>
       <div className="stg-container">
         {/* Head */}
         <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 3.5vw, 3rem)' }}>
@@ -62,13 +62,13 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
               fontSize: '0.75rem',
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              color: '#B0B0B0',
+              color: '#52525B',
               fontWeight: 600,
             }}
           >
             Inside the Facility
           </p>
-          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem', color: '#FFFFFF' }}>
+          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem', color: '#0A0A0A' }}>
             Explore Our Podcast Setups
           </h2>
           <p
@@ -78,7 +78,7 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
               marginLeft: 'auto',
               marginRight: 'auto',
               fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)',
-              color: '#B0B0B0',
+              color: '#52525B',
             }}
           >
             Different production environments across the ARCC Media Production facility, each configured for a
@@ -105,13 +105,13 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
-                  background: '#0d0d0d',
+                  background: '#FFFFFF',
                   border: isSelected
-                    ? '1px solid #FFFFFF'
-                    : '1px solid #4D4D4D',
+                    ? '2px solid #000000'
+                    : '1px solid #E5E7EB',
                   boxShadow: isSelected
-                    ? '0 0 0 1px #FFFFFF, 0 20px 48px rgba(0,0,0,0.9)'
-                    : '0 4px 24px rgba(0,0,0,0.5)',
+                    ? '0 16px 40px rgba(0,0,0,0.12)'
+                    : '0 4px 20px rgba(0,0,0,0.05)',
                   borderRadius: '16px',
                   overflow: 'hidden',
                   cursor: 'pointer',
@@ -120,16 +120,16 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                 }}
                 onMouseEnter={(e) => {
                   if (!isSelected) {
-                    e.currentTarget.style.borderColor = '#B0B0B0';
+                    e.currentTarget.style.borderColor = '#000000';
                     e.currentTarget.style.transform = 'translateY(-4px)';
-                    e.currentTarget.style.boxShadow = '0 12px 36px rgba(255, 255, 255, 0.08)';
+                    e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.1)';
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (!isSelected) {
-                    e.currentTarget.style.borderColor = '#4D4D4D';
+                    e.currentTarget.style.borderColor = '#E5E7EB';
                     e.currentTarget.style.transform = 'none';
-                    e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.5)';
+                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.05)';
                   }
                 }}
               >
@@ -139,7 +139,7 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                     position: 'relative',
                     aspectRatio: '16 / 9',
                     width: '100%',
-                    background: '#000000',
+                    background: '#F3F4F6',
                     overflow: 'hidden',
                   }}
                 >
@@ -160,7 +160,7 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                     style={{
                       position: 'absolute',
                       inset: 0,
-                      background: 'linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.75) 100%)',
+                      background: 'linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%)',
                       pointerEvents: 'none',
                     }}
                   />
@@ -179,7 +179,6 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                       color: '#FFFFFF',
                       letterSpacing: '0.08em',
                       textTransform: 'uppercase',
-                      border: '1px solid #4D4D4D',
                     }}
                   >
                     {setup.tag}
@@ -191,19 +190,21 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                       position: 'absolute',
                       top: '12px',
                       right: '12px',
-                      background: 'rgba(0, 0, 0, 0.85)',
+                      background: 'rgba(255, 255, 255, 0.92)',
+                      backdropFilter: 'blur(6px)',
                       padding: '3px 8px',
                       borderRadius: '6px',
                       fontSize: '0.72rem',
                       fontWeight: 600,
-                      color: '#FFFFFF',
+                      color: '#000000',
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '4px',
-                      border: '1px solid #4D4D4D',
+                      border: '1px solid rgba(0, 0, 0, 0.1)',
+                      boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
                     }}
                   >
-                    <Users size={12} style={{ color: '#B0B0B0' }} />
+                    <Users size={12} style={{ color: '#000000' }} />
                     <span>{setup.capacity}</span>
                   </div>
 
@@ -222,12 +223,12 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                     <span
                       style={{
                         fontSize: '0.72rem',
-                        color: '#B0B0B0',
-                        fontWeight: 500,
-                        background: 'rgba(0, 0, 0, 0.8)',
+                        color: '#FFFFFF',
+                        fontWeight: 600,
+                        background: 'rgba(0, 0, 0, 0.75)',
+                        backdropFilter: 'blur(4px)',
                         padding: '2px 8px',
                         borderRadius: '4px',
-                        border: '1px solid #4D4D4D',
                       }}
                     >
                       {setup.bestFor}
@@ -241,6 +242,7 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                         background: '#FFFFFF',
                         padding: '2px 8px',
                         borderRadius: '4px',
+                        boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
                       }}
                     >
                       Inspect →
@@ -251,7 +253,7 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                 {/* Card Body */}
                 <div
                   style={{
-                    padding: '1.25rem 1.35rem 1.4rem',
+                    padding: '1.35rem 1.35rem 1.4rem',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
@@ -263,7 +265,7 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                       style={{
                         fontSize: '1.2rem',
                         marginBottom: '0.45rem',
-                        color: '#FFFFFF',
+                        color: '#0A0A0A',
                         fontWeight: 700,
                       }}
                     >
@@ -274,7 +276,7 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                         margin: 0,
                         fontSize: '0.86rem',
                         lineHeight: 1.55,
-                        color: '#B0B0B0',
+                        color: '#52525B',
                         marginBottom: '1rem',
                       }}
                     >
@@ -289,20 +291,20 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                       flexDirection: 'column',
                       gap: '0.4rem',
                       paddingTop: '0.85rem',
-                      borderTop: '1px solid #4D4D4D',
+                      borderTop: '1px solid #E5E7EB',
                       fontSize: '0.78rem',
-                      color: '#7D7D7D',
+                      color: '#4B5563',
                     }}
                   >
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
-                      <Video size={13} style={{ color: '#FFFFFF', flexShrink: 0 }} />
-                      <span style={{ color: '#B0B0B0', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                      <Video size={13} style={{ color: '#000000', flexShrink: 0 }} />
+                      <span style={{ color: '#18181B', fontWeight: 500, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                         {setup.cameras}
                       </span>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
-                      <Mic size={13} style={{ color: '#FFFFFF', flexShrink: 0 }} />
-                      <span style={{ color: '#B0B0B0', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                      <Mic size={13} style={{ color: '#000000', flexShrink: 0 }} />
+                      <span style={{ color: '#18181B', fontWeight: 500, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                         {setup.audio}
                       </span>
                     </div>
@@ -318,11 +320,11 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
           <div
             style={{
               marginTop: '2.5rem',
-              background: '#0a0a0a',
-              border: '1px solid #FFFFFF',
+              background: '#FFFFFF',
+              border: '2px solid #000000',
               borderRadius: '20px',
               overflow: 'hidden',
-              boxShadow: '0 28px 70px rgba(0, 0, 0, 0.95)',
+              boxShadow: '0 28px 70px rgba(0, 0, 0, 0.16)',
               display: 'flex',
               flexWrap: 'wrap',
               animation: 'fadeIn 0.3s ease',
@@ -361,8 +363,8 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                       width: '40px',
                       height: '40px',
                       borderRadius: '50%',
-                      background: 'rgba(0, 0, 0, 0.85)',
-                      border: '1px solid #4D4D4D',
+                      background: 'rgba(0, 0, 0, 0.75)',
+                      border: '1px solid rgba(255, 255, 255, 0.3)',
                       color: '#fff',
                       display: 'flex',
                       alignItems: 'center',
@@ -385,8 +387,8 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                       width: '40px',
                       height: '40px',
                       borderRadius: '50%',
-                      background: 'rgba(0, 0, 0, 0.85)',
-                      border: '1px solid #4D4D4D',
+                      background: 'rgba(0, 0, 0, 0.75)',
+                      border: '1px solid rgba(255, 255, 255, 0.3)',
                       color: '#fff',
                       display: 'flex',
                       alignItems: 'center',
@@ -405,7 +407,7 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                       transform: 'translateX(-50%)',
                       display: 'flex',
                       gap: '6px',
-                      background: 'rgba(0, 0, 0, 0.8)',
+                      background: 'rgba(0, 0, 0, 0.7)',
                       padding: '4px 8px',
                       borderRadius: '10px',
                     }}
@@ -417,7 +419,7 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                           width: gIdx === currentGalleryIndex ? '14px' : '6px',
                           height: '6px',
                           borderRadius: '3px',
-                          background: gIdx === currentGalleryIndex ? '#FFFFFF' : '#4D4D4D',
+                          background: gIdx === currentGalleryIndex ? '#FFFFFF' : 'rgba(255,255,255,0.4)',
                         }}
                       />
                     ))}
@@ -435,8 +437,8 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                background: '#0d0d0d',
-                borderLeft: '1px solid #4D4D4D',
+                background: '#F8F9FA',
+                borderLeft: '1px solid #E5E7EB',
                 position: 'relative',
               }}
             >
@@ -448,12 +450,20 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                   position: 'absolute',
                   top: '1.25rem',
                   right: '1.25rem',
-                  color: '#B0B0B0',
+                  color: '#52525B',
+                  background: '#FFFFFF',
+                  border: '1px solid #E5E7EB',
+                  borderRadius: '50%',
+                  width: '32px',
+                  height: '32px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
                   cursor: 'pointer',
                   padding: '4px',
                 }}
               >
-                <X size={22} />
+                <X size={18} />
               </button>
 
               <div>
@@ -462,7 +472,7 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                     fontSize: '0.8rem',
                     letterSpacing: '0.12em',
                     textTransform: 'uppercase',
-                    color: '#B0B0B0',
+                    color: '#000000',
                     fontWeight: 700,
                     display: 'block',
                     marginBottom: '0.5rem',
@@ -471,11 +481,11 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                   {selectedSetup.tag} · {selectedSetup.capacity}
                 </span>
 
-                <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem', color: '#FFFFFF', fontWeight: 700 }}>
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem', color: '#0A0A0A', fontWeight: 700 }}>
                   {selectedSetup.title}
                 </h3>
 
-                <p style={{ fontSize: '0.92rem', lineHeight: 1.6, color: '#B0B0B0', marginBottom: '1.25rem' }}>
+                <p style={{ fontSize: '0.92rem', lineHeight: 1.6, color: '#52525B', marginBottom: '1.25rem' }}>
                   {selectedSetup.desc}
                 </p>
 
@@ -487,23 +497,23 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                     gap: '0.5rem',
                     padding: '1rem',
                     borderRadius: '10px',
-                    background: '#000000',
-                    border: '1px solid #4D4D4D',
+                    background: '#FFFFFF',
+                    border: '1px solid #E5E7EB',
                     marginBottom: '1.5rem',
                     fontSize: '0.84rem',
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#FFFFFF' }}>
-                    <CheckCircle2 size={15} style={{ color: '#FFFFFF' }} />
-                    <span><strong>Cameras:</strong> <span style={{ color: '#B0B0B0' }}>{selectedSetup.cameras}</span></span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#18181B' }}>
+                    <CheckCircle2 size={15} style={{ color: '#10B981' }} />
+                    <span><strong>Cameras:</strong> <span style={{ color: '#52525B' }}>{selectedSetup.cameras}</span></span>
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#FFFFFF' }}>
-                    <CheckCircle2 size={15} style={{ color: '#FFFFFF' }} />
-                    <span><strong>Audio:</strong> <span style={{ color: '#B0B0B0' }}>{selectedSetup.audio}</span></span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#18181B' }}>
+                    <CheckCircle2 size={15} style={{ color: '#10B981' }} />
+                    <span><strong>Audio:</strong> <span style={{ color: '#52525B' }}>{selectedSetup.audio}</span></span>
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#FFFFFF' }}>
-                    <CheckCircle2 size={15} style={{ color: '#FFFFFF' }} />
-                    <span><strong>Ideal for:</strong> <span style={{ color: '#B0B0B0' }}>{selectedSetup.bestFor}</span></span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#18181B' }}>
+                    <CheckCircle2 size={15} style={{ color: '#10B981' }} />
+                    <span><strong>Ideal for:</strong> <span style={{ color: '#52525B' }}>{selectedSetup.bestFor}</span></span>
                   </div>
                 </div>
 
@@ -532,7 +542,7 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                   justifyContent: 'space-between',
                   marginTop: '1.5rem',
                   paddingTop: '1rem',
-                  borderTop: '1px solid #4D4D4D',
+                  borderTop: '1px solid #E5E7EB',
                 }}
               >
                 <button
@@ -542,7 +552,7 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '0.35rem',
-                    color: '#FFFFFF',
+                    color: '#000000',
                     fontSize: '0.85rem',
                     fontWeight: 600,
                     cursor: 'pointer',
@@ -550,7 +560,7 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                 >
                   <ChevronLeft size={16} /> Previous
                 </button>
-                <span style={{ fontSize: '0.8rem', color: '#7D7D7D' }}>
+                <span style={{ fontSize: '0.8rem', color: '#71717A' }}>
                   {selectedSetup.index} / {String(PODCAST_SETUPS.length).padStart(2, '0')}
                 </span>
                 <button
@@ -560,7 +570,7 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '0.35rem',
-                    color: '#FFFFFF',
+                    color: '#000000',
                     fontSize: '0.85rem',
                     fontWeight: 600,
                     cursor: 'pointer',

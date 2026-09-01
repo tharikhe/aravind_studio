@@ -77,10 +77,10 @@ export default function Hero({ onOpenModal }: HeroProps) {
     <section
       className="home-hero"
       style={{
-        paddingTop: 'clamp(1.5rem, 2.5vw, 2.5rem)',
-        paddingBottom: 'clamp(1.25rem, 2.5vw, 2.5rem)',
+        paddingTop: 'clamp(2rem, 3.5vw, 3.5rem)',
+        paddingBottom: 'clamp(2rem, 3.5vw, 3.5rem)',
         position: 'relative',
-        background: '#000000',
+        background: '#FFFFFF',
       }}
     >
       <div className="stg-container">
@@ -88,7 +88,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
           className="stg-row"
           style={{
             alignItems: 'center',
-            rowGap: '2rem',
+            rowGap: '2.5rem',
           }}
         >
           {/* Left Column: Thesis & Proposition */}
@@ -108,8 +108,8 @@ export default function Hero({ onOpenModal }: HeroProps) {
                 gap: '0.5rem',
                 padding: '0.35rem 0.85rem',
                 borderRadius: '999px',
-                background: 'rgba(255, 255, 255, 0.05)',
-                border: '1px solid #4D4D4D',
+                background: '#F4F5F7',
+                border: '1px solid #E5E7EB',
                 marginBottom: '1rem',
               }}
             >
@@ -118,15 +118,15 @@ export default function Hero({ onOpenModal }: HeroProps) {
                   width: '7px',
                   height: '7px',
                   borderRadius: '50%',
-                  backgroundColor: '#FFFFFF',
-                  boxShadow: '0 0 10px rgba(255, 255, 255, 0.8)',
+                  backgroundColor: '#10B981',
+                  boxShadow: '0 0 8px rgba(16, 185, 129, 0.6)',
                 }}
               />
               <span
                 style={{
                   fontSize: '0.75rem',
                   fontWeight: 600,
-                  color: '#B0B0B0',
+                  color: '#18181B',
                   letterSpacing: '0.06em',
                   textTransform: 'uppercase',
                 }}
@@ -139,17 +139,17 @@ export default function Hero({ onOpenModal }: HeroProps) {
             <h1
               style={{
                 fontSize: 'clamp(2.3rem, 3.8vw, 3.3rem)',
-                fontWeight: 700,
+                fontWeight: 800,
                 lineHeight: 1.12,
                 letterSpacing: '-0.035em',
                 marginBottom: '1rem',
-                color: '#FFFFFF',
+                color: '#0A0A0A',
               }}
             >
               Podcast Studio <br className="stg-hide-tp" />
               <span
                 style={{
-                  background: 'linear-gradient(135deg, #FFFFFF 0%, #7D7D7D 100%)',
+                  background: 'linear-gradient(135deg, #000000 0%, #52525B 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                 }}
@@ -164,7 +164,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
               style={{
                 fontSize: 'clamp(0.95rem, 1.2vw, 1.1rem)',
                 lineHeight: 1.55,
-                color: '#B0B0B0',
+                color: '#4A5568',
                 marginBottom: '1.5rem',
                 maxWidth: '440px',
               }}
@@ -220,20 +220,20 @@ export default function Hero({ onOpenModal }: HeroProps) {
                 flexWrap: 'wrap',
                 gap: '0.65rem 1.15rem',
                 paddingTop: '1rem',
-                borderTop: '1px solid #4D4D4D',
+                borderTop: '1px solid #E5E7EB',
                 width: '100%',
                 fontSize: '0.82rem',
-                color: '#7D7D7D',
+                color: '#52525B',
               }}
             >
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#B0B0B0' }}>
-                <Video size={14} style={{ color: '#FFFFFF' }} /> 4K Multi-Cam
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#18181B', fontWeight: 500 }}>
+                <Video size={14} style={{ color: '#000000' }} /> 4K Multi-Cam
               </span>
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#B0B0B0' }}>
-                <Mic size={14} style={{ color: '#FFFFFF' }} /> Shure &amp; Rode Mics
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#18181B', fontWeight: 500 }}>
+                <Mic size={14} style={{ color: '#000000' }} /> Shure &amp; Rode Mics
               </span>
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#B0B0B0' }}>
-                <Sparkles size={14} style={{ color: '#FFFFFF' }} /> Soundproofed
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#18181B', fontWeight: 500 }}>
+                <Sparkles size={14} style={{ color: '#000000' }} /> Soundproofed
               </span>
             </div>
 
@@ -246,15 +246,15 @@ export default function Hero({ onOpenModal }: HeroProps) {
                   alignItems: 'center',
                   gap: '0.45rem',
                   fontSize: '0.88rem',
-                  color: '#B0B0B0',
+                  color: '#4A5568',
                   textDecoration: 'none',
                   transition: 'color 0.2s ease',
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
-                onMouseLeave={(e) => (e.currentTarget.style.color = '#B0B0B0')}
+                onMouseEnter={(e) => (e.currentTarget.style.color = '#000000')}
+                onMouseLeave={(e) => (e.currentTarget.style.color = '#4A5568')}
               >
-                <Phone size={14} style={{ color: '#FFFFFF' }} />
-                <span>Direct Line: <strong style={{ color: '#FFFFFF' }}>+91 960 55 333 66</strong></span>
+                <Phone size={14} style={{ color: '#000000' }} />
+                <span>Direct Line: <strong style={{ color: '#000000' }}>+91 960 55 333 66</strong></span>
               </a>
             </div>
           </div>
@@ -265,11 +265,11 @@ export default function Hero({ onOpenModal }: HeroProps) {
               style={{
                 position: 'relative',
                 width: '100%',
-                borderRadius: '16px',
+                borderRadius: '18px',
                 padding: '8px',
-                background: '#0d0d0d',
-                border: '1px solid #4D4D4D',
-                boxShadow: '0 20px 50px rgba(0, 0, 0, 0.8)',
+                background: '#111827',
+                border: '1px solid #1F2937',
+                boxShadow: '0 20px 48px rgba(0, 0, 0, 0.18)',
               }}
               onMouseEnter={() => setIsAutoPlaying(false)}
               onMouseLeave={() => setIsAutoPlaying(true)}
@@ -280,7 +280,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
                   position: 'relative',
                   width: '100%',
                   aspectRatio: '16 / 9',
-                  borderRadius: '10px',
+                  borderRadius: '12px',
                   overflow: 'hidden',
                   background: '#000000',
                 }}
@@ -341,7 +341,8 @@ export default function Hero({ onOpenModal }: HeroProps) {
                           width: '8px',
                           height: '8px',
                           borderRadius: '50%',
-                          backgroundColor: '#FFFFFF',
+                          backgroundColor: '#EF4444',
+                          boxShadow: '0 0 8px rgba(239, 68, 68, 0.8)',
                         }}
                       />
                       <span style={{ fontWeight: 700, color: '#FFFFFF' }}>REC 4K UHD</span>
@@ -349,11 +350,11 @@ export default function Hero({ onOpenModal }: HeroProps) {
 
                     <div
                       style={{
-                        background: 'rgba(0, 0, 0, 0.8)',
+                        background: 'rgba(0, 0, 0, 0.75)',
                         padding: '2px 8px',
                         borderRadius: '4px',
-                        border: '1px solid #4D4D4D',
-                        color: '#B0B0B0',
+                        border: '1px solid rgba(255, 255, 255, 0.2)',
+                        color: '#E5E7EB',
                       }}
                     >
                       {currentSetup.cam}
@@ -407,10 +408,10 @@ export default function Hero({ onOpenModal }: HeroProps) {
                         height: '14px',
                       }}
                     >
-                      <span style={{ width: '3px', height: '40%', background: '#FFFFFF', borderRadius: '1px' }} />
-                      <span style={{ width: '3px', height: '70%', background: '#FFFFFF', borderRadius: '1px' }} />
-                      <span style={{ width: '3px', height: '90%', background: '#FFFFFF', borderRadius: '1px' }} />
-                      <span style={{ width: '3px', height: '55%', background: '#FFFFFF', borderRadius: '1px' }} />
+                      <span style={{ width: '3px', height: '40%', background: '#22C55E', borderRadius: '1px' }} />
+                      <span style={{ width: '3px', height: '70%', background: '#22C55E', borderRadius: '1px' }} />
+                      <span style={{ width: '3px', height: '90%', background: '#22C55E', borderRadius: '1px' }} />
+                      <span style={{ width: '3px', height: '55%', background: '#EAB308', borderRadius: '1px' }} />
                     </div>
                   </div>
                 </div>
@@ -429,8 +430,8 @@ export default function Hero({ onOpenModal }: HeroProps) {
                     width: '36px',
                     height: '36px',
                     borderRadius: '50%',
-                    background: 'rgba(0, 0, 0, 0.8)',
-                    border: '1px solid #4D4D4D',
+                    background: 'rgba(0, 0, 0, 0.75)',
+                    border: '1px solid rgba(255, 255, 255, 0.25)',
                     color: '#FFFFFF',
                     display: 'flex',
                     alignItems: 'center',
@@ -443,7 +444,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
                     e.currentTarget.style.color = '#000000';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)';
+                    e.currentTarget.style.background = 'rgba(0, 0, 0, 0.75)';
                     e.currentTarget.style.color = '#FFFFFF';
                   }}
                 >
@@ -463,8 +464,8 @@ export default function Hero({ onOpenModal }: HeroProps) {
                     width: '36px',
                     height: '36px',
                     borderRadius: '50%',
-                    background: 'rgba(0, 0, 0, 0.8)',
-                    border: '1px solid #4D4D4D',
+                    background: 'rgba(0, 0, 0, 0.75)',
+                    border: '1px solid rgba(255, 255, 255, 0.25)',
                     color: '#FFFFFF',
                     display: 'flex',
                     alignItems: 'center',
@@ -477,7 +478,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
                     e.currentTarget.style.color = '#000000';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'rgba(0, 0, 0, 0.8)';
+                    e.currentTarget.style.background = 'rgba(0, 0, 0, 0.75)';
                     e.currentTarget.style.color = '#FFFFFF';
                   }}
                 >
@@ -507,9 +508,9 @@ export default function Hero({ onOpenModal }: HeroProps) {
                         padding: '0.45rem 0.65rem',
                         fontSize: '0.75rem',
                         fontWeight: isActive ? 700 : 500,
-                        color: isActive ? '#000000' : '#B0B0B0',
-                        background: isActive ? '#FFFFFF' : 'rgba(255, 255, 255, 0.04)',
-                        border: isActive ? '1px solid #FFFFFF' : '1px solid #4D4D4D',
+                        color: isActive ? '#000000' : '#D1D5DB',
+                        background: isActive ? '#FFFFFF' : 'rgba(255, 255, 255, 0.08)',
+                        border: isActive ? '1px solid #FFFFFF' : '1px solid rgba(255, 255, 255, 0.12)',
                         borderRadius: '6px',
                         cursor: 'pointer',
                         whiteSpace: 'nowrap',
@@ -518,13 +519,13 @@ export default function Hero({ onOpenModal }: HeroProps) {
                       onMouseEnter={(e) => {
                         if (!isActive) {
                           e.currentTarget.style.color = '#FFFFFF';
-                          e.currentTarget.style.borderColor = '#B0B0B0';
+                          e.currentTarget.style.background = 'rgba(255, 255, 255, 0.16)';
                         }
                       }}
                       onMouseLeave={(e) => {
                         if (!isActive) {
-                          e.currentTarget.style.color = '#B0B0B0';
-                          e.currentTarget.style.borderColor = '#4D4D4D';
+                          e.currentTarget.style.color = '#D1D5DB';
+                          e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
                         }
                       }}
                     >

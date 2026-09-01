@@ -1,32 +1,33 @@
 /* ==========================================================================
-   ARCC MEDIA PRODUCTION - MONOCHROME LUXURY DESIGN SYSTEM
-   Palette: #FFFFFF | #000000 | #B0B0B0 | #7D7D7D | #4D4D4D
+   ARCC MEDIA PRODUCTION - LIGHT MODE LUXURY DESIGN SYSTEM
+   Palette: #FFFFFF (White) | #F8F9FA (Off-White) | #000000 (Black) | #4A5568 | #E5E7EB
    ========================================================================== */
 
 :root {
-  /* Color Scheme */
-  --bringer-s-body-bg: #000000;
-  --bringer-s-nav: rgba(0, 0, 0, 0.88);
-  --bringer-s-container-bg: #0d0d0d;
-  --bringer-s-container-frosted: rgba(18, 18, 18, 0.95);
-  --bringer-s-heading: #ffffff;
-  --bringer-s-heading-fade: #b0b0b0;
-  --bringer-s-text: #ffffff;
-  --bringer-s-accent: #ffffff;
-  --bringer-button-hover-bg: #b0b0b0;
-  --bringer-s-text-accent: #b0b0b0;
-  --bringer-s-accented-text: #ffffff;
-  --bringer-s-border: #4d4d4d;
-  --bringer-s-border-accent: #b0b0b0;
-  --bringer-s-border-mute: rgba(255, 255, 255, 0.08);
-  --bringer-s-border-highlight: #7d7d7d;
-  --bringer-s-backlight: rgba(255, 255, 255, 0.04);
-  --bringer-s-box-shadow: rgba(0, 0, 0, 0.6);
-  --bringer-c-border-gradient: linear-gradient(to right, transparent, #4d4d4d, transparent);
+  /* Color Scheme - Clean Luxury Light Mode */
+  --bringer-s-body-bg: #ffffff;
+  --bringer-s-nav: rgba(255, 255, 255, 0.92);
+  --bringer-s-container-bg: #f8f9fa;
+  --bringer-s-container-frosted: rgba(255, 255, 255, 0.95);
+  --bringer-s-heading: #0a0a0a;
+  --bringer-s-heading-fade: #52525b;
+  --bringer-s-text: #18181b;
+  --bringer-s-text-muted: #52525b;
+  --bringer-s-accent: #000000;
+  --bringer-button-hover-bg: #27272a;
+  --bringer-s-text-accent: #18181b;
+  --bringer-s-accented-text: #000000;
+  --bringer-s-border: #e5e7eb;
+  --bringer-s-border-accent: #000000;
+  --bringer-s-border-mute: #f3f4f6;
+  --bringer-s-border-highlight: #d1d5db;
+  --bringer-s-backlight: rgba(0, 0, 0, 0.02);
+  --bringer-s-box-shadow: rgba(0, 0, 0, 0.06);
+  --bringer-c-border-gradient: linear-gradient(to right, transparent, #e5e7eb, transparent);
 
-  --bringer-c-menu: #b0b0b0;
-  --bringer-c-menu-hover: #ffffff;
-  --bringer-c-menu-active: #ffffff;
+  --bringer-c-menu: #4a5568;
+  --bringer-c-menu-hover: #000000;
+  --bringer-c-menu-active: #000000;
 
   /* Typography */
   --bringer-t-heading-ff: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -80,8 +81,8 @@
   --bringer-default-br: 14px;
   --bringer-small-br: 10px;
   --bringer-xs-br: 6px;
-  --bringer-button-br: 6px;
-  --bringer-input-br: 6px;
+  --bringer-button-br: 8px;
+  --bringer-input-br: 8px;
 
   /* Grid Tokens */
   --stg-container-width: 1200px;
@@ -119,7 +120,7 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
@@ -137,8 +138,8 @@ body {
 }
 
 ::selection {
-  background: #ffffff;
-  color: #000000;
+  background: #000000;
+  color: #ffffff;
 }
 
 a {
@@ -148,7 +149,7 @@ a {
 }
 
 a:hover {
-  color: #ffffff;
+  color: #000000;
 }
 
 button {
@@ -203,7 +204,7 @@ h5 {
 .bringer-large-text {
   font-size: var(--bringer-t-large-fs);
   line-height: 1.6;
-  color: #b0b0b0;
+  color: #52525b;
 }
 
 .bringer-meta {
@@ -211,7 +212,7 @@ h5 {
   font-weight: 600;
   letter-spacing: var(--bringer-t-meta-ls);
   text-transform: uppercase;
-  color: #7d7d7d;
+  color: #71717a;
 }
 
 .bringer-accent {
@@ -283,15 +284,15 @@ h5 {
 }
 
 /* ==========================================================================
-   BLOCK & SECTION UTILITIES
+   BLOCK & SECTION UTILITIES - LIGHT MODE
    ========================================================================== */
 
 .bringer-block {
-  background: #0f0f0f;
+  background: #ffffff;
   border: 1px solid var(--bringer-s-border);
   border-radius: var(--bringer-small-br);
   padding: 1.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   position: relative;
   transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -299,7 +300,7 @@ h5 {
 .divider-top {
   position: relative;
   padding-top: var(--bringer-section-gap);
-  padding-bottom: clamp(1rem, 2vw, 2rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .divider-top::before {
@@ -313,7 +314,7 @@ h5 {
 }
 
 /* ==========================================================================
-   BUTTONS - MONOCHROME CONTRAST
+   BUTTONS - HIGH CONTRAST LIGHT MODE
    ========================================================================== */
 
 .bringer-button {
@@ -325,33 +326,35 @@ h5 {
   font-size: var(--bringer-t-button-fs);
   font-weight: 600;
   line-height: 1;
-  color: #000000 !important;
-  background: #ffffff;
-  border: 1px solid #ffffff;
+  color: #ffffff !important;
+  background: #000000;
+  border: 1px solid #000000;
   border-radius: var(--bringer-button-br);
   text-decoration: none;
   transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   white-space: nowrap;
   box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 .bringer-button:hover {
-  background: #b0b0b0;
-  border-color: #b0b0b0;
+  background: #27272a;
+  border-color: #27272a;
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
 .bringer-button.is-secondary {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: #4d4d4d;
-  color: #ffffff !important;
+  background: #ffffff;
+  border-color: #d1d5db;
+  color: #000000 !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
 .bringer-button.is-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #b0b0b0;
-  box-shadow: none;
+  background: #f4f4f5;
+  border-color: #000000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* ==========================================================================
@@ -367,11 +370,11 @@ h5 {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.15rem;
-  background: #ffffff;
-  color: #000000 !important;
-  border: 1px solid #b0b0b0;
+  background: #000000;
+  color: #ffffff !important;
+  border: 1px solid #27272a;
   border-radius: 999px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 700;
@@ -380,15 +383,15 @@ h5 {
 
 .wf-whatsapp-sticky:hover {
   transform: translateY(-2px) scale(1.03);
-  background: #b0b0b0;
-  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.25);
+  background: #27272a;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 .wf-whatsapp-sticky svg {
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  fill: #000000;
+  fill: #ffffff;
 }
 
 @media only screen and (max-width: 760px) {

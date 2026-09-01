@@ -27,7 +27,7 @@ export default function GoogleReviews() {
   };
 
   return (
-    <section className="divider-top" id="google-reviews">
+    <section className="divider-top" id="google-reviews" style={{ background: '#FFFFFF' }}>
       <div className="stg-container">
         {/* Head */}
         <div style={{ textAlign: 'center', marginBottom: 'clamp(1.75rem, 3vw, 2.5rem)' }}>
@@ -37,13 +37,13 @@ export default function GoogleReviews() {
               fontSize: '0.75rem',
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              color: '#B0B0B0',
+              color: '#52525B',
               fontWeight: 600,
             }}
           >
             Verified Feedback
           </p>
-          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem', color: '#FFFFFF' }}>
+          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem', color: '#0A0A0A' }}>
             What Clients Say About ARCC Media Production
           </h2>
           <p
@@ -53,7 +53,7 @@ export default function GoogleReviews() {
               marginLeft: 'auto',
               marginRight: 'auto',
               fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)',
-              color: '#B0B0B0',
+              color: '#52525B',
             }}
           >
             Real feedback from creators, brands, and podcast hosts recorded at our Indiranagar studio.
@@ -67,26 +67,27 @@ export default function GoogleReviews() {
               alignItems: 'center',
               margin: '1.25rem auto 0',
               padding: '0.75rem 1.6rem',
-              border: '1px solid #4D4D4D',
+              border: '1px solid #E5E7EB',
               borderRadius: '12px',
-              background: '#0d0d0d',
-              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
+              background: '#F8F9FA',
+              boxShadow: '0 2px 10px rgba(0, 0, 0, 0.04)',
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
-              <div style={{ display: 'flex', gap: '2px', color: '#FFFFFF' }}>
+              <div style={{ display: 'flex', gap: '2px', color: '#F59E0B' }}>
                 {[...Array(5)].map((_, sIdx) => (
-                  <Star key={sIdx} size={15} fill="#FFFFFF" strokeWidth={0} />
+                  <Star key={sIdx} size={15} fill="#F59E0B" strokeWidth={0} />
                 ))}
               </div>
-              <span style={{ fontSize: '1rem', fontWeight: 700, color: '#FFFFFF' }}>4.9 / 5.0</span>
+              <span style={{ fontSize: '1rem', fontWeight: 700, color: '#0A0A0A' }}>4.9 / 5.0</span>
             </div>
             <p
               style={{
                 margin: '0.2rem 0 0',
                 fontSize: '0.78rem',
                 letterSpacing: '0.04em',
-                color: '#B0B0B0',
+                color: '#52525B',
+                fontWeight: 500,
               }}
             >
               Verified Google Reviews
@@ -110,23 +111,25 @@ export default function GoogleReviews() {
               width: '44px',
               height: '44px',
               borderRadius: '50%',
-              background: 'rgba(0, 0, 0, 0.85)',
-              border: '1px solid #4D4D4D',
-              color: '#fff',
+              background: '#FFFFFF',
+              border: '1px solid #E5E7EB',
+              color: '#000000',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.7)',
+              boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
               transition: 'all 0.2s ease',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#FFFFFF';
-              e.currentTarget.style.color = '#000000';
+              e.currentTarget.style.background = '#000000';
+              e.currentTarget.style.color = '#FFFFFF';
+              e.currentTarget.style.borderColor = '#000000';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(0, 0, 0, 0.85)';
-              e.currentTarget.style.color = '#FFFFFF';
+              e.currentTarget.style.background = '#FFFFFF';
+              e.currentTarget.style.color = '#000000';
+              e.currentTarget.style.borderColor = '#E5E7EB';
             }}
           >
             <ChevronLeft size={22} />
@@ -151,21 +154,21 @@ export default function GoogleReviews() {
                   gap: '1rem',
                   padding: '1.5rem 1.35rem',
                   minHeight: '100%',
-                  background: '#0d0d0d',
-                  border: '1px solid #4D4D4D',
+                  background: '#FFFFFF',
+                  border: '1px solid #E5E7EB',
                   borderRadius: '14px',
-                  boxShadow: '0 4px 20px rgba(0, 0, 0, 0.5)',
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.04)',
                   transition: 'all 0.25s ease',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#FFFFFF';
+                  e.currentTarget.style.borderColor = '#000000';
                   e.currentTarget.style.transform = 'translateY(-3px)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(255, 255, 255, 0.08)';
+                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.08)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#4D4D4D';
+                  e.currentTarget.style.borderColor = '#E5E7EB';
                   e.currentTarget.style.transform = 'none';
-                  e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.5)';
+                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.04)';
                 }}
               >
                 {/* Top: Stars + Google Mark */}
@@ -177,9 +180,9 @@ export default function GoogleReviews() {
                     width: '100%',
                   }}
                 >
-                  <div style={{ display: 'flex', gap: '3px', color: '#FFFFFF' }}>
+                  <div style={{ display: 'flex', gap: '3px', color: '#F59E0B' }}>
                     {[...Array(5)].map((_, sIdx) => (
-                      <Star key={sIdx} size={15} fill="#FFFFFF" strokeWidth={0} />
+                      <Star key={sIdx} size={15} fill="#F59E0B" strokeWidth={0} />
                     ))}
                   </div>
 
@@ -194,7 +197,8 @@ export default function GoogleReviews() {
                       fontSize: '0.72rem',
                       letterSpacing: '0.06em',
                       textTransform: 'uppercase',
-                      color: '#B0B0B0',
+                      color: '#52525B',
+                      fontWeight: 600,
                       textDecoration: 'none',
                     }}
                   >
@@ -203,8 +207,8 @@ export default function GoogleReviews() {
                         width: '18px',
                         height: '18px',
                         borderRadius: '50%',
-                        background: '#FFFFFF',
-                        color: '#000000',
+                        background: '#000000',
+                        color: '#FFFFFF',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -223,9 +227,9 @@ export default function GoogleReviews() {
                   style={{
                     flex: '1 1 auto',
                     margin: 0,
-                    fontSize: '0.86rem',
+                    fontSize: '0.88rem',
                     lineHeight: 1.6,
-                    color: '#B0B0B0',
+                    color: '#374151',
                     fontStyle: 'normal',
                   }}
                 >
@@ -236,7 +240,7 @@ export default function GoogleReviews() {
                 <footer
                   style={{
                     paddingTop: '0.5rem',
-                    borderTop: '1px solid #4D4D4D',
+                    borderTop: '1px solid #E5E7EB',
                   }}
                 >
                   <a
@@ -245,8 +249,8 @@ export default function GoogleReviews() {
                     rel="noopener noreferrer"
                     style={{
                       fontSize: '0.9rem',
-                      fontWeight: 600,
-                      color: '#FFFFFF',
+                      fontWeight: 700,
+                      color: '#0A0A0A',
                       textDecoration: 'none',
                     }}
                   >
@@ -271,23 +275,25 @@ export default function GoogleReviews() {
               width: '44px',
               height: '44px',
               borderRadius: '50%',
-              background: 'rgba(0, 0, 0, 0.85)',
-              border: '1px solid #4D4D4D',
-              color: '#fff',
+              background: '#FFFFFF',
+              border: '1px solid #E5E7EB',
+              color: '#000000',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.7)',
+              boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
               transition: 'all 0.2s ease',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#FFFFFF';
-              e.currentTarget.style.color = '#000000';
+              e.currentTarget.style.background = '#000000';
+              e.currentTarget.style.color = '#FFFFFF';
+              e.currentTarget.style.borderColor = '#000000';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(0, 0, 0, 0.85)';
-              e.currentTarget.style.color = '#FFFFFF';
+              e.currentTarget.style.background = '#FFFFFF';
+              e.currentTarget.style.color = '#000000';
+              e.currentTarget.style.borderColor = '#E5E7EB';
             }}
           >
             <ChevronRight size={22} />
@@ -304,10 +310,10 @@ export default function GoogleReviews() {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.4rem',
-              color: '#FFFFFF',
+              color: '#000000',
               fontSize: '0.95rem',
-              fontWeight: 600,
-              textDecoration: 'none',
+              fontWeight: 700,
+              textDecoration: 'underline',
             }}
           >
             Read All Google Reviews &rarr;
