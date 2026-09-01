@@ -45,11 +45,11 @@ export default function Header({ onOpenModal }: HeaderProps) {
           zIndex: 100,
           transition: 'all 0.3s ease',
           background: isScrolled
-            ? 'rgba(7, 9, 13, 0.94)'
-            : 'rgba(7, 9, 13, 0.75)',
+            ? 'rgba(0, 0, 0, 0.95)'
+            : 'rgba(0, 0, 0, 0.8)',
           backdropFilter: 'blur(16px)',
-          borderBottom: '1px solid rgba(245, 247, 250, 0.08)',
-          boxShadow: isScrolled ? '0 10px 30px rgba(0,0,0,0.5)' : 'none',
+          borderBottom: '1px solid #4D4D4D',
+          boxShadow: isScrolled ? '0 10px 30px rgba(0,0,0,0.8)' : 'none',
         }}
       >
         <div
@@ -116,16 +116,16 @@ export default function Header({ onOpenModal }: HeaderProps) {
                   <a
                     href={link.href}
                     style={{
-                      color: 'rgba(255, 255, 255, 0.85)',
+                      color: '#B0B0B0',
                       fontSize: '0.875rem',
                       fontWeight: 500,
                       letterSpacing: '0.02em',
                       textDecoration: 'none',
                       transition: 'color 0.2s ease',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#5C9DFF')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
                     onMouseLeave={(e) =>
-                      (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.85)')
+                      (e.currentTarget.style.color = '#B0B0B0')
                     }
                   >
                     {link.label}
@@ -176,7 +176,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
                 display: 'block',
                 width: '22px',
                 height: '2px',
-                backgroundColor: '#F5F7FA',
+                backgroundColor: '#FFFFFF',
                 transition: 'all 0.3s ease',
                 transform: mobileMenuOpen
                   ? 'rotate(45deg) translate(5px, 5px)'
@@ -188,7 +188,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
                 display: 'block',
                 width: '22px',
                 height: '2px',
-                backgroundColor: '#F5F7FA',
+                backgroundColor: '#FFFFFF',
                 transition: 'all 0.3s ease',
                 opacity: mobileMenuOpen ? 0 : 1,
               }}
@@ -198,7 +198,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
                 display: 'block',
                 width: '22px',
                 height: '2px',
-                backgroundColor: '#F5F7FA',
+                backgroundColor: '#FFFFFF',
                 transition: 'all 0.3s ease',
                 transform: mobileMenuOpen
                   ? 'rotate(-45deg) translate(5px, -5px)'
@@ -218,12 +218,12 @@ export default function Header({ onOpenModal }: HeaderProps) {
           right: 0,
           bottom: 0,
           width: 'min(320px, 85vw)',
-          backgroundColor: '#07090D',
+          backgroundColor: '#000000',
           zIndex: 1000,
           transform: mobileMenuOpen ? 'translateX(0)' : 'translateX(100%)',
           transition: 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
-          boxShadow: '-10px 0 30px rgba(0, 0, 0, 0.7)',
-          borderLeft: '1px solid rgba(255, 255, 255, 0.1)',
+          boxShadow: '-10px 0 30px rgba(0, 0, 0, 0.9)',
+          borderLeft: '1px solid #4D4D4D',
           display: 'flex',
           flexDirection: 'column',
           padding: '2rem 1.5rem',
@@ -250,7 +250,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
             onClick={() => setMobileMenuOpen(false)}
             aria-label="Close menu"
             style={{
-              background: 'rgba(255, 255, 255, 0.08)',
+              background: 'rgba(255, 255, 255, 0.1)',
               border: 'none',
               color: '#fff',
               width: '34px',
@@ -282,7 +282,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
                 style={{
-                  color: '#F5F7FA',
+                  color: '#FFFFFF',
                   fontSize: '1.05rem',
                   fontWeight: 500,
                   textDecoration: 'none',
@@ -318,7 +318,7 @@ export default function Header({ onOpenModal }: HeaderProps) {
           style={{
             position: 'fixed',
             inset: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.65)',
+            backgroundColor: 'rgba(0, 0, 0, 0.8)',
             backdropFilter: 'blur(4px)',
             zIndex: 999,
           }}

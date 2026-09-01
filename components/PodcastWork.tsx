@@ -39,13 +39,13 @@ export default function PodcastWork() {
               fontSize: '0.75rem',
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              color: 'var(--bringer-s-text-accent)',
+              color: '#B0B0B0',
               fontWeight: 600,
             }}
           >
             Showcase Episodes
           </p>
-          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem', color: '#FFFFFF' }}>
             Podcasts Shot at ARCC Media Production
           </h2>
           <p
@@ -55,7 +55,7 @@ export default function PodcastWork() {
               marginLeft: 'auto',
               marginRight: 'auto',
               fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)',
-              color: 'rgba(255, 255, 255, 0.72)',
+              color: '#B0B0B0',
             }}
           >
             Real podcast and interview episodes recorded inside our studio.
@@ -78,18 +78,24 @@ export default function PodcastWork() {
               width: '44px',
               height: '44px',
               borderRadius: '50%',
-              background: 'rgba(0, 0, 0, 0.75)',
-              border: '1px solid rgba(255, 255, 255, 0.25)',
+              background: 'rgba(0, 0, 0, 0.85)',
+              border: '1px solid #4D4D4D',
               color: '#fff',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.5)',
+              boxShadow: '0 4px 16px rgba(0,0,0,0.7)',
               transition: 'all 0.2s ease',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(0, 0, 0, 0.95)')}
-            onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(0, 0, 0, 0.75)')}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = '#FFFFFF';
+              e.currentTarget.style.color = '#000000';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'rgba(0, 0, 0, 0.85)';
+              e.currentTarget.style.color = '#FFFFFF';
+            }}
           >
             <ChevronLeft size={22} />
           </button>
@@ -117,24 +123,24 @@ export default function PodcastWork() {
                     aspectRatio: '16 / 9',
                     width: '100%',
                     padding: 0,
-                    border: isPlaying ? '2px solid #5C9DFF' : '1px solid rgba(255, 255, 255, 0.1)',
+                    border: isPlaying ? '2px solid #FFFFFF' : '1px solid #4D4D4D',
                     borderRadius: '14px',
-                    background: '#000',
+                    background: '#000000',
                     overflow: 'hidden',
                     cursor: 'pointer',
                     textAlign: 'left',
-                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.5)',
+                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.6)',
                     transition: 'all 0.3s ease',
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.transform = 'translateY(-3px)';
-                    e.currentTarget.style.borderColor = 'rgba(92, 157, 255, 0.5)';
+                    e.currentTarget.style.borderColor = '#B0B0B0';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = 'none';
                     e.currentTarget.style.borderColor = isPlaying
-                      ? '#5C9DFF'
-                      : 'rgba(255, 255, 255, 0.1)';
+                      ? '#FFFFFF'
+                      : '#4D4D4D';
                   }}
                 >
                   {/* Thumbnail */}
@@ -159,12 +165,12 @@ export default function PodcastWork() {
                       width: '46px',
                       height: '46px',
                       borderRadius: '50%',
-                      background: 'rgba(0, 0, 0, 0.7)',
-                      border: '1px solid rgba(255, 255, 255, 0.4)',
+                      background: 'rgba(0, 0, 0, 0.75)',
+                      border: '1px solid #4D4D4D',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      boxShadow: '0 4px 16px rgba(0, 0, 0, 0.5)',
+                      boxShadow: '0 4px 16px rgba(0, 0, 0, 0.6)',
                       pointerEvents: 'none',
                     }}
                   >
@@ -189,7 +195,7 @@ export default function PodcastWork() {
                       right: 0,
                       padding: '2rem 1rem 0.85rem',
                       background:
-                        'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.95) 100%)',
+                        'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.98) 100%)',
                       pointerEvents: 'none',
                       display: 'flex',
                       flexDirection: 'column',
@@ -201,7 +207,7 @@ export default function PodcastWork() {
                         fontSize: '0.7rem',
                         letterSpacing: '0.12em',
                         textTransform: 'uppercase',
-                        color: '#5C9DFF',
+                        color: '#B0B0B0',
                         fontWeight: 600,
                       }}
                     >
@@ -211,7 +217,7 @@ export default function PodcastWork() {
                       style={{
                         fontSize: '0.9rem',
                         fontWeight: 600,
-                        color: '#F5F7FA',
+                        color: '#FFFFFF',
                         lineHeight: 1.3,
                         margin: 0,
                         overflow: 'hidden',
@@ -243,18 +249,24 @@ export default function PodcastWork() {
               width: '44px',
               height: '44px',
               borderRadius: '50%',
-              background: 'rgba(0, 0, 0, 0.75)',
-              border: '1px solid rgba(255, 255, 255, 0.25)',
+              background: 'rgba(0, 0, 0, 0.85)',
+              border: '1px solid #4D4D4D',
               color: '#fff',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               cursor: 'pointer',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.5)',
+              boxShadow: '0 4px 16px rgba(0,0,0,0.7)',
               transition: 'all 0.2s ease',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.background = 'rgba(0, 0, 0, 0.95)')}
-            onMouseLeave={(e) => (e.currentTarget.style.background = 'rgba(0, 0, 0, 0.75)')}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = '#FFFFFF';
+              e.currentTarget.style.color = '#000000';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'rgba(0, 0, 0, 0.85)';
+              e.currentTarget.style.color = '#FFFFFF';
+            }}
           >
             <ChevronRight size={22} />
           </button>
@@ -271,8 +283,8 @@ export default function PodcastWork() {
               aspectRatio: '16 / 9',
               borderRadius: '16px',
               overflow: 'hidden',
-              boxShadow: '0 24px 60px rgba(0, 0, 0, 0.85)',
-              border: '1px solid rgba(92, 157, 255, 0.4)',
+              boxShadow: '0 24px 60px rgba(0, 0, 0, 0.95)',
+              border: '1px solid #FFFFFF',
               background: '#000',
               animation: 'fadeIn 0.3s ease',
             }}
@@ -290,7 +302,7 @@ export default function PodcastWork() {
                 height: '36px',
                 borderRadius: '50%',
                 background: 'rgba(0, 0, 0, 0.8)',
-                border: '1px solid rgba(255, 255, 255, 0.3)',
+                border: '1px solid #4D4D4D',
                 color: '#fff',
                 display: 'flex',
                 alignItems: 'center',

@@ -173,13 +173,13 @@ export default function StudioFeatures() {
               fontSize: '0.75rem',
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              color: 'var(--bringer-s-text-accent)',
+              color: '#B0B0B0',
               fontWeight: 600,
             }}
           >
             Studio Infrastructure
           </p>
-          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem', color: '#FFFFFF' }}>
             Fully Equipped for Podcast &amp; Video
           </h2>
           <p
@@ -189,7 +189,7 @@ export default function StudioFeatures() {
               marginLeft: 'auto',
               marginRight: 'auto',
               fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)',
-              color: 'rgba(255, 255, 255, 0.72)',
+              color: '#B0B0B0',
             }}
           >
             Everything you need for seamless on-camera recording, from Sony Cineline cameras and sound treatment to dedicated creator amenities.
@@ -203,8 +203,8 @@ export default function StudioFeatures() {
               gap: '0.4rem',
               padding: '4px',
               borderRadius: '999px',
-              background: 'rgba(255, 255, 255, 0.04)',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
+              background: '#0d0d0d',
+              border: '1px solid #4D4D4D',
               marginTop: '1.25rem',
             }}
           >
@@ -223,11 +223,11 @@ export default function StudioFeatures() {
                   style={{
                     padding: '0.4rem 1rem',
                     fontSize: '0.78rem',
-                    fontWeight: isSelected ? 600 : 500,
+                    fontWeight: isSelected ? 700 : 500,
                     borderRadius: '999px',
-                    color: isSelected ? '#FFFFFF' : 'rgba(255, 255, 255, 0.65)',
-                    background: isSelected ? 'rgba(63, 110, 233, 0.4)' : 'transparent',
-                    border: isSelected ? '1px solid #5C9DFF' : '1px solid transparent',
+                    color: isSelected ? '#000000' : '#B0B0B0',
+                    background: isSelected ? '#FFFFFF' : 'transparent',
+                    border: isSelected ? '1px solid #FFFFFF' : '1px solid transparent',
                     cursor: 'pointer',
                     transition: 'all 0.2s ease',
                   }}
@@ -260,30 +260,30 @@ export default function StudioFeatures() {
                 gap: '0.65rem',
                 padding: '1.25rem 0.75rem',
                 textAlign: 'center',
-                background: 'linear-gradient(160deg, rgba(26, 29, 36, 0.7) 0%, rgba(14, 17, 23, 0.6) 100%)',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
+                background: '#0d0d0d',
+                border: '1px solid #4D4D4D',
                 borderRadius: '12px',
                 transition: 'all 0.25s ease',
-                boxShadow: '0 4px 16px rgba(0, 0, 0, 0.2)',
+                boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(92, 157, 255, 0.45)';
+                e.currentTarget.style.borderColor = '#FFFFFF';
                 e.currentTarget.style.transform = 'translateY(-3px)';
-                e.currentTarget.style.background = 'linear-gradient(160deg, rgba(35, 40, 52, 0.9) 0%, rgba(20, 24, 34, 0.8) 100%)';
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(63, 110, 233, 0.2)';
+                e.currentTarget.style.background = '#141414';
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(255, 255, 255, 0.08)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                e.currentTarget.style.borderColor = '#4D4D4D';
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.background = 'linear-gradient(160deg, rgba(26, 29, 36, 0.7) 0%, rgba(14, 17, 23, 0.6) 100%)';
-                e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.2)';
+                e.currentTarget.style.background = '#0d0d0d';
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.4)';
               }}
             >
               <div
                 style={{
                   width: '36px',
                   height: '36px',
-                  color: 'var(--bringer-s-text-accent)',
+                  color: '#FFFFFF',
                   flexShrink: 0,
                   display: 'flex',
                   alignItems: 'center',
@@ -297,7 +297,7 @@ export default function StudioFeatures() {
                   margin: 0,
                   fontSize: '0.82rem',
                   lineHeight: 1.35,
-                  color: 'rgba(255, 255, 255, 0.9)',
+                  color: '#FFFFFF',
                   fontWeight: 600,
                 }}
               >
@@ -307,7 +307,7 @@ export default function StudioFeatures() {
                     style={{
                       display: 'block',
                       fontSize: '0.72rem',
-                      color: 'rgba(255, 255, 255, 0.55)',
+                      color: '#7D7D7D',
                       marginTop: '2px',
                       fontWeight: 400,
                     }}

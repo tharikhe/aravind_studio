@@ -42,13 +42,13 @@ export default function VisualProof() {
               fontSize: '0.75rem',
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              color: 'var(--bringer-s-text-accent)',
+              color: '#B0B0B0',
               fontWeight: 600,
             }}
           >
             Contact Sheet
           </p>
-          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem', color: '#FFFFFF' }}>
             See What Your Podcast Can Look Like
           </h2>
           <p
@@ -58,7 +58,7 @@ export default function VisualProof() {
               marginLeft: 'auto',
               marginRight: 'auto',
               fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)',
-              color: 'rgba(255, 255, 255, 0.72)',
+              color: '#B0B0B0',
             }}
           >
             Real podcast frames shot at ARCC Media Production across different lighting setups and camera configurations.
@@ -82,28 +82,28 @@ export default function VisualProof() {
                 onClick={() => handleCardClick(idx)}
                 style={{
                   position: 'relative',
-                  background: 'rgba(14, 17, 23, 0.6)',
+                  background: '#0d0d0d',
                   border: isSelected
-                    ? '1px solid #5C9DFF'
-                    : '1px solid rgba(255, 255, 255, 0.08)',
+                    ? '1px solid #FFFFFF'
+                    : '1px solid #4D4D4D',
                   borderRadius: '10px',
                   overflow: 'hidden',
                   cursor: 'pointer',
                   boxShadow: isSelected
-                    ? '0 0 0 1px rgba(92, 157, 255, 0.35), 0 10px 28px rgba(0,0,0,0.6)'
-                    : '0 2px 10px rgba(0,0,0,0.2)',
+                    ? '0 0 0 1px #FFFFFF, 0 10px 28px rgba(0,0,0,0.8)'
+                    : '0 2px 10px rgba(0,0,0,0.4)',
                   transition: 'all 0.25s ease',
                   transform: isSelected ? 'scale(1.02)' : 'none',
                 }}
                 onMouseEnter={(e) => {
                   if (!isSelected) {
-                    e.currentTarget.style.borderColor = 'rgba(92, 157, 255, 0.4)';
+                    e.currentTarget.style.borderColor = '#B0B0B0';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (!isSelected) {
-                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                    e.currentTarget.style.borderColor = '#4D4D4D';
                     e.currentTarget.style.transform = 'none';
                   }
                 }}
@@ -117,12 +117,11 @@ export default function VisualProof() {
                     fontSize: '0.68rem',
                     letterSpacing: '0.06em',
                     fontFamily: 'ui-monospace, monospace',
-                    color: '#fff',
-                    background: 'rgba(7, 9, 13, 0.8)',
-                    backdropFilter: 'blur(4px)',
+                    color: '#FFFFFF',
+                    background: '#000000',
                     padding: '2px 6px',
                     borderRadius: '4px',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    border: '1px solid #4D4D4D',
                   }}
                 >
                   {frame.index}
@@ -133,7 +132,7 @@ export default function VisualProof() {
                     position: 'relative',
                     aspectRatio: '16 / 9',
                     width: '100%',
-                    background: '#07090D',
+                    background: '#000000',
                   }}
                 >
                   <Image
@@ -157,11 +156,11 @@ export default function VisualProof() {
           <div
             style={{
               marginTop: '2rem',
-              background: 'rgba(14, 17, 23, 0.98)',
-              border: '1px solid rgba(92, 157, 255, 0.4)',
+              background: '#0a0a0a',
+              border: '1px solid #FFFFFF',
               borderRadius: '16px',
               overflow: 'hidden',
-              boxShadow: '0 24px 60px rgba(0, 0, 0, 0.8)',
+              boxShadow: '0 24px 60px rgba(0, 0, 0, 0.95)',
               display: 'flex',
               flexWrap: 'wrap',
               animation: 'fadeIn 0.3s ease',
@@ -174,7 +173,7 @@ export default function VisualProof() {
                 minWidth: '300px',
                 aspectRatio: '16 / 9',
                 position: 'relative',
-                background: '#07090D',
+                background: '#000000',
               }}
             >
               <Image
@@ -195,8 +194,8 @@ export default function VisualProof() {
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                background: 'rgba(26, 29, 36, 0.95)',
-                borderLeft: '1px solid rgba(255, 255, 255, 0.1)',
+                background: '#0d0d0d',
+                borderLeft: '1px solid #4D4D4D',
                 position: 'relative',
               }}
             >
@@ -208,7 +207,7 @@ export default function VisualProof() {
                   position: 'absolute',
                   top: '1rem',
                   right: '1rem',
-                  color: 'rgba(255, 255, 255, 0.6)',
+                  color: '#B0B0B0',
                   cursor: 'pointer',
                   padding: '4px',
                 }}
@@ -222,7 +221,7 @@ export default function VisualProof() {
                     fontSize: '0.8rem',
                     letterSpacing: '0.12em',
                     textTransform: 'uppercase',
-                    color: '#5C9DFF',
+                    color: '#B0B0B0',
                     fontWeight: 600,
                     display: 'block',
                     marginBottom: '0.75rem',
@@ -249,9 +248,9 @@ export default function VisualProof() {
                         textTransform: 'uppercase',
                         padding: '0.25rem 0.55rem',
                         borderRadius: '999px',
-                        border: '1px solid rgba(255, 255, 255, 0.15)',
-                        background: 'rgba(255, 255, 255, 0.06)',
-                        color: 'rgba(255, 255, 255, 0.85)',
+                        border: '1px solid #4D4D4D',
+                        background: 'rgba(255, 255, 255, 0.05)',
+                        color: '#FFFFFF',
                       }}
                     >
                       {tag}
@@ -263,7 +262,7 @@ export default function VisualProof() {
                   style={{
                     fontSize: '0.92rem',
                     lineHeight: 1.6,
-                    color: 'rgba(255, 255, 255, 0.8)',
+                    color: '#B0B0B0',
                     margin: 0,
                   }}
                 >
@@ -276,10 +275,11 @@ export default function VisualProof() {
                 style={{
                   display: 'flex',
                   alignItems: 'center',
+                  gap: '0.35rem',
                   justifyContent: 'space-between',
                   marginTop: '1.5rem',
                   paddingTop: '1rem',
-                  borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+                  borderTop: '1px solid #4D4D4D',
                 }}
               >
                 <button
@@ -289,7 +289,7 @@ export default function VisualProof() {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '0.35rem',
-                    color: '#5C9DFF',
+                    color: '#FFFFFF',
                     fontSize: '0.85rem',
                     fontWeight: 600,
                     cursor: 'pointer',
@@ -297,7 +297,7 @@ export default function VisualProof() {
                 >
                   <ChevronLeft size={16} /> Previous
                 </button>
-                <span style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)' }}>
+                <span style={{ fontSize: '0.8rem', color: '#7D7D7D' }}>
                   {selectedFrame.index} / {String(VISUAL_FRAMES.length).padStart(2, '0')}
                 </span>
                 <button
@@ -307,7 +307,7 @@ export default function VisualProof() {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '0.35rem',
-                    color: '#5C9DFF',
+                    color: '#FFFFFF',
                     fontSize: '0.85rem',
                     fontWeight: 600,
                     cursor: 'pointer',

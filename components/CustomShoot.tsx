@@ -52,13 +52,13 @@ export default function CustomShoot({ onOpenModal }: CustomShootProps) {
               fontSize: '0.75rem',
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              color: 'var(--bringer-s-text-accent)',
+              color: '#B0B0B0',
               fontWeight: 600,
             }}
           >
             Bespoke Production
           </p>
-          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem', color: '#FFFFFF' }}>
             Need a Custom Podcast Setup?
           </h2>
           <p
@@ -68,7 +68,7 @@ export default function CustomShoot({ onOpenModal }: CustomShootProps) {
               marginLeft: 'auto',
               marginRight: 'auto',
               fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)',
-              color: 'rgba(255, 255, 255, 0.72)',
+              color: '#B0B0B0',
             }}
           >
             We can adapt the set, background, furniture, lighting, framing, and brand elements based on
@@ -97,21 +97,21 @@ export default function CustomShoot({ onOpenModal }: CustomShootProps) {
                   gap: '0.75rem',
                   padding: '1.5rem 1.35rem',
                   minHeight: '100%',
-                  background: 'linear-gradient(160deg, rgba(26, 29, 36, 0.75) 0%, rgba(14, 17, 23, 0.6) 100%)',
-                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  background: '#0d0d0d',
+                  border: '1px solid #4D4D4D',
                   borderRadius: '14px',
                   transition: 'all 0.25s ease',
-                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.25)',
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(92, 157, 255, 0.4)';
+                  e.currentTarget.style.borderColor = '#FFFFFF';
                   e.currentTarget.style.transform = 'translateY(-3px)';
-                  e.currentTarget.style.boxShadow = '0 10px 28px rgba(63, 110, 233, 0.18)';
+                  e.currentTarget.style.boxShadow = '0 10px 28px rgba(255, 255, 255, 0.08)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                  e.currentTarget.style.borderColor = '#4D4D4D';
                   e.currentTarget.style.transform = 'none';
-                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.25)';
+                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.4)';
                 }}
               >
                 <div
@@ -119,9 +119,9 @@ export default function CustomShoot({ onOpenModal }: CustomShootProps) {
                     width: '36px',
                     height: '36px',
                     borderRadius: '8px',
-                    background: 'rgba(63, 110, 233, 0.15)',
-                    border: '1px solid rgba(92, 157, 255, 0.3)',
-                    color: '#5C9DFF',
+                    background: 'rgba(255, 255, 255, 0.06)',
+                    border: '1px solid #4D4D4D',
+                    color: '#FFFFFF',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -131,10 +131,10 @@ export default function CustomShoot({ onOpenModal }: CustomShootProps) {
                   <Icon size={18} />
                 </div>
                 <div>
-                  <h4 style={{ fontSize: '1.1rem', marginBottom: '0.4rem', color: '#F5F7FA', fontWeight: 600 }}>
+                  <h4 style={{ fontSize: '1.1rem', marginBottom: '0.4rem', color: '#FFFFFF', fontWeight: 600 }}>
                     {item.title}
                   </h4>
-                  <p style={{ margin: 0, fontSize: '0.86rem', lineHeight: 1.55, color: 'rgba(255, 255, 255, 0.72)' }}>
+                  <p style={{ margin: 0, fontSize: '0.86rem', lineHeight: 1.55, color: '#B0B0B0' }}>
                     {item.desc}
                   </p>
                 </div>

@@ -8,62 +8,74 @@ interface InternalLinksProps {
 
 export default function InternalLinks({ onOpenModal }: InternalLinksProps) {
   return (
-    <section className="divider-top" style={{ paddingBottom: '3rem' }}>
+    <section
+      className="divider-top"
+      id="internal-links"
+      style={{
+        paddingTop: 'clamp(2.5rem, 4.5vw, 3.5rem)',
+        paddingBottom: 'clamp(2.5rem, 4.5vw, 3.5rem)',
+        background: '#070707',
+        borderTop: '1px solid #4D4D4D',
+      }}
+    >
       <div className="stg-container">
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <div
-            className="bringer-block"
+        <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+          <p
             style={{
-              padding: '1.5rem 1.75rem',
-              background: 'rgba(26, 29, 36, 0.65)',
-              borderRadius: '14px',
+              margin: '0 0 0.5rem',
+              fontSize: '0.75rem',
+              letterSpacing: '0.14em',
+              textTransform: 'uppercase',
+              color: '#B0B0B0',
+              fontWeight: 600,
             }}
           >
-            <h5 style={{ fontSize: '1.05rem', marginBottom: '0.65rem', color: '#F5F7FA' }}>
-              Explore ARCC Media Production
-            </h5>
-            <p
-              className="bringer-meta"
+            Directory &amp; Overview
+          </p>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.2rem)', marginBottom: '1.25rem', color: '#FFFFFF' }}>
+            Explore ARCC Media Production
+          </h2>
+
+          <p
+            style={{
+              fontSize: '0.92rem',
+              lineHeight: 1.8,
+              color: '#B0B0B0',
+              margin: '0 auto 1.5rem',
+            }}
+          >
+            Planning your next series? Check our{' '}
+            <a href="#podcast-setups" style={{ color: '#FFFFFF', textDecoration: 'underline' }}>
+              podcast studio setups
+            </a>
+            , explore{' '}
+            <a href="#editing-support" style={{ color: '#FFFFFF', textDecoration: 'underline' }}>
+              post-production editing and reels
+            </a>
+            , browse{' '}
+            <a href="#what-you-can-create" style={{ color: '#FFFFFF', textDecoration: 'underline' }}>
+              show formats
+            </a>
+            , or{' '}
+            <button
+              type="button"
+              onClick={() => onOpenModal('Production Enquiry')}
               style={{
-                lineHeight: 1.9,
-                margin: 0,
-                fontSize: '0.85rem',
-                textTransform: 'none',
-                letterSpacing: 'normal',
-                color: 'rgba(255, 255, 255, 0.75)',
+                color: '#FFFFFF',
+                background: 'none',
+                border: 'none',
+                textDecoration: 'underline',
+                cursor: 'pointer',
+                fontFamily: 'inherit',
+                fontSize: 'inherit',
+                padding: 0,
+                fontWeight: 600,
               }}
             >
-              <a href="#podcast-setups" style={{ color: '#5C9DFF' }}>
-                Podcast Studio in Bangalore
-              </a>{' '}
-              &nbsp;·&nbsp;{' '}
-              <a href="#editing-support" style={{ color: '#5C9DFF' }}>
-                Podcast Editing in Bangalore
-              </a>{' '}
-              &nbsp;·&nbsp;{' '}
-              <a href="#what-you-can-create" style={{ color: '#5C9DFF' }}>
-                Podcast Studio Guide for Bangalore Brands
-              </a>{' '}
-              &nbsp;·&nbsp;{' '}
-              <button
-                type="button"
-                onClick={() => onOpenModal('Podcast Production')}
-                style={{
-                  color: '#5C9DFF',
-                  fontWeight: 600,
-                  cursor: 'pointer',
-                  textDecoration: 'underline',
-                  display: 'inline',
-                  background: 'none',
-                  border: 'none',
-                  padding: 0,
-                  fontSize: 'inherit',
-                }}
-              >
-                Book a Shoot
-              </button>
-            </p>
-          </div>
+              request a custom quote
+            </button>{' '}
+            for full multi-camera studio recording in Indiranagar, Bengaluru.
+          </p>
         </div>
       </div>
     </section>

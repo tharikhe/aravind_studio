@@ -96,9 +96,9 @@ export default function LeadModal({
         alignItems: 'center',
         justifyContent: 'center',
         padding: '1.25rem',
-        background: 'rgba(7, 9, 13, 0.85)',
-        backdropFilter: 'blur(8px)',
-        WebkitBackdropFilter: 'blur(8px)',
+        background: 'rgba(0, 0, 0, 0.88)',
+        backdropFilter: 'blur(10px)',
+        WebkitBackdropFilter: 'blur(10px)',
         animation: 'fadeIn 0.2s ease-out',
       }}
     >
@@ -123,10 +123,10 @@ export default function LeadModal({
           overflowY: 'auto',
           padding: '2rem 1.75rem',
           margin: 0,
-          background: 'rgba(26, 29, 36, 0.96)',
-          border: '1px solid rgba(245, 247, 250, 0.15)',
+          background: '#0d0d0d',
+          border: '1px solid #4D4D4D',
           borderRadius: '16px',
-          boxShadow: '0 24px 60px rgba(0, 0, 0, 0.65)',
+          boxShadow: '0 24px 60px rgba(0, 0, 0, 0.95)',
         }}
       >
         <button
@@ -142,20 +142,22 @@ export default function LeadModal({
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: 'rgba(255, 255, 255, 0.7)',
-            background: 'rgba(255, 255, 255, 0.05)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
+            color: '#B0B0B0',
+            background: 'rgba(255, 255, 255, 0.06)',
+            border: '1px solid #4D4D4D',
             borderRadius: '50%',
             cursor: 'pointer',
             transition: 'all 0.2s ease',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.color = '#fff';
-            e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)';
+            e.currentTarget.style.color = '#000000';
+            e.currentTarget.style.background = '#FFFFFF';
+            e.currentTarget.style.borderColor = '#FFFFFF';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.color = 'rgba(255, 255, 255, 0.7)';
-            e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+            e.currentTarget.style.color = '#B0B0B0';
+            e.currentTarget.style.background = 'rgba(255, 255, 255, 0.06)';
+            e.currentTarget.style.borderColor = '#4D4D4D';
           }}
         >
           <X size={18} />
@@ -163,11 +165,11 @@ export default function LeadModal({
 
         {isSubmitted ? (
           <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
-            <CheckCircle2 size={56} style={{ color: '#25D366', margin: '0 auto 1rem' }} />
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem', color: '#F5F7FA' }}>
+            <CheckCircle2 size={56} style={{ color: '#FFFFFF', margin: '0 auto 1rem' }} />
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem', color: '#FFFFFF' }}>
               Enquiry Received!
             </h3>
-            <p style={{ color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.6, marginBottom: '1.75rem' }}>
+            <p style={{ color: '#B0B0B0', lineHeight: 1.6, marginBottom: '1.75rem' }}>
               Thank you, <strong style={{ color: '#fff' }}>{name}</strong>. Our ARCC Media Production team will contact you at <strong style={{ color: '#fff' }}>{phone}</strong> within one business day.
             </p>
             <button
@@ -190,10 +192,10 @@ export default function LeadModal({
                   style={{ objectFit: 'contain', objectPosition: 'left center' }}
                 />
               </div>
-              <h3 id="wf-lead-modal-title" style={{ fontSize: '1.4rem', marginBottom: '0.35rem', color: '#F5F7FA' }}>
+              <h3 id="wf-lead-modal-title" style={{ fontSize: '1.4rem', marginBottom: '0.35rem', color: '#FFFFFF' }}>
                 Tell us about your project
               </h3>
-              <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.65)', margin: 0 }}>
+              <p style={{ fontSize: '0.875rem', color: '#B0B0B0', margin: 0 }}>
                 Share a few details and our production team will respond within one business day.
               </p>
             </div>
@@ -201,9 +203,9 @@ export default function LeadModal({
             {errorMessage && (
               <div
                 style={{
-                  background: 'rgba(239, 68, 68, 0.15)',
-                  border: '1px solid rgba(239, 68, 68, 0.4)',
-                  color: '#fca5a5',
+                  background: 'rgba(255, 255, 255, 0.08)',
+                  border: '1px solid #FFFFFF',
+                  color: '#FFFFFF',
                   padding: '0.75rem 1rem',
                   borderRadius: '6px',
                   fontSize: '0.85rem',
@@ -217,8 +219,8 @@ export default function LeadModal({
             <form onSubmit={handleSubmit}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#F5F7FAC0', marginBottom: '0.35rem' }}>
-                    Your Name <span style={{ color: '#5C9DFF' }}>*</span>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#B0B0B0', marginBottom: '0.35rem' }}>
+                    Your Name <span style={{ color: '#FFFFFF' }}>*</span>
                   </label>
                   <input
                     type="text"
@@ -229,8 +231,8 @@ export default function LeadModal({
                     style={{
                       width: '100%',
                       padding: '0.75rem 1rem',
-                      background: 'rgba(7, 9, 13, 0.6)',
-                      border: '1px solid rgba(245, 247, 250, 0.15)',
+                      background: '#000000',
+                      border: '1px solid #4D4D4D',
                       borderRadius: '6px',
                       color: '#fff',
                       fontSize: '0.9rem',
@@ -239,8 +241,8 @@ export default function LeadModal({
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#F5F7FAC0', marginBottom: '0.35rem' }}>
-                    Your Phone <span style={{ color: '#5C9DFF' }}>*</span>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#B0B0B0', marginBottom: '0.35rem' }}>
+                    Your Phone <span style={{ color: '#FFFFFF' }}>*</span>
                   </label>
                   <input
                     type="tel"
@@ -251,8 +253,8 @@ export default function LeadModal({
                     style={{
                       width: '100%',
                       padding: '0.75rem 1rem',
-                      background: 'rgba(7, 9, 13, 0.6)',
-                      border: '1px solid rgba(245, 247, 250, 0.15)',
+                      background: '#000000',
+                      border: '1px solid #4D4D4D',
                       borderRadius: '6px',
                       color: '#fff',
                       fontSize: '0.9rem',
@@ -261,7 +263,7 @@ export default function LeadModal({
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#F5F7FAC0', marginBottom: '0.35rem' }}>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#B0B0B0', marginBottom: '0.35rem' }}>
                     Your Email <span style={{ opacity: 0.6 }}>(optional)</span>
                   </label>
                   <input
@@ -272,8 +274,8 @@ export default function LeadModal({
                     style={{
                       width: '100%',
                       padding: '0.75rem 1rem',
-                      background: 'rgba(7, 9, 13, 0.6)',
-                      border: '1px solid rgba(245, 247, 250, 0.15)',
+                      background: '#000000',
+                      border: '1px solid #4D4D4D',
                       borderRadius: '6px',
                       color: '#fff',
                       fontSize: '0.9rem',
@@ -282,7 +284,7 @@ export default function LeadModal({
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#F5F7FAC0', marginBottom: '0.35rem' }}>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#B0B0B0', marginBottom: '0.35rem' }}>
                     Service of interest
                   </label>
                   <select
@@ -291,8 +293,8 @@ export default function LeadModal({
                     style={{
                       width: '100%',
                       padding: '0.75rem 1rem',
-                      background: 'rgba(7, 9, 13, 0.8)',
-                      border: '1px solid rgba(245, 247, 250, 0.15)',
+                      background: '#000000',
+                      border: '1px solid #4D4D4D',
                       borderRadius: '6px',
                       color: '#fff',
                       fontSize: '0.9rem',
@@ -313,7 +315,7 @@ export default function LeadModal({
 
                 {service === 'Studio Visit' && (
                   <div>
-                    <label style={{ display: 'block', fontSize: '0.8rem', color: '#F5F7FAC0', marginBottom: '0.35rem' }}>
+                    <label style={{ display: 'block', fontSize: '0.8rem', color: '#B0B0B0', marginBottom: '0.35rem' }}>
                       Preferred visit date
                     </label>
                     <input
@@ -323,8 +325,8 @@ export default function LeadModal({
                       style={{
                         width: '100%',
                         padding: '0.75rem 1rem',
-                        background: 'rgba(7, 9, 13, 0.6)',
-                        border: '1px solid rgba(245, 247, 250, 0.15)',
+                        background: '#000000',
+                        border: '1px solid #4D4D4D',
                         borderRadius: '6px',
                         color: '#fff',
                         fontSize: '0.9rem',
@@ -334,8 +336,8 @@ export default function LeadModal({
                 )}
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#F5F7FAC0', marginBottom: '0.35rem' }}>
-                    Project details <span style={{ color: '#5C9DFF' }}>*</span>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#B0B0B0', marginBottom: '0.35rem' }}>
+                    Project details <span style={{ color: '#FFFFFF' }}>*</span>
                   </label>
                   <textarea
                     value={message}
@@ -346,8 +348,8 @@ export default function LeadModal({
                     style={{
                       width: '100%',
                       padding: '0.75rem 1rem',
-                      background: 'rgba(7, 9, 13, 0.6)',
-                      border: '1px solid rgba(245, 247, 250, 0.15)',
+                      background: '#000000',
+                      border: '1px solid #4D4D4D',
                       borderRadius: '6px',
                       color: '#fff',
                       fontSize: '0.9rem',

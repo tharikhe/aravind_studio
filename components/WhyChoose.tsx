@@ -5,38 +5,38 @@ import React from 'react';
 const WHY_CHOOSE_ITEMS = [
   {
     index: '01',
-    title: 'Multiple podcast setups',
+    title: 'Multiple Podcast Setups',
     desc: 'Choose from different studio environments for your show format and brand look.',
   },
   {
     index: '02',
-    title: 'Multi-camera recording',
-    desc: 'Capture host, guest, and wide conversation angles in one session.',
+    title: 'Multi-Camera 4K Recording',
+    desc: 'Capture host, guest, and wide conversation angles simultaneously in 4K UHD.',
   },
   {
     index: '03',
-    title: 'Professional audio',
-    desc: 'Sound-treated rooms with boom mics and monitored recording for clean dialogue.',
+    title: 'Broadcast Grade Audio',
+    desc: 'Sound-treated acoustic room with Shure & Rode boom mics for clean dialogue.',
   },
   {
     index: '04',
-    title: 'Controlled lighting',
-    desc: 'Studio lighting designed for consistent, flattering on-camera results.',
+    title: 'Studio Lighting Grid',
+    desc: 'Godox overhead diffuse lighting designed for consistent on-camera look.',
   },
   {
     index: '05',
-    title: 'Crew support during shoot',
-    desc: 'On-set operators help with framing, audio, and smooth recording flow.',
+    title: 'Crew Support During Shoot',
+    desc: 'Dedicated on-set engineers manage multi-camera switching, audio levels, and staging.',
   },
   {
     index: '06',
-    title: 'Editing and reels available',
-    desc: 'Turn the same session into episodes, shorts, teasers, and platform clips.',
+    title: 'Post-Production & Reels',
+    desc: 'Turn each session into full episodes, short-form clips, teasers, and YouTube masters.',
   },
   {
     index: '07',
-    title: 'Located in Indiranagar',
-    desc: 'Central Bangalore studio with prep rooms, lounge, and guest-friendly amenities.',
+    title: 'Prime Indiranagar Location',
+    desc: 'Centrally located Bangalore facility with lounge, makeup room, and creator amenities.',
   },
 ];
 
@@ -48,17 +48,17 @@ export default function WhyChoose() {
         <div style={{ textAlign: 'center', marginBottom: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}>
           <p
             style={{
-              margin: '0 0 0.65rem',
+              margin: '0 0 0.5rem',
               fontSize: '0.75rem',
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
-              color: 'var(--bringer-s-text-accent)',
+              color: '#B0B0B0',
               fontWeight: 600,
             }}
           >
             Why ARCC Media Production
           </p>
-          <h2 style={{ fontSize: 'clamp(1.85rem, 3.5vw, 2.75rem)', marginBottom: '0.85rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem', color: '#FFFFFF' }}>
             Why Choose ARCC for Your Podcast?
           </h2>
           <p
@@ -67,7 +67,8 @@ export default function WhyChoose() {
               maxWidth: '40em',
               marginLeft: 'auto',
               marginRight: 'auto',
-              fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
+              fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)',
+              color: '#B0B0B0',
             }}
           >
             Purpose-built studio infrastructure, on-set production support, and optional post — designed
@@ -81,34 +82,33 @@ export default function WhyChoose() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-            gap: 'var(--stg-gap)',
+            gap: 'clamp(1rem, 1.6vw, 1.5rem)',
           }}
         >
-          {WHY_CHOOSE_ITEMS.map((item) => (
+          {WHY_CHOOSE_ITEMS.map((item, idx) => (
             <article
               key={item.index}
               style={{
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '0.65rem',
-                padding: '1.5rem 1.35rem 1.6rem',
-                borderRadius: '12px',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                background:
-                  'linear-gradient(165deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.015) 100%)',
-                boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.05)',
+                padding: '1.5rem 1.35rem',
+                borderRadius: '14px',
+                border: '1px solid #4D4D4D',
+                background: '#0d0d0d',
+                boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
                 transition: 'all 0.25s ease',
+                gridColumn: idx === 6 ? 'span 3' : 'auto',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(92, 157, 255, 0.35)';
+                e.currentTarget.style.borderColor = '#FFFFFF';
                 e.currentTarget.style.transform = 'translateY(-3px)';
-                e.currentTarget.style.boxShadow =
-                  '0 12px 32px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08)';
+                e.currentTarget.style.boxShadow = '0 10px 28px rgba(255, 255, 255, 0.08)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                e.currentTarget.style.borderColor = '#4D4D4D';
                 e.currentTarget.style.transform = 'none';
-                e.currentTarget.style.boxShadow = 'inset 0 1px 0 rgba(255, 255, 255, 0.05)';
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.4)';
               }}
             >
               <span
@@ -116,21 +116,21 @@ export default function WhyChoose() {
                   fontSize: '0.75rem',
                   letterSpacing: '0.1em',
                   fontFamily: 'ui-monospace, monospace',
-                  color: '#5C9DFF',
-                  fontWeight: 600,
+                  color: '#FFFFFF',
+                  fontWeight: 700,
                 }}
               >
                 {item.index}
               </span>
-              <h4 style={{ margin: 0, fontSize: '1.15rem', color: '#F5F7FA', lineHeight: 1.35 }}>
+              <h4 style={{ margin: 0, fontSize: '1.15rem', color: '#FFFFFF', lineHeight: 1.35, fontWeight: 600 }}>
                 {item.title}
               </h4>
               <p
                 style={{
                   margin: 0,
-                  fontSize: '0.9rem',
+                  fontSize: '0.88rem',
                   lineHeight: 1.55,
-                  color: 'rgba(255, 255, 255, 0.72)',
+                  color: '#B0B0B0',
                 }}
               >
                 {item.desc}

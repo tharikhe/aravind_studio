@@ -30,8 +30,8 @@ export default function Footer() {
     <footer
       id="bringer-footer"
       style={{
-        borderTop: '1px solid rgba(245, 247, 250, 0.1)',
-        background: 'rgba(7, 9, 13, 0.95)',
+        borderTop: '1px solid #4D4D4D',
+        background: '#000000',
         paddingTop: 'clamp(3rem, 5vw, 4.5rem)',
         paddingBottom: '2.5rem',
       }}
@@ -79,7 +79,7 @@ export default function Footer() {
               style={{
                 fontSize: '0.9rem',
                 lineHeight: 1.6,
-                color: 'rgba(255, 255, 255, 0.72)',
+                color: '#B0B0B0',
                 marginBottom: '1rem',
                 maxWidth: '380px',
               }}
@@ -92,7 +92,7 @@ export default function Footer() {
               style={{
                 fontSize: '0.85rem',
                 lineHeight: 1.5,
-                color: 'rgba(255, 255, 255, 0.6)',
+                color: '#7D7D7D',
                 marginBottom: '0.5rem',
                 maxWidth: '380px',
               }}
@@ -102,7 +102,7 @@ export default function Footer() {
             </p>
 
             <p style={{ fontSize: '0.88rem', marginBottom: '1.25rem' }}>
-              <a href="tel:+919605533366" style={{ color: '#5C9DFF', fontWeight: 600 }}>
+              <a href="tel:+919605533366" style={{ color: '#FFFFFF', fontWeight: 600, textDecoration: 'underline' }}>
                 +91 960 55 333 66
               </a>
             </p>
@@ -113,7 +113,7 @@ export default function Footer() {
                 fontSize: '0.75rem',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
-                color: '#8A99AD',
+                color: '#7D7D7D',
                 marginBottom: '0.65rem',
                 fontWeight: 600,
               }}
@@ -133,7 +133,7 @@ export default function Footer() {
                   height: '36px',
                   borderRadius: '50%',
                   background: 'rgba(255, 255, 255, 0.06)',
-                  border: '1px solid rgba(255, 255, 255, 0.12)',
+                  border: '1px solid #4D4D4D',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -141,12 +141,14 @@ export default function Footer() {
                   transition: 'all 0.2s ease',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(63, 110, 233, 0.3)';
-                  e.currentTarget.style.borderColor = '#5C9DFF';
+                  e.currentTarget.style.background = '#FFFFFF';
+                  e.currentTarget.style.color = '#000000';
+                  e.currentTarget.style.borderColor = '#FFFFFF';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = 'rgba(255, 255, 255, 0.06)';
-                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.12)';
+                  e.currentTarget.style.color = '#FFFFFF';
+                  e.currentTarget.style.borderColor = '#4D4D4D';
                 }}
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -166,7 +168,7 @@ export default function Footer() {
                   height: '36px',
                   borderRadius: '50%',
                   background: 'rgba(255, 255, 255, 0.06)',
-                  border: '1px solid rgba(255, 255, 255, 0.12)',
+                  border: '1px solid #4D4D4D',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -174,12 +176,14 @@ export default function Footer() {
                   transition: 'all 0.2s ease',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(63, 110, 233, 0.3)';
-                  e.currentTarget.style.borderColor = '#5C9DFF';
+                  e.currentTarget.style.background = '#FFFFFF';
+                  e.currentTarget.style.color = '#000000';
+                  e.currentTarget.style.borderColor = '#FFFFFF';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.background = 'rgba(255, 255, 255, 0.06)';
-                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.12)';
+                  e.currentTarget.style.color = '#FFFFFF';
+                  e.currentTarget.style.borderColor = '#4D4D4D';
                 }}
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -193,7 +197,7 @@ export default function Footer() {
 
           {/* Explore Links */}
           <div className="stg-col-3 stg-tp-col-6">
-            <h6 style={{ fontSize: '1rem', color: '#F5F7FA', marginBottom: '1.25rem' }}>Explore</h6>
+            <h6 style={{ fontSize: '1rem', color: '#FFFFFF', marginBottom: '1.25rem' }}>Explore</h6>
             <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
               {exploreLinks.map((item, idx) => (
                 <li key={idx}>
@@ -201,11 +205,11 @@ export default function Footer() {
                     href={item.href}
                     style={{
                       fontSize: '0.88rem',
-                      color: 'rgba(255, 255, 255, 0.7)',
+                      color: '#B0B0B0',
                       transition: 'color 0.2s ease',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#5C9DFF')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.7)')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#B0B0B0')}
                   >
                     {item.label}
                   </a>
@@ -216,7 +220,7 @@ export default function Footer() {
 
           {/* Resources Links */}
           <div className="stg-col-4 stg-tp-col-6">
-            <h6 style={{ fontSize: '1rem', color: '#F5F7FA', marginBottom: '1.25rem' }}>Resources</h6>
+            <h6 style={{ fontSize: '1rem', color: '#FFFFFF', marginBottom: '1.25rem' }}>Resources</h6>
             <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
               {resourceLinks.map((item, idx) => (
                 <li key={idx}>
@@ -224,11 +228,11 @@ export default function Footer() {
                     href={item.href}
                     style={{
                       fontSize: '0.88rem',
-                      color: 'rgba(255, 255, 255, 0.7)',
+                      color: '#B0B0B0',
                       transition: 'color 0.2s ease',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#5C9DFF')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.7)')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#B0B0B0')}
                   >
                     {item.label}
                   </a>
@@ -242,14 +246,14 @@ export default function Footer() {
         <div
           style={{
             paddingTop: '1.75rem',
-            borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+            borderTop: '1px solid #4D4D4D',
             display: 'flex',
             flexWrap: 'wrap',
             justifyContent: 'space-between',
             alignItems: 'center',
             gap: '1rem',
             fontSize: '0.85rem',
-            color: 'rgba(255, 255, 255, 0.55)',
+            color: '#7D7D7D',
           }}
         >
           <div>Made with excellence in Bengaluru.</div>
