@@ -20,7 +20,7 @@ export default function InternalLinks({ onOpenModal }: InternalLinksProps) {
             }}
           >
             <h5 style={{ fontSize: '1.05rem', marginBottom: '0.65rem', color: '#F5F7FA' }}>
-              Explore Winterfox
+              Explore ARCC Media Production
             </h5>
             <p
               className="bringer-meta"

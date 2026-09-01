@@ -56,10 +56,10 @@ export default function WhyChoose() {
               fontWeight: 600,
             }}
           >
-            Why Winterfox
+            Why ARCC Media Production
           </p>
           <h2 style={{ fontSize: 'clamp(1.85rem, 3.5vw, 2.75rem)', marginBottom: '0.85rem' }}>
-            Why Choose Winterfox for Your Podcast?
+            Why Choose ARCC for Your Podcast?
           </h2>
           <p
             className="bringer-large-text"

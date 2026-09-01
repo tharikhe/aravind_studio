@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   const exploreLinks = [
@@ -51,37 +52,27 @@ export default function Footer() {
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '0.65rem',
                 textDecoration: 'none',
                 marginBottom: '1.25rem',
               }}
             >
               <div
                 style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '8px',
-                  background: 'linear-gradient(135deg, #3F6EE9 0%, #1e3a8a 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#fff',
-                  fontWeight: 700,
-                  fontSize: '1.2rem',
+                  position: 'relative',
+                  height: '46px',
+                  width: '200px',
                 }}
               >
-                W
+                <Image
+                  src="/logo.png"
+                  alt="ARCC Media Production"
+                  fill
+                  style={{
+                    objectFit: 'contain',
+                    objectPosition: 'left center',
+                  }}
+                />
               </div>
-              <span
-                style={{
-                  fontSize: '1.2rem',
-                  fontWeight: 700,
-                  letterSpacing: '-0.02em',
-                  color: '#F5F7FA',
-                }}
-              >
-                WINTERFOX STUDIOS
-              </span>
             </Link>
 
             <p
@@ -93,7 +84,7 @@ export default function Footer() {
                 maxWidth: '380px',
               }}
             >
-              Winterfox Studios is a video production company with an in-house content studio, helping
+              ARCC Media Production is a full-service video production company with an in-house content studio, helping
               teams plan, shoot, edit, and deliver content from one place.
             </p>
 
@@ -106,7 +97,7 @@ export default function Footer() {
                 maxWidth: '380px',
               }}
             >
-              Winterfox Studios, 2nd floor, 8th main, 80 feet road, next to Bata showroom, HAL 2nd
+              ARCC Media Production, 2nd floor, 8th main, 80 feet road, next to Bata showroom, HAL 2nd
               stage, Indiranagar, Bengaluru, 560038
             </p>
 
@@ -133,7 +124,7 @@ export default function Footer() {
             {/* Social Links */}
             <div style={{ display: 'flex', gap: '0.75rem' }}>
               <a
-                href="https://www.instagram.com/winterfox.studios/"
+                href="https://www.instagram.com/arccmediaproduction/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -166,7 +157,7 @@ export default function Footer() {
               </a>
 
               <a
-                href="https://www.linkedin.com/company/winterfox-studios/"
+                href="https://www.linkedin.com/company/arccmediaproduction/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -262,7 +253,7 @@ export default function Footer() {
           }}
         >
           <div>Made with excellence in Bengaluru.</div>
-          <div>Copyright &copy; 2026 Winterfox Studios. All Rights Reserved.</div>
+          <div>Copyright &copy; 2026 ARCC Media Production. All Rights Reserved.</div>
         </div>
       </div>
     </footer>

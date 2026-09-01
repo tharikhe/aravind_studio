@@ -32,7 +32,7 @@ export default function GoogleReviews() {
         {/* Head */}
         <div style={{ textAlign: 'center', marginBottom: 'clamp(1.75rem, 3vw, 2.5rem)' }}>
           <h2 style={{ fontSize: 'clamp(1.85rem, 3.5vw, 2.75rem)', marginBottom: '0.85rem' }}>
-            What Clients Say About Winterfox
+            What Clients Say About ARCC Media Production
           </h2>
           <p
             className="bringer-large-text"
@@ -43,7 +43,7 @@ export default function GoogleReviews() {
               fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
             }}
           >
-            Real feedback from clients who reviewed Winterfox Studios on Google.
+            Real feedback from clients who reviewed ARCC Media Production on Google.
           </p>
 
           {/* Google Rating Badge */}
@@ -272,7 +272,7 @@ export default function GoogleReviews() {
         {/* Read All Reviews Link */}
         <div style={{ textAlign: 'center', marginTop: '1.5rem' }}>
           <a
-            href="https://www.google.com/maps/search/?api=1&query=Winterfox+Studios+Indiranagar+Bangalore"
+            href="https://www.google.com/maps/search/?api=1&query=ARCC+Media+Production+Bangalore"
             target="_blank"
             rel="noopener noreferrer"
             style={{

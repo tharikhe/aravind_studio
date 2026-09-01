@@ -11,7 +11,7 @@ export const PODCAST_VIDEOS: PodcastVideo[] = [
     id: 'vid-1',
     youtubeId: '5CK-_zWG9xw',
     category: 'Podcast Interview',
-    title: 'Founder interview recorded at Winterfox Studios',
+    title: 'Founder interview recorded at ARCC Media Production',
   },
   {
     id: 'vid-2',
@@ -41,7 +41,7 @@ export const PODCAST_VIDEOS: PodcastVideo[] = [
     id: 'vid-6',
     youtubeId: 'mfskJ2oP7uw',
     category: 'Podcast Episode',
-    title: 'Long-form podcast episode at Winterfox',
+    title: 'Long-form podcast episode at ARCC Media Production',
   },
   {
     id: 'vid-7',

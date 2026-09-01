@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { X, CheckCircle2 } from 'lucide-react';
 
 interface LeadModalProps {
@@ -167,7 +168,7 @@ export default function LeadModal({
               Enquiry Received!
             </h3>
             <p style={{ color: 'rgba(255, 255, 255, 0.8)', lineHeight: 1.6, marginBottom: '1.75rem' }}>
-              Thank you, <strong style={{ color: '#fff' }}>{name}</strong>. Our production team will contact you at <strong style={{ color: '#fff' }}>{phone}</strong> within one business day.
+              Thank you, <strong style={{ color: '#fff' }}>{name}</strong>. Our ARCC Media Production team will contact you at <strong style={{ color: '#fff' }}>{phone}</strong> within one business day.
             </p>
             <button
               type="button"
@@ -180,12 +181,22 @@ export default function LeadModal({
           </div>
         ) : (
           <>
-            <h3 id="wf-lead-modal-title" style={{ fontSize: '1.45rem', marginBottom: '0.4rem', color: '#F5F7FA' }}>
-              Tell us about your project
-            </h3>
-            <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.65)', marginBottom: '1.5rem' }}>
-              Share a few details and our production team will respond within one business day.
-            </p>
+            <div style={{ marginBottom: '1.25rem' }}>
+              <div style={{ position: 'relative', height: '34px', width: '140px', marginBottom: '0.75rem' }}>
+                <Image
+                  src="/logo.png"
+                  alt="ARCC Media Production"
+                  fill
+                  style={{ objectFit: 'contain', objectPosition: 'left center' }}
+                />
+              </div>
+              <h3 id="wf-lead-modal-title" style={{ fontSize: '1.4rem', marginBottom: '0.35rem', color: '#F5F7FA' }}>
+                Tell us about your project
+              </h3>
+              <p style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.65)', margin: 0 }}>
+                Share a few details and our production team will respond within one business day.
+              </p>
+            </div>
 
             {errorMessage && (
               <div

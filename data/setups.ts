@@ -22,7 +22,7 @@ export const PODCAST_SETUPS: PodcastSetup[] = [
     gallery: [
       {
         image: 'https://winterfox.studio/img/podcast-experience/brand-grey-setup.jpg',
-        alt: 'Brand grey podcast studio with grey armchairs, wooden bookshelf, and professional microphones at Winterfox Studios',
+        alt: 'Brand grey podcast studio with grey armchairs, wooden bookshelf, and professional microphones at ARCC Media Production',
       },
     ],
   },
@@ -35,19 +35,19 @@ export const PODCAST_SETUPS: PodcastSetup[] = [
     gallery: [
       {
         image: 'https://winterfox.studio/img/podcast-experience/brand-beige-setup-bookshelf.jpg',
-        alt: 'Brand beige podcast studio with cream armchairs, round wood table, and professional microphones at Winterfox Studios',
+        alt: 'Brand beige podcast studio with cream armchairs, round wood table, and professional microphones at ARCC Media Production',
       },
       {
         image: 'https://winterfox.studio/img/podcast-experience/brand-beige-setup-wall.jpg',
-        alt: 'Brand beige podcast studio with armchairs, grey wall decor, and warm accent lighting at Winterfox Studios',
+        alt: 'Brand beige podcast studio with armchairs, grey wall decor, and warm accent lighting at ARCC Media Production',
       },
       {
         image: 'https://winterfox.studio/img/podcast-experience/brand-beige-setup-shelving.jpg',
-        alt: 'Brand beige podcast studio with facing armchairs, black shelving backdrop, and boom microphones at Winterfox Studios',
+        alt: 'Brand beige podcast studio with facing armchairs, black shelving backdrop, and boom microphones at ARCC Media Production',
       },
       {
         image: 'https://winterfox.studio/img/podcast-experience/brand-beige-setup.jpg',
-        alt: 'Brand beige podcast studio with cream armchairs, wooden bookshelf backdrop, and round coffee table at Winterfox Studios',
+        alt: 'Brand beige podcast studio with cream armchairs, wooden bookshelf backdrop, and round coffee table at ARCC Media Production',
       },
     ],
   },
@@ -60,11 +60,11 @@ export const PODCAST_SETUPS: PodcastSetup[] = [
     gallery: [
       {
         image: 'https://winterfox.studio/img/podcast-experience/custom-brand-setup-warm.png',
-        alt: 'Custom brand podcast studio with grey armchairs, terracotta wall, bookshelf backdrop, and studio lighting at Winterfox Studios',
+        alt: 'Custom brand podcast studio with grey armchairs, terracotta wall, bookshelf backdrop, and studio lighting at ARCC Media Production',
       },
       {
         image: 'https://winterfox.studio/img/slider/landing10.jpg',
-        alt: 'Custom brand podcast studio with cream armchairs, red accent wall, and portrait gallery at Winterfox Studios',
+        alt: 'Custom brand podcast studio with cream armchairs, red accent wall, and portrait gallery at ARCC Media Production',
       },
     ],
   },
@@ -77,11 +77,11 @@ export const PODCAST_SETUPS: PodcastSetup[] = [
     gallery: [
       {
         image: 'https://winterfox.studio/img/slider/landing5.jpg',
-        alt: 'Royal blue podcast studio with white desk, office chair, and professional lighting at Winterfox Studios',
+        alt: 'Royal blue podcast studio with white desk, office chair, and professional lighting at ARCC Media Production',
       },
       {
         image: 'https://winterfox.studio/img/podcast-experience/royal-blue-setup-studio.png',
-        alt: 'Royal blue podcast studio with overhead Godox lighting, shelving, and wood floor at Winterfox Studios',
+        alt: 'Royal blue podcast studio with overhead Godox lighting, shelving, and wood floor at ARCC Media Production',
       },
     ],
   },
@@ -94,11 +94,11 @@ export const PODCAST_SETUPS: PodcastSetup[] = [
     gallery: [
       {
         image: 'https://winterfox.studio/img/podcast-experience/dark-premium-setup-studio.jpg',
-        alt: 'Dark premium podcast studio with cream armchairs, black drapes, overhead softboxes, and professional microphones at Winterfox Studios',
+        alt: 'Dark premium podcast studio with cream armchairs, black drapes, overhead softboxes, and professional microphones at ARCC Media Production',
       },
       {
         image: 'https://winterfox.studio/img/podcast-experience/dark-premium-setup.png',
-        alt: 'Dark premium podcast studio with cream armchairs, octagonal softboxes, and warm accent lighting at Winterfox Studios',
+        alt: 'Dark premium podcast studio with cream armchairs, octagonal softboxes, and warm accent lighting at ARCC Media Production',
       },
     ],
   },
@@ -111,7 +111,7 @@ export const PODCAST_SETUPS: PodcastSetup[] = [
     gallery: [
       {
         image: 'https://winterfox.studio/img/podcast-experience/round-table-setup.jpg',
-        alt: 'Round table podcast studio with teal velvet armchairs, dark wood pedestal table, and professional microphones at Winterfox Studios',
+        alt: 'Round table podcast studio with teal velvet armchairs, dark wood pedestal table, and professional microphones at ARCC Media Production',
       },
     ],
   },
@@ -119,16 +119,16 @@ export const PODCAST_SETUPS: PodcastSetup[] = [
     index: '07',
     title: 'Three Seater Setup',
     tag: 'Setup 07',
-    desc: 'Beige three-seater sofa with dual boom mics—full Winterfox studio lighting or a warm styled living-room look for relaxed group and interview formats.',
+    desc: 'Beige three-seater sofa with dual boom mics—full ARCC studio lighting or a warm styled living-room look for relaxed group and interview formats.',
     image: 'https://winterfox.studio/img/podcast-experience/one-on-one-three-seater-studio.jpg',
     gallery: [
       {
         image: 'https://winterfox.studio/img/podcast-experience/one-on-one-three-seater-studio.jpg',
-        alt: 'Three seater podcast studio with beige sofa, Winterfox Studios neon sign, overhead softboxes, and boom microphones at Winterfox Studios',
+        alt: 'Three seater podcast studio with beige sofa, ARCC Media Production studio setup, overhead softboxes, and boom microphones',
       },
       {
         image: 'https://winterfox.studio/img/podcast-experience/one-on-one-three-seater-setup.jpg',
-        alt: 'Three seater podcast studio with beige sofa, warm accent lighting, and styled living-room backdrop at Winterfox Studios',
+        alt: 'Three seater podcast studio with beige sofa, warm accent lighting, and styled living-room backdrop at ARCC Media Production',
       },
     ],
   },
@@ -141,7 +141,7 @@ export const PODCAST_SETUPS: PodcastSetup[] = [
     gallery: [
       {
         image: 'https://winterfox.studio/img/podcast-experience/four-seater-setup.jpg',
-        alt: 'Four seater podcast studio with pink and blue armchairs, round wood table, and sideboard backdrop at Winterfox Studios',
+        alt: 'Four seater podcast studio with pink and blue armchairs, round wood table, and sideboard backdrop at ARCC Media Production',
       },
     ],
   },
@@ -154,7 +154,7 @@ export const PODCAST_SETUPS: PodcastSetup[] = [
     gallery: [
       {
         image: 'https://winterfox.studio/img/podcast-experience/white-infinity-setup.jpg',
-        alt: 'White infinity podcast studio with seamless backdrop, bar stool, overhead softboxes, and professional camera at Winterfox Studios',
+        alt: 'White infinity podcast studio with seamless backdrop, bar stool, overhead softboxes, and professional camera at ARCC Media Production',
       },
     ],
   },
@@ -167,7 +167,7 @@ export const PODCAST_SETUPS: PodcastSetup[] = [
     gallery: [
       {
         image: 'https://winterfox.studio/img/podcast-experience/green-infinity-setup.jpg',
-        alt: 'Green infinity podcast studio with seamless chroma key backdrop, dual cameras on tripods, and professional lighting at Winterfox Studios',
+        alt: 'Green infinity podcast studio with seamless chroma key backdrop, dual cameras on tripods, and professional lighting at ARCC Media Production',
       },
     ],
   },

@@ -10,31 +10,40 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Podcast Studio in Bangalore | Winterfox Studios',
+  title: 'Podcast Studio in Bangalore | ARCC Media Production',
   description:
-    'Professional podcast studio in Bangalore for video podcasts, founder interviews, brand podcasts, YouTube shows, editing, reels, and studio shoots in Indiranagar.',
+    'Professional podcast studio in Bangalore by ARCC Media Production for video podcasts, founder interviews, brand podcasts, YouTube shows, editing, reels, and studio shoots in Indiranagar.',
   keywords: [
+    'ARCC Media Production',
+    'ARCC Podcast Studio Bangalore',
     'Podcast Studio in Bangalore',
     'video podcast studio Bangalore',
     'podcast recording studio Indiranagar',
     'YouTube podcast studio Bangalore',
     'podcast editing Bangalore',
     'podcast shoot Bangalore',
-    'winterfox studio',
   ],
-  authors: [{ name: 'Winterfox Studios' }],
+  authors: [{ name: 'ARCC Media Production' }],
+  icons: {
+    icon: [
+      { url: '/favicon.png', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    shortcut: ['/favicon.png'],
+    apple: [{ url: '/favicon.png' }],
+  },
   openGraph: {
-    title: 'Podcast Studio in Bangalore | Winterfox Studios',
+    title: 'Podcast Studio in Bangalore | ARCC Media Production',
     description:
-      'Professional podcast studio in Bangalore for video podcasts, founder interviews, brand podcasts, YouTube shows, editing, reels, and studio shoots in Indiranagar.',
-    url: 'https://winterfox.studio/',
-    siteName: 'Winterfox Studios',
+      'Professional podcast studio in Bangalore by ARCC Media Production for video podcasts, founder interviews, brand podcasts, YouTube shows, editing, reels, and studio shoots in Indiranagar.',
+    url: 'https://arccmediaproduction.com/',
+    siteName: 'ARCC Media Production',
     images: [
       {
-        url: 'https://winterfox.studio/img/social-share.jpg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Winterfox Studios',
+        alt: 'ARCC Media Production',
       },
     ],
     locale: 'en_IN',
@@ -42,10 +51,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Podcast Studio in Bangalore | Winterfox Studios',
+    title: 'Podcast Studio in Bangalore | ARCC Media Production',
     description:
-      'Professional podcast studio in Bangalore for video podcasts, founder interviews, brand podcasts, YouTube shows, editing, reels, and studio shoots in Indiranagar.',
-    images: ['https://winterfox.studio/img/social-share.jpg'],
+      'Professional podcast studio in Bangalore by ARCC Media Production for video podcasts, founder interviews, brand podcasts, YouTube shows, editing, reels, and studio shoots in Indiranagar.',
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
@@ -58,13 +67,13 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'ProfessionalService',
-      name: 'Winterfox Studios',
-      image: 'https://winterfox.studio/img/social-share.jpg',
-      url: 'https://winterfox.studio/',
+      name: 'ARCC Media Production',
+      image: 'https://arccmediaproduction.com/og-image.png',
+      url: 'https://arccmediaproduction.com/',
       telephone: '+91-9605533366',
-      email: 'business@winterfox.studio',
+      email: 'business@arccmediaproduction.com',
       description:
-        'Winterfox Studios is a professional podcast studio in Indiranagar, Bangalore, offering video podcast recording, multi-camera setups, studio shoots, editing, reels, and post-production support.',
+        'ARCC Media Production is a professional podcast studio in Indiranagar, Bangalore, offering video podcast recording, multi-camera setups, studio shoots, editing, reels, and post-production support.',
       address: {
         '@type': 'PostalAddress',
         streetAddress:
@@ -83,7 +92,7 @@ const jsonLd = {
         '@type': 'City',
         name: 'Bangalore',
       },
-      sameAs: ['https://www.instagram.com/winterfox.studios/'],
+      sameAs: ['https://www.instagram.com/arccmediaproduction/'],
     },
   ],
 };
@@ -96,6 +105,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -76,7 +76,7 @@ export default function PodcastSetups() {
               fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
             }}
           >
-            Different production environments across the Winterfox facility, each configured for a
+            Different production environments across the ARCC Media Production facility, each configured for a
             specific podcast or interview format.
           </p>
         </div>

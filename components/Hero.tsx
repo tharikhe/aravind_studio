@@ -11,27 +11,27 @@ interface HeroProps {
 const HERO_SLIDES = [
   {
     image: 'https://winterfox.studio/img/slider/landing1.jpg',
-    alt: 'Podcast interview set with grey armchairs, microphones, and bookshelf backdrop at Winterfox Studios',
+    alt: 'Podcast interview set with grey armchairs, microphones, and bookshelf backdrop at ARCC Media Production',
   },
   {
     image: 'https://winterfox.studio/img/slider/landing10.jpg',
-    alt: 'Red-wall podcast conversation set with armchairs, microphones, and studio lighting at Winterfox Studios',
+    alt: 'Red-wall podcast conversation set with armchairs, microphones, and studio lighting at ARCC Media Production',
   },
   {
     image: 'https://winterfox.studio/img/podcast-experience/studio-grey.jpg',
-    alt: 'Grey podcast studio with professional overhead lighting and dual seating at Winterfox Studios',
+    alt: 'Grey podcast studio with professional overhead lighting and dual seating at ARCC Media Production',
   },
   {
     image: 'https://winterfox.studio/img/podcast-experience/studio-red.jpg',
-    alt: 'Red-wall podcast interview studio with dual seating and professional microphones at Winterfox Studios',
+    alt: 'Red-wall podcast interview studio with dual seating and professional microphones at ARCC Media Production',
   },
   {
     image: 'https://winterfox.studio/img/slider/landing4.jpg',
-    alt: 'Grey podcast studio with facing armchairs, microphones, and wooden bookshelf at Winterfox Studios',
+    alt: 'Grey podcast studio with facing armchairs, microphones, and wooden bookshelf at ARCC Media Production',
   },
   {
     image: 'https://winterfox.studio/img/podcast-experience/blue-studio.jpg',
-    alt: 'Blue-wall podcast production stage with professional lighting at Winterfox Studios',
+    alt: 'Blue-wall podcast production stage with professional lighting at ARCC Media Production',
   },
 ];
 
@@ -78,6 +78,40 @@ export default function Hero({ onOpenModal }: HeroProps) {
               alignItems: 'flex-start',
             }}
           >
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.35rem 0.85rem',
+                borderRadius: '999px',
+                background: 'rgba(92, 157, 255, 0.1)',
+                border: '1px solid rgba(92, 157, 255, 0.25)',
+                marginBottom: '1rem',
+              }}
+            >
+              <span
+                style={{
+                  width: '8px',
+                  height: '8px',
+                  borderRadius: '50%',
+                  backgroundColor: '#5C9DFF',
+                  boxShadow: '0 0 8px #5C9DFF',
+                }}
+              />
+              <span
+                style={{
+                  fontSize: '0.78rem',
+                  fontWeight: 600,
+                  color: '#5C9DFF',
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                ARCC Media Production
+              </span>
+            </div>
+
             <h1
               style={{
                 fontSize: 'clamp(2.35rem, 4.2vw, 3.4rem)',
@@ -100,7 +134,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
                 marginBottom: '1.75rem',
               }}
             >
-              Premium podcast studio in Bengaluru offering fully equipped recording spaces,
+              ARCC Media Production is Bengaluru&apos;s premier podcast and video studio offering fully equipped recording spaces,
               multi-camera production, professional lighting, broadcast-quality audio, and
               post-production editing services.
             </p>
@@ -210,7 +244,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
                 </a>
 
                 <a
-                  href="https://wa.me/919605533366?text=Hi%20Winterfox%2C%20I%20am%20interested%20in%20booking%20the%20podcast%20studio."
+                  href="https://wa.me/919605533366?text=Hi%20ARCC%20Media%20Production%2C%20I%20am%20interested%20in%20booking%20the%20podcast%20studio."
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{

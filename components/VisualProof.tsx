@@ -60,7 +60,7 @@ export default function VisualProof() {
               fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
             }}
           >
-            Real podcast frames shot at Winterfox Studios.
+            Real podcast frames shot at ARCC Media Production.
           </p>
         </div>
 

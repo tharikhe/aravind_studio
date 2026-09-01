@@ -1,9 +1,10 @@
-# Winterfox Studios - Podcast Studio Web Application
+# ARCC Media Production - Podcast Studio Web Application
 
-A responsive Next.js application cloning the design, layout, aesthetic tokens, and interactive experience of [Winterfox Studios](https://winterfox.studio/).
+A responsive Next.js application for **ARCC Media Production** featuring premium dark aesthetics, interactive studio setups, showreels, reviews, and lead capture.
 
 ## 🚀 Features
 
+- **Brand Logo & Favicon**: Custom ARCC Media Production logo in header, mobile drawer, footer, modal, favicon, and WhatsApp/social sharing previews.
 - **Sticky Frosted Header**: Backdrop blur navigation with responsive mobile slide-out drawer.
 - **Hero Section**: Dual CTAs, click-to-call & WhatsApp integration, and auto-advancing 16:9 studio slider.
 - **Studio Infrastructure Grid**: 14-amenity feature grid with custom SVGs.

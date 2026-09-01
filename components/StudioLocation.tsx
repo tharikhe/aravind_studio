@@ -58,7 +58,7 @@ export default function StudioLocation({ onOpenModal }: StudioLocationProps) {
                   Address<span className="bringer-accent">.</span>
                 </h5>
                 <p style={{ fontSize: '0.92rem', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.78)', marginBottom: '1.5rem' }}>
-                  Winterfox Studios, 2nd floor, 8th main, 80 feet road, next to Bata showroom, HAL 2nd
+                  ARCC Media Production, 2nd floor, 8th main, 80 feet road, next to Bata showroom, HAL 2nd
                   stage, Indiranagar, Bengaluru, 560038
                 </p>
 
@@ -104,7 +104,7 @@ export default function StudioLocation({ onOpenModal }: StudioLocationProps) {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Winterfox Studios podcast studio location map"
+                title="ARCC Media Production podcast studio location map"
               />
             </div>
           </div>

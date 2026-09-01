@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface HeaderProps {
   onOpenModal: (inquiry?: string) => void;
@@ -13,294 +14,327 @@ export default function Header({ onOpenModal }: HeaderProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      if (window.scrollY > 20) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
-    { label: 'Home', href: '/' },
-    { label: 'Studio', href: '#podcast-setups' },
-    { label: 'Production Services', href: '#studio-features' },
-    { label: 'Work', href: '#podcast-work' },
+    { label: 'Setups', href: '#podcast-setups' },
+    { label: 'Infrastructure', href: '#studio-features' },
     { label: 'Frames', href: '#podcast-frames' },
+    { label: 'Episodes', href: '#podcast-work' },
+    { label: 'Why ARCC', href: '#why-choose' },
     { label: 'Reviews', href: '#google-reviews' },
     { label: 'Location', href: '#studio-location' },
   ];
 
   return (
-    <header
-      id="bringer-header"
-      style={{
-        position: 'sticky',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 100,
-        background: isScrolled ? 'rgba(7, 9, 13, 0.92)' : 'rgba(7, 9, 13, 0.75)',
-        backdropFilter: 'blur(16px)',
-        WebkitBackdropFilter: 'blur(16px)',
-        borderBottom: '1px solid rgba(245, 247, 250, 0.08)',
-        transition: 'background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease',
-        boxShadow: isScrolled ? '0 8px 32px rgba(0, 0, 0, 0.45)' : 'none',
-      }}
-    >
-      <div
-        className="stg-container"
+    <>
+      <header
+        id="bringer-header"
+        className="is-frosted is-sticky"
         style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          minHeight: '74px',
-          paddingTop: '0.5rem',
-          paddingBottom: '0.5rem',
+          position: 'sticky',
+          top: 0,
+          zIndex: 100,
+          transition: 'all 0.3s ease',
+          background: isScrolled
+            ? 'rgba(7, 9, 13, 0.94)'
+            : 'rgba(7, 9, 13, 0.75)',
+          backdropFilter: 'blur(16px)',
+          borderBottom: '1px solid rgba(245, 247, 250, 0.08)',
+          boxShadow: isScrolled ? '0 10px 30px rgba(0,0,0,0.5)' : 'none',
         }}
       >
-        {/* Logo */}
-        <Link
-          href="/"
+        <div
+          className="stg-container"
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '0.65rem',
-            textDecoration: 'none',
+            justifyContent: 'space-between',
+            height: isScrolled ? '68px' : '76px',
+            transition: 'height 0.3s ease',
           }}
         >
-          <div
+          {/* Logo Section */}
+          <Link
+            href="/"
             style={{
-              width: '38px',
-              height: '38px',
-              borderRadius: '8px',
-              background: 'linear-gradient(135deg, #3F6EE9 0%, #1e3a8a 100%)',
-              display: 'flex',
+              display: 'inline-flex',
               alignItems: 'center',
-              justifyContent: 'center',
-              color: '#fff',
-              fontWeight: 700,
-              fontSize: '1.25rem',
-              boxShadow: '0 4px 12px rgba(63, 110, 233, 0.35)',
+              textDecoration: 'none',
             }}
           >
-            W
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span
+            <div
               style={{
-                fontSize: '1.2rem',
-                fontWeight: 700,
-                letterSpacing: '-0.03em',
-                color: '#F5F7FA',
-                lineHeight: 1.1,
+                position: 'relative',
+                height: '42px',
+                width: '180px',
               }}
             >
-              WINTERFOX
-            </span>
-            <span
-              style={{
-                fontSize: '0.65rem',
-                letterSpacing: '0.22em',
-                color: '#5C9DFF',
-                textTransform: 'uppercase',
-                fontWeight: 600,
-                lineHeight: 1.2,
-              }}
-            >
-              STUDIOS · BENGALURU
-            </span>
-          </div>
-        </Link>
+              <Image
+                src="/logo.png"
+                alt="ARCC Media Production"
+                fill
+                priority
+                style={{
+                  objectFit: 'contain',
+                  objectPosition: 'left center',
+                }}
+              />
+            </div>
+          </Link>
 
-        {/* Desktop Nav */}
-        <nav
-          style={{
-            display: 'none',
-          }}
-          className="desktop-nav"
-        >
-          <ul
+          {/* Desktop Navigation Links */}
+          <nav
+            className="bringer-nav"
             style={{
               display: 'flex',
               alignItems: 'center',
               gap: '1.75rem',
-              listStyle: 'none',
-              margin: 0,
-              padding: 0,
             }}
           >
-            {navLinks.map((link, idx) => (
-              <li key={idx}>
-                <a
-                  href={link.href}
-                  style={{
-                    fontSize: '0.9rem',
-                    fontWeight: 500,
-                    color: idx === 0 ? '#FFFFFF' : '#C5C7CE',
-                    transition: 'color 0.2s ease',
-                    textDecoration: 'none',
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#5C9DFF')}
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.color = idx === 0 ? '#FFFFFF' : '#C5C7CE')
-                  }
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+            <ul
+              className="main-menu"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '1.5rem',
+                margin: 0,
+                padding: 0,
+                listStyle: 'none',
+              }}
+            >
+              {navLinks.map((link, idx) => (
+                <li key={idx}>
+                  <a
+                    href={link.href}
+                    style={{
+                      color: 'rgba(255, 255, 255, 0.85)',
+                      fontSize: '0.875rem',
+                      fontWeight: 500,
+                      letterSpacing: '0.02em',
+                      textDecoration: 'none',
+                      transition: 'color 0.2s ease',
+                    }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#5C9DFF')}
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.85)')
+                    }
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
 
-        {/* Header Right Action */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            {/* Header Right CTA */}
+            <div style={{ marginLeft: '0.5rem' }}>
+              <button
+                type="button"
+                className="bringer-button"
+                onClick={() => onOpenModal('General Inquiry')}
+                style={{
+                  fontSize: '0.85rem',
+                  padding: '0.55rem 1.25rem',
+                  minHeight: '38px',
+                }}
+              >
+                Get a Quote
+              </button>
+            </div>
+          </nav>
+
+          {/* Mobile Hamburger Toggle Button */}
           <button
             type="button"
-            className="bringer-button desktop-cta"
-            onClick={() => onOpenModal('Request a Quote')}
-            style={{
-              fontSize: '0.85rem',
-              padding: '0.65rem 1.25rem',
-            }}
-          >
-            Get a Quote
-          </button>
-
-          {/* Mobile Menu Toggle Button */}
-          <button
-            type="button"
-            className="mobile-toggler"
+            className="mobile-nav-toggle"
             aria-label="Toggle navigation menu"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             style={{
-              width: '44px',
-              height: '44px',
-              background: mobileMenuOpen ? 'rgba(63, 110, 233, 0.25)' : 'var(--bringer-s-accent)',
-              border: '1px solid rgba(255, 255, 255, 0.15)',
-              borderRadius: '8px',
-              display: 'flex',
+              display: 'none',
               flexDirection: 'column',
-              alignItems: 'center',
               justifyContent: 'center',
+              alignItems: 'center',
+              width: '40px',
+              height: '40px',
               gap: '5px',
+              background: 'transparent',
+              border: 'none',
               cursor: 'pointer',
-              transition: 'background 0.25s ease',
+              padding: '8px',
             }}
           >
             <span
               style={{
-                width: '20px',
+                display: 'block',
+                width: '22px',
                 height: '2px',
-                background: '#fff',
-                borderRadius: '2px',
-                transform: mobileMenuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none',
-                transition: 'transform 0.25s ease',
+                backgroundColor: '#F5F7FA',
+                transition: 'all 0.3s ease',
+                transform: mobileMenuOpen
+                  ? 'rotate(45deg) translate(5px, 5px)'
+                  : 'none',
               }}
             />
             <span
               style={{
-                width: '20px',
+                display: 'block',
+                width: '22px',
                 height: '2px',
-                background: '#fff',
-                borderRadius: '2px',
+                backgroundColor: '#F5F7FA',
+                transition: 'all 0.3s ease',
                 opacity: mobileMenuOpen ? 0 : 1,
-                transition: 'opacity 0.25s ease',
               }}
             />
             <span
               style={{
-                width: '20px',
+                display: 'block',
+                width: '22px',
                 height: '2px',
-                background: '#fff',
-                borderRadius: '2px',
-                transform: mobileMenuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none',
-                transition: 'transform 0.25s ease',
+                backgroundColor: '#F5F7FA',
+                transition: 'all 0.3s ease',
+                transform: mobileMenuOpen
+                  ? 'rotate(-45deg) translate(5px, -5px)'
+                  : 'none',
               }}
             />
           </button>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile Navigation Drawer */}
-      {mobileMenuOpen && (
+      {/* Mobile Slide-Over Drawer */}
+      <div
+        className="mobile-drawer"
+        style={{
+          position: 'fixed',
+          top: 0,
+          right: 0,
+          bottom: 0,
+          width: 'min(320px, 85vw)',
+          backgroundColor: '#07090D',
+          zIndex: 1000,
+          transform: mobileMenuOpen ? 'translateX(0)' : 'translateX(100%)',
+          transition: 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
+          boxShadow: '-10px 0 30px rgba(0, 0, 0, 0.7)',
+          borderLeft: '1px solid rgba(255, 255, 255, 0.1)',
+          display: 'flex',
+          flexDirection: 'column',
+          padding: '2rem 1.5rem',
+        }}
+      >
         <div
           style={{
-            position: 'absolute',
-            top: '100%',
-            left: 0,
-            right: 0,
-            background: 'rgba(7, 9, 13, 0.98)',
-            borderBottom: '1px solid rgba(245, 247, 250, 0.15)',
-            padding: '1.5rem clamp(1rem, 4vw, 2rem) 2rem',
-            boxShadow: '0 20px 40px rgba(0,0,0,0.6)',
-            animation: 'fadeIn 0.2s ease',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            marginBottom: '2rem',
           }}
         >
-          <ul
-            style={{
-              listStyle: 'none',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '1rem',
-              marginBottom: '1.5rem',
-            }}
-          >
-            {navLinks.map((link, idx) => (
-              <li key={idx}>
-                <a
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  style={{
-                    display: 'block',
-                    fontSize: '1.15rem',
-                    fontWeight: 600,
-                    color: '#F5F7FA',
-                    padding: '0.35rem 0',
-                    borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
-                  }}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div style={{ position: 'relative', height: '36px', width: '150px' }}>
+            <Image
+              src="/logo.png"
+              alt="ARCC Media Production"
+              fill
+              style={{ objectFit: 'contain', objectPosition: 'left center' }}
+            />
+          </div>
           <button
             type="button"
-            className="bringer-button"
-            onClick={() => {
-              setMobileMenuOpen(false);
-              onOpenModal('Request a Quote');
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label="Close menu"
+            style={{
+              background: 'rgba(255, 255, 255, 0.08)',
+              border: 'none',
+              color: '#fff',
+              width: '34px',
+              height: '34px',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
             }}
-            style={{ width: '100%', padding: '0.85rem' }}
           >
-            Get a Quote
+            ✕
           </button>
         </div>
+
+        <ul
+          style={{
+            listStyle: 'none',
+            padding: 0,
+            margin: '0 0 2rem',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1.25rem',
+          }}
+        >
+          {navLinks.map((link, idx) => (
+            <li key={idx}>
+              <a
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                style={{
+                  color: '#F5F7FA',
+                  fontSize: '1.05rem',
+                  fontWeight: 500,
+                  textDecoration: 'none',
+                  display: 'block',
+                }}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <button
+          type="button"
+          className="bringer-button"
+          onClick={() => {
+            setMobileMenuOpen(false);
+            onOpenModal('General Inquiry');
+          }}
+          style={{
+            width: '100%',
+            marginTop: 'auto',
+          }}
+        >
+          Get a Quote
+        </button>
+      </div>
+
+      {/* Backdrop for mobile drawer */}
+      {mobileMenuOpen && (
+        <div
+          onClick={() => setMobileMenuOpen(false)}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            backgroundColor: 'rgba(0, 0, 0, 0.65)',
+            backdropFilter: 'blur(4px)',
+            zIndex: 999,
+          }}
+        />
       )}
 
       <style jsx>{`
-        @media (min-width: 961px) {
-          :global(.desktop-nav) {
-            display: block !important;
-          }
-          :global(.desktop-cta) {
-            display: inline-flex !important;
-          }
-          :global(.mobile-toggler) {
-            display: none !important;
-          }
-        }
         @media (max-width: 960px) {
-          :global(.desktop-nav) {
+          :global(.bringer-nav) {
             display: none !important;
           }
-          :global(.desktop-cta) {
-            display: none !important;
-          }
-          :global(.mobile-toggler) {
+          :global(.mobile-nav-toggle) {
             display: flex !important;
           }
         }
       `}</style>
-    </header>
+    </>
   );
 }

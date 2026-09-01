@@ -34,7 +34,7 @@ export default function PodcastWork() {
         {/* Head */}
         <div style={{ textAlign: 'center', marginBottom: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}>
           <h2 style={{ fontSize: 'clamp(1.85rem, 3.5vw, 2.75rem)', marginBottom: '0.85rem' }}>
-            Podcasts Shot at Winterfox
+            Podcasts Shot at ARCC Media Production
           </h2>
           <p
             className="bringer-large-text"
