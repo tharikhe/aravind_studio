@@ -1,57 +1,14 @@
 'use client';
 
 import React from 'react';
-import { Mic, Video, Users, Youtube, Briefcase, GraduationCap, Film, Share2 } from 'lucide-react';
-
-const CREATION_FORMATS = [
-  {
-    title: 'Founder Podcasts',
-    desc: 'On-camera conversations for founders building an authentic personal brand.',
-    icon: Mic,
-  },
-  {
-    title: 'Brand Shows',
-    desc: 'Flagship episodic series for marketing teams and high-growth brands.',
-    icon: Video,
-  },
-  {
-    title: 'Expert Interviews',
-    desc: 'Structured long-form interviews with specialists, leaders, and guests.',
-    icon: Users,
-  },
-  {
-    title: 'YouTube Podcasts',
-    desc: 'Video-first podcast formats optimized for retention on YouTube.',
-    icon: Youtube,
-  },
-  {
-    title: 'Corporate Series',
-    desc: 'Internal and external town-hall shows for teams and global stakeholders.',
-    icon: Briefcase,
-  },
-  {
-    title: 'Educational Masterclasses',
-    desc: 'Knowledge-sharing podcast formats with presentation slides and dual feeds.',
-    icon: GraduationCap,
-  },
-  {
-    title: 'Viral Reels & Shorts',
-    desc: 'High-hook vertical clips extracted directly from your master recording.',
-    icon: Film,
-  },
-  {
-    title: 'LinkedIn & Social Cutdowns',
-    desc: 'Platform-ready cutdowns with animated subtitles for social distribution.',
-    icon: Share2,
-  },
-];
+import ScrollJourney from './ScrollJourney';
 
 export default function WhatYouCanCreate() {
   return (
     <section className="divider-top" id="what-you-can-create" style={{ background: '#F8F9FA' }}>
       <div className="stg-container">
         {/* Head */}
-        <div style={{ textAlign: 'center', marginBottom: 'clamp(1.75rem, 3vw, 2.5rem)' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 3.5vw, 3rem)' }}>
           <p
             style={{
               margin: '0 0 0.5rem',
@@ -62,93 +19,28 @@ export default function WhatYouCanCreate() {
               fontWeight: 600,
             }}
           >
-            Production Formats
+            Production Formats &amp; Journey
           </p>
-          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', margin: 0, color: '#0A0A0A' }}>
+          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem', color: '#0A0A0A' }}>
             What You Can Create Here
           </h2>
-        </div>
-
-        {/* 4-Col Grid */}
-        <div
-          className="what-create-grid"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
-            gap: 'clamp(0.85rem, 1.4vw, 1.25rem)',
-          }}
-        >
-          {CREATION_FORMATS.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={idx}
-                className="bringer-block"
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '0.75rem',
-                  padding: '1.4rem 1.25rem',
-                  minHeight: '100%',
-                  background: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
-                  borderRadius: '14px',
-                  transition: 'all 0.25s ease',
-                  boxShadow: '0 2px 10px rgba(0, 0, 0, 0.04)',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#000000';
-                  e.currentTarget.style.transform = 'translateY(-3px)';
-                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.08)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#E5E7EB';
-                  e.currentTarget.style.transform = 'none';
-                  e.currentTarget.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.04)';
-                }}
-              >
-                <div
-                  style={{
-                    width: '36px',
-                    height: '36px',
-                    borderRadius: '8px',
-                    background: '#F4F5F7',
-                    border: '1px solid #E5E7EB',
-                    color: '#000000',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginBottom: '0.25rem',
-                  }}
-                >
-                  <Icon size={18} />
-                </div>
-                <div>
-                  <h4 style={{ fontSize: '1.08rem', marginBottom: '0.4rem', color: '#0A0A0A', fontWeight: 600 }}>
-                    {item.title}
-                  </h4>
-                  <p style={{ margin: 0, fontSize: '0.86rem', lineHeight: 1.5, color: '#52525B' }}>
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
+          <p
+            className="bringer-large-text"
+            style={{
+              maxWidth: '38em',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)',
+              color: '#52525B',
+            }}
+          >
+            From founder interviews to multi-camera enterprise series and viral shorts, follow the production journey crafted at ARCC Media Production.
+          </p>
         </div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 1024px) {
-          :global(.what-create-grid) {
-            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-          }
-        }
-        @media (max-width: 640px) {
-          :global(.what-create-grid) {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
+      {/* Buttery-Smooth Scroll-Driven SVG Journey Line */}
+      <ScrollJourney />
     </section>
   );
 }
