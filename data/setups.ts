@@ -8,6 +8,10 @@ export interface PodcastSetup {
   title: string;
   desc: string;
   tag: string;
+  capacity: string;
+  cameras: string;
+  audio: string;
+  bestFor: string;
   image: string;
   gallery: SetupGalleryItem[];
 }
@@ -15,159 +19,103 @@ export interface PodcastSetup {
 export const PODCAST_SETUPS: PodcastSetup[] = [
   {
     index: '01',
-    title: 'Brand Grey Setup',
+    title: 'Brand Bookshelf Setup',
     tag: 'Setup 01',
-    desc: 'Grey armchairs with a full wooden bookshelf backdrop and textured grey walls for polished, brand-safe leadership and expert conversations.',
-    image: 'https://winterfox.studio/img/podcast-experience/brand-grey-setup.jpg',
+    capacity: '2 Guests',
+    cameras: '3x 4K Cinema Line',
+    audio: '2x Shure SM7B + Rode Boom',
+    bestFor: 'Founder & Leadership Podcasts',
+    desc: 'Charcoal armchairs with a warm oak bookshelf backdrop and sound-treated walls for authoritative, polished leadership and expert conversations.',
+    image: '/images/setups/setup-brand-grey.jpg',
     gallery: [
       {
-        image: 'https://winterfox.studio/img/podcast-experience/brand-grey-setup.jpg',
-        alt: 'Brand grey podcast studio with grey armchairs, wooden bookshelf, and professional microphones at ARCC Media Production',
+        image: '/images/setups/setup-brand-grey.jpg',
+        alt: 'Brand bookshelf podcast studio with charcoal armchairs, wooden bookshelf, and broadcast microphones at ARCC Media Production',
       },
     ],
   },
   {
     index: '02',
-    title: 'Brand Beige Setup',
+    title: 'Warm Acoustic Lounge',
     tag: 'Setup 02',
-    desc: 'Warm beige armchairs with interchangeable backdrops—open shelving, gallery wall, or round coffee table—for relaxed creator and interview formats.',
-    image: 'https://winterfox.studio/img/podcast-experience/brand-beige-setup-bookshelf.jpg',
+    capacity: '2 Guests',
+    cameras: '3x 4K Sony FX6/FX3',
+    audio: '2x Shure SM7B Broadcast Mics',
+    bestFor: 'Casual Interviews & Creator Shows',
+    desc: 'Warm terracotta fluted acoustic wood paneling with soft ambient lighting and plush cream lounge chairs for relaxed storytelling and creator series.',
+    image: '/images/setups/setup-warm-lounge.jpg',
     gallery: [
       {
-        image: 'https://winterfox.studio/img/podcast-experience/brand-beige-setup-bookshelf.jpg',
-        alt: 'Brand beige podcast studio with cream armchairs, round wood table, and professional microphones at ARCC Media Production',
-      },
-      {
-        image: 'https://winterfox.studio/img/podcast-experience/brand-beige-setup-wall.jpg',
-        alt: 'Brand beige podcast studio with armchairs, grey wall decor, and warm accent lighting at ARCC Media Production',
-      },
-      {
-        image: 'https://winterfox.studio/img/podcast-experience/brand-beige-setup-shelving.jpg',
-        alt: 'Brand beige podcast studio with facing armchairs, black shelving backdrop, and boom microphones at ARCC Media Production',
-      },
-      {
-        image: 'https://winterfox.studio/img/podcast-experience/brand-beige-setup.jpg',
-        alt: 'Brand beige podcast studio with cream armchairs, wooden bookshelf backdrop, and round coffee table at ARCC Media Production',
+        image: '/images/setups/setup-warm-lounge.jpg',
+        alt: 'Warm lounge podcast studio with cream armchairs, fluted wood backdrop, and warm lighting at ARCC Media Production',
       },
     ],
   },
   {
     index: '03',
-    title: 'Custom Brand Setup',
+    title: 'Executive Dark Studio',
     tag: 'Setup 03',
-    desc: 'Terracotta-walled set with grey armchairs and bookshelf styling, adaptable to custom colours, furniture, and brand elements for your show identity.',
-    image: 'https://winterfox.studio/img/podcast-experience/custom-brand-setup-warm.png',
+    capacity: '2 Guests',
+    cameras: '3x Sony Cinema 4K',
+    audio: '2x Rode PodMic / SM7B',
+    bestFor: 'VC, Tech & Corporate Shows',
+    desc: 'Charcoal slate acoustic panels with brass inlays, moody cinematic key lighting, and dark leather club chairs for high-impact executive dialogues.',
+    image: '/images/setups/setup-executive-dark.jpg',
     gallery: [
       {
-        image: 'https://winterfox.studio/img/podcast-experience/custom-brand-setup-warm.png',
-        alt: 'Custom brand podcast studio with grey armchairs, terracotta wall, bookshelf backdrop, and studio lighting at ARCC Media Production',
-      },
-      {
-        image: 'https://winterfox.studio/img/slider/landing10.jpg',
-        alt: 'Custom brand podcast studio with cream armchairs, red accent wall, and portrait gallery at ARCC Media Production',
+        image: '/images/setups/setup-executive-dark.jpg',
+        alt: 'Executive dark podcast studio with leather club chairs, slate walls, and brass accents at ARCC Media Production',
       },
     ],
   },
   {
     index: '04',
-    title: 'Royal Blue Setup',
+    title: 'Royal Blue Production Stage',
     tag: 'Setup 04',
-    desc: 'Vivid blue-wall stage with desk or open-floor layout, overhead Godox lighting, and teleprompter-ready framing for talking-head and direct-to-camera formats.',
-    image: 'https://winterfox.studio/img/slider/landing5.jpg',
+    capacity: '2–3 Guests',
+    cameras: '4x Sony Multi-Cam Rig',
+    audio: 'Multi-channel Audio Monitored',
+    bestFor: 'Talking Head, Brand Series & D2C',
+    desc: 'Vivid cobalt-blue stage with geometric ambient backlighting, overhead softboxes, and teleprompter-ready framing for vibrant modern video shows.',
+    image: '/images/setups/setup-royal-blue.jpg',
     gallery: [
       {
-        image: 'https://winterfox.studio/img/slider/landing5.jpg',
-        alt: 'Royal blue podcast studio with white desk, office chair, and professional lighting at ARCC Media Production',
-      },
-      {
-        image: 'https://winterfox.studio/img/podcast-experience/royal-blue-setup-studio.png',
-        alt: 'Royal blue podcast studio with overhead Godox lighting, shelving, and wood floor at ARCC Media Production',
+        image: '/images/setups/setup-royal-blue.jpg',
+        alt: 'Royal blue podcast studio stage with geometric lighting, monitors, and broadcast mics at ARCC Media Production',
       },
     ],
   },
   {
     index: '05',
-    title: 'Dark Premium Setup',
+    title: 'Multi-Guest Roundtable',
     tag: 'Setup 05',
-    desc: 'Black drape backdrop with cream armchairs, decorative shelving, and overhead softboxes for moody, cinematic founder and leadership podcasts.',
-    image: 'https://winterfox.studio/img/podcast-experience/dark-premium-setup-studio.jpg',
+    capacity: '4 Guests',
+    cameras: '4x 4K Independent Feeds',
+    audio: '4x Shure SM7B + Cloudlifters',
+    bestFor: 'Group Panels & Debate Podcasts',
+    desc: 'Circular dark walnut conference table with four ergonomic navy armchairs, warm suspended lighting, and dedicated 4-camera isolation feeds for group panels.',
+    image: '/images/setups/setup-round-table.jpg',
     gallery: [
       {
-        image: 'https://winterfox.studio/img/podcast-experience/dark-premium-setup-studio.jpg',
-        alt: 'Dark premium podcast studio with cream armchairs, black drapes, overhead softboxes, and professional microphones at ARCC Media Production',
-      },
-      {
-        image: 'https://winterfox.studio/img/podcast-experience/dark-premium-setup.png',
-        alt: 'Dark premium podcast studio with cream armchairs, octagonal softboxes, and warm accent lighting at ARCC Media Production',
+        image: '/images/setups/setup-round-table.jpg',
+        alt: 'Multi-guest roundtable podcast studio with 4 armchairs, circular table, and 4 microphones at ARCC Media Production',
       },
     ],
   },
   {
     index: '06',
-    title: 'Round Table Setup',
+    title: 'White Infinity Cyclorama',
     tag: 'Setup 06',
-    desc: 'Teal velvet armchairs around a dark wood round table with warm pendant lighting and dual boom mics for intimate face-to-face conversations.',
-    image: 'https://winterfox.studio/img/podcast-experience/round-table-setup.jpg',
+    capacity: '1–3 Guests',
+    cameras: 'Sony FX6 4K High-Key Rig',
+    audio: 'Wireless Lav + Boom Mics',
+    bestFor: 'Keynotes, Product Launches & Ads',
+    desc: 'Seamless curved white cyclorama with ceiling softbox grid and clean minimalist seating for high-key commercial interviews, portraits, and product launches.',
+    image: '/images/setups/setup-white-infinity.jpg',
     gallery: [
       {
-        image: 'https://winterfox.studio/img/podcast-experience/round-table-setup.jpg',
-        alt: 'Round table podcast studio with teal velvet armchairs, dark wood pedestal table, and professional microphones at ARCC Media Production',
-      },
-    ],
-  },
-  {
-    index: '07',
-    title: 'Three Seater Setup',
-    tag: 'Setup 07',
-    desc: 'Beige three-seater sofa with dual boom mics—full ARCC studio lighting or a warm styled living-room look for relaxed group and interview formats.',
-    image: 'https://winterfox.studio/img/podcast-experience/one-on-one-three-seater-studio.jpg',
-    gallery: [
-      {
-        image: 'https://winterfox.studio/img/podcast-experience/one-on-one-three-seater-studio.jpg',
-        alt: 'Three seater podcast studio with beige sofa, ARCC Media Production studio setup, overhead softboxes, and boom microphones',
-      },
-      {
-        image: 'https://winterfox.studio/img/podcast-experience/one-on-one-three-seater-setup.jpg',
-        alt: 'Three seater podcast studio with beige sofa, warm accent lighting, and styled living-room backdrop at ARCC Media Production',
-      },
-    ],
-  },
-  {
-    index: '08',
-    title: 'Four Seater Setup',
-    tag: 'Setup 08',
-    desc: 'Four armchairs around a round wood coffee table with pink and blue seating, sideboard backdrop, and overhead mic for panel discussions and group podcast formats.',
-    image: 'https://winterfox.studio/img/podcast-experience/four-seater-setup.jpg',
-    gallery: [
-      {
-        image: 'https://winterfox.studio/img/podcast-experience/four-seater-setup.jpg',
-        alt: 'Four seater podcast studio with pink and blue armchairs, round wood table, and sideboard backdrop at ARCC Media Production',
-      },
-    ],
-  },
-  {
-    index: '09',
-    title: 'White Infinity Setup',
-    tag: 'Setup 09',
-    desc: 'White seamless infinity cove with bar stool, overhead softboxes, and full camera rig for high-key portraits, product shots, and minimalist on-camera formats.',
-    image: 'https://winterfox.studio/img/podcast-experience/white-infinity-setup.jpg',
-    gallery: [
-      {
-        image: 'https://winterfox.studio/img/podcast-experience/white-infinity-setup.jpg',
-        alt: 'White infinity podcast studio with seamless backdrop, bar stool, overhead softboxes, and professional camera at ARCC Media Production',
-      },
-    ],
-  },
-  {
-    index: '10',
-    title: 'Green Infinity Setup',
-    tag: 'Setup 10',
-    desc: 'Green seamless chroma key cove with dual cameras, overhead softboxes, and even lighting for virtual backgrounds, VFX compositing, and flexible branded content.',
-    image: 'https://winterfox.studio/img/podcast-experience/green-infinity-setup.jpg',
-    gallery: [
-      {
-        image: 'https://winterfox.studio/img/podcast-experience/green-infinity-setup.jpg',
-        alt: 'Green infinity podcast studio with seamless chroma key backdrop, dual cameras on tripods, and professional lighting at ARCC Media Production',
+        image: '/images/setups/setup-white-infinity.jpg',
+        alt: 'White infinity cyclorama studio stage with minimalist leather seating and overhead grid at ARCC Media Production',
       },
     ],
   },

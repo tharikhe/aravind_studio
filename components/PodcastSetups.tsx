@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight, X, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, ArrowRight, Video, Mic, Users, CheckCircle2 } from 'lucide-react';
 import { PODCAST_SETUPS, PodcastSetup } from '@/data/setups';
 
 interface PodcastSetupsProps {
@@ -55,7 +55,7 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
     <section className="divider-top" id="podcast-setups">
       <div className="stg-container">
         {/* Head */}
-        <div style={{ textAlign: 'center', marginBottom: 'clamp(1.75rem, 3vw, 2.5rem)' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 3.5vw, 3rem)' }}>
           <p
             style={{
               margin: '0 0 0.5rem',
@@ -86,14 +86,14 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
           </p>
         </div>
 
-        {/* Bento Grid */}
+        {/* High-Craft Bento Grid */}
         <div
           className="setup-bento-grid"
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-            gap: 'clamp(1rem, 1.8vw, 1.5rem)',
-            alignItems: 'start',
+            gap: 'clamp(1.15rem, 2vw, 1.65rem)',
+            alignItems: 'stretch',
           }}
         >
           {PODCAST_SETUPS.map((setup, idx) => {
@@ -103,38 +103,43 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                 key={setup.index}
                 onClick={() => handleCardClick(idx)}
                 style={{
-                  background: 'linear-gradient(160deg, rgba(26, 29, 36, 0.8) 0%, rgba(14, 17, 23, 0.7) 100%)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  background: 'linear-gradient(165deg, rgba(26, 29, 36, 0.85) 0%, rgba(14, 17, 23, 0.75) 100%)',
                   border: isSelected
                     ? '1px solid #5C9DFF'
-                    : '1px solid rgba(255, 255, 255, 0.08)',
+                    : '1px solid rgba(255, 255, 255, 0.09)',
                   boxShadow: isSelected
-                    ? '0 0 0 1px rgba(92, 157, 255, 0.4), 0 16px 40px rgba(0,0,0,0.6)'
-                    : '0 4px 20px rgba(0,0,0,0.3)',
-                  borderRadius: '14px',
+                    ? '0 0 0 1px rgba(92, 157, 255, 0.5), 0 20px 48px rgba(0,0,0,0.7)'
+                    : '0 4px 24px rgba(0,0,0,0.35)',
+                  borderRadius: '16px',
                   overflow: 'hidden',
                   cursor: 'pointer',
-                  transition: 'all 0.25s ease',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                   transform: isSelected ? 'scale(1.015)' : 'none',
                 }}
                 onMouseEnter={(e) => {
                   if (!isSelected) {
-                    e.currentTarget.style.borderColor = 'rgba(92, 157, 255, 0.35)';
-                    e.currentTarget.style.transform = 'translateY(-3px)';
+                    e.currentTarget.style.borderColor = 'rgba(92, 157, 255, 0.45)';
+                    e.currentTarget.style.transform = 'translateY(-4px)';
+                    e.currentTarget.style.boxShadow = '0 12px 36px rgba(63, 110, 233, 0.15)';
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (!isSelected) {
-                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.09)';
                     e.currentTarget.style.transform = 'none';
+                    e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.35)';
                   }
                 }}
               >
+                {/* Visual Image Header */}
                 <div
                   style={{
                     position: 'relative',
-                    aspectRatio: '16 / 10',
+                    aspectRatio: '16 / 9',
                     width: '100%',
-                    background: '#0a0d13',
+                    background: '#07090D',
                     overflow: 'hidden',
                   }}
                 >
@@ -146,59 +151,163 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                     style={{
                       objectFit: 'cover',
                       objectPosition: 'center',
-                      transition: 'transform 0.4s ease',
+                      transition: 'transform 0.5s ease',
                     }}
                   />
+
+                  {/* Gradient shadow for text contrast */}
                   <div
                     style={{
                       position: 'absolute',
-                      top: '10px',
-                      left: '10px',
-                      background: 'rgba(7, 9, 13, 0.8)',
-                      backdropFilter: 'blur(6px)',
-                      padding: '3px 8px',
-                      borderRadius: '4px',
-                      fontSize: '0.7rem',
-                      fontWeight: 600,
+                      inset: 0,
+                      background: 'linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.7) 100%)',
+                      pointerEvents: 'none',
+                    }}
+                  />
+
+                  {/* Setup Index Pill */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '12px',
+                      left: '12px',
+                      background: 'rgba(7, 9, 13, 0.85)',
+                      backdropFilter: 'blur(8px)',
+                      padding: '3px 9px',
+                      borderRadius: '6px',
+                      fontSize: '0.72rem',
+                      fontWeight: 700,
                       color: '#5C9DFF',
                       letterSpacing: '0.08em',
                       textTransform: 'uppercase',
-                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      border: '1px solid rgba(92, 157, 255, 0.3)',
                     }}
                   >
                     {setup.tag}
                   </div>
 
+                  {/* Capacity Pill */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '12px',
+                      right: '12px',
+                      background: 'rgba(0, 0, 0, 0.75)',
+                      backdropFilter: 'blur(6px)',
+                      padding: '3px 8px',
+                      borderRadius: '6px',
+                      fontSize: '0.72rem',
+                      fontWeight: 600,
+                      color: 'rgba(255, 255, 255, 0.9)',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '4px',
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                    }}
+                  >
+                    <Users size={12} style={{ color: '#5C9DFF' }} />
+                    <span>{setup.capacity}</span>
+                  </div>
+
+                  {/* Best For Tag Badge */}
                   <div
                     style={{
                       position: 'absolute',
                       bottom: '10px',
-                      right: '10px',
-                      background: 'rgba(0, 0, 0, 0.65)',
-                      padding: '2px 7px',
-                      borderRadius: '4px',
-                      fontSize: '0.68rem',
-                      color: 'rgba(255, 255, 255, 0.8)',
+                      left: '12px',
+                      right: '12px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
                     }}
                   >
-                    Click to View Setup →
+                    <span
+                      style={{
+                        fontSize: '0.72rem',
+                        color: 'rgba(255, 255, 255, 0.9)',
+                        fontWeight: 500,
+                        background: 'rgba(0, 0, 0, 0.65)',
+                        padding: '2px 8px',
+                        borderRadius: '4px',
+                      }}
+                    >
+                      {setup.bestFor}
+                    </span>
+
+                    <span
+                      style={{
+                        fontSize: '0.7rem',
+                        color: '#5C9DFF',
+                        fontWeight: 600,
+                        background: 'rgba(7, 9, 13, 0.8)',
+                        padding: '2px 6px',
+                        borderRadius: '4px',
+                      }}
+                    >
+                      Inspect →
+                    </span>
                   </div>
                 </div>
 
-                <div style={{ padding: '1.1rem 1.25rem 1.25rem' }}>
-                  <h4 style={{ fontSize: '1.15rem', marginBottom: '0.35rem', color: '#F5F7FA', fontWeight: 600 }}>
-                    {setup.title}
-                  </h4>
-                  <p
+                {/* Card Body */}
+                <div
+                  style={{
+                    padding: '1.25rem 1.35rem 1.4rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    flex: '1 0 auto',
+                  }}
+                >
+                  <div>
+                    <h3
+                      style={{
+                        fontSize: '1.2rem',
+                        marginBottom: '0.45rem',
+                        color: '#F5F7FA',
+                        fontWeight: 700,
+                      }}
+                    >
+                      {setup.title}
+                    </h3>
+                    <p
+                      style={{
+                        margin: 0,
+                        fontSize: '0.86rem',
+                        lineHeight: 1.55,
+                        color: 'rgba(255, 255, 255, 0.72)',
+                        marginBottom: '1rem',
+                      }}
+                    >
+                      {setup.desc}
+                    </p>
+                  </div>
+
+                  {/* Tech Specs Chips */}
+                  <div
                     style={{
-                      margin: 0,
-                      fontSize: '0.86rem',
-                      lineHeight: 1.5,
-                      color: 'rgba(255, 255, 255, 0.72)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '0.4rem',
+                      paddingTop: '0.85rem',
+                      borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+                      fontSize: '0.78rem',
+                      color: 'rgba(255, 255, 255, 0.75)',
                     }}
                   >
-                    {setup.desc}
-                  </p>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+                      <Video size={13} style={{ color: '#5C9DFF', flexShrink: 0 }} />
+                      <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        {setup.cameras}
+                      </span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+                      <Mic size={13} style={{ color: '#5C9DFF', flexShrink: 0 }} />
+                      <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        {setup.audio}
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </article>
             );
@@ -209,12 +318,12 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
         {selectedSetup && (
           <div
             style={{
-              marginTop: '2rem',
+              marginTop: '2.5rem',
               background: 'rgba(14, 17, 23, 0.98)',
-              border: '1px solid rgba(92, 157, 255, 0.4)',
-              borderRadius: '16px',
+              border: '1px solid rgba(92, 157, 255, 0.5)',
+              borderRadius: '20px',
               overflow: 'hidden',
-              boxShadow: '0 24px 60px rgba(0, 0, 0, 0.8)',
+              boxShadow: '0 28px 70px rgba(0, 0, 0, 0.85)',
               display: 'flex',
               flexWrap: 'wrap',
               animation: 'fadeIn 0.3s ease',
@@ -224,7 +333,7 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
             <div
               style={{
                 flex: '1 1 65%',
-                minWidth: '300px',
+                minWidth: '320px',
                 aspectRatio: '16 / 10',
                 position: 'relative',
                 background: '#07090D',
@@ -323,11 +432,11 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
               style={{
                 flex: '0 1 35%',
                 minWidth: '280px',
-                padding: '2rem 1.75rem',
+                padding: '2.25rem 2rem',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                background: 'rgba(26, 29, 36, 0.95)',
+                background: 'rgba(26, 29, 36, 0.98)',
                 borderLeft: '1px solid rgba(255, 255, 255, 0.1)',
                 position: 'relative',
               }}
@@ -338,14 +447,14 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                 aria-label="Close preview"
                 style={{
                   position: 'absolute',
-                  top: '1rem',
-                  right: '1rem',
+                  top: '1.25rem',
+                  right: '1.25rem',
                   color: 'rgba(255, 255, 255, 0.6)',
                   cursor: 'pointer',
                   padding: '4px',
                 }}
               >
-                <X size={20} />
+                <X size={22} />
               </button>
 
               <div>
@@ -355,19 +464,49 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                     letterSpacing: '0.12em',
                     textTransform: 'uppercase',
                     color: '#5C9DFF',
-                    fontWeight: 600,
+                    fontWeight: 700,
                     display: 'block',
                     marginBottom: '0.5rem',
                   }}
                 >
-                  Setup {selectedSetup.index}
+                  {selectedSetup.tag} · {selectedSetup.capacity}
                 </span>
-                <h3 style={{ fontSize: '1.45rem', marginBottom: '0.85rem', color: '#F5F7FA' }}>
+
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem', color: '#F5F7FA', fontWeight: 700 }}>
                   {selectedSetup.title}
                 </h3>
-                <p style={{ fontSize: '0.92rem', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.8)' }}>
+
+                <p style={{ fontSize: '0.92rem', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.8)', marginBottom: '1.25rem' }}>
                   {selectedSetup.desc}
                 </p>
+
+                {/* Specs List in Modal */}
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.5rem',
+                    padding: '1rem',
+                    borderRadius: '10px',
+                    background: 'rgba(7, 9, 13, 0.6)',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    marginBottom: '1.5rem',
+                    fontSize: '0.84rem',
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255, 255, 255, 0.9)' }}>
+                    <CheckCircle2 size={15} style={{ color: '#22C55E' }} />
+                    <span><strong>Cameras:</strong> {selectedSetup.cameras}</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255, 255, 255, 0.9)' }}>
+                    <CheckCircle2 size={15} style={{ color: '#22C55E' }} />
+                    <span><strong>Audio:</strong> {selectedSetup.audio}</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255, 255, 255, 0.9)' }}>
+                    <CheckCircle2 size={15} style={{ color: '#22C55E' }} />
+                    <span><strong>Ideal for:</strong> {selectedSetup.bestFor}</span>
+                  </div>
+                </div>
 
                 {onOpenModal && (
                   <button
@@ -375,14 +514,13 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
                     className="bringer-button"
                     onClick={() => onOpenModal(`Setup ${selectedSetup.index}: ${selectedSetup.title}`)}
                     style={{
-                      marginTop: '1.25rem',
                       width: '100%',
-                      fontSize: '0.88rem',
-                      padding: '0.75rem 1.25rem',
+                      fontSize: '0.92rem',
+                      padding: '0.85rem 1.5rem',
                     }}
                   >
                     <span>Book This Setup</span>
-                    <ArrowRight size={15} />
+                    <ArrowRight size={16} />
                   </button>
                 )}
               </div>
@@ -438,7 +576,7 @@ export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
       </div>
 
       <style jsx>{`
-        @media (max-width: 960px) {
+        @media (max-width: 1024px) {
           :global(.setup-bento-grid) {
             grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
           }
