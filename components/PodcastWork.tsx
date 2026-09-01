@@ -2,37 +2,20 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { X } from 'lucide-react';
 import { PODCAST_VIDEOS, PodcastVideo } from '@/data/videos';
 
 export default function PodcastWork() {
   const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
-  const [startIndex, setStartIndex] = useState(0);
 
-  const visibleCount = 3;
-
-  const handleNext = () => {
-    setStartIndex((prev) => (prev + 1) % PODCAST_VIDEOS.length);
-  };
-
-  const handlePrev = () => {
-    setStartIndex((prev) => (prev - 1 + PODCAST_VIDEOS.length) % PODCAST_VIDEOS.length);
-  };
-
-  const getVisibleVideos = () => {
-    const items: { video: PodcastVideo; index: number }[] = [];
-    for (let i = 0; i < visibleCount; i++) {
-      const idx = (startIndex + i) % PODCAST_VIDEOS.length;
-      items.push({ video: PODCAST_VIDEOS[idx], index: idx });
-    }
-    return items;
-  };
+  // Triple the array for seamless infinite marquee loop
+  const marqueeVideos = [...PODCAST_VIDEOS, ...PODCAST_VIDEOS, ...PODCAST_VIDEOS];
 
   return (
-    <section className="divider-top" id="podcast-work" style={{ background: '#FFFFFF' }}>
+    <section className="divider-top" id="podcast-work" style={{ background: '#FFFFFF', overflow: 'hidden' }}>
       <div className="stg-container">
         {/* Head */}
-        <div style={{ textAlign: 'center', marginBottom: 'clamp(1.75rem, 3vw, 2.5rem)' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(2rem, 3.5vw, 2.75rem)' }}>
           <p
             style={{
               margin: '0 0 0.5rem',
@@ -61,223 +44,173 @@ export default function PodcastWork() {
             Real podcast and interview episodes recorded inside our studio.
           </p>
         </div>
+      </div>
 
-        {/* Video Slider Container */}
-        <div style={{ position: 'relative', width: '100%', marginBottom: '2rem' }}>
-          {/* Arrow Left */}
-          <button
-            type="button"
-            onClick={handlePrev}
-            aria-label="Previous podcast videos"
-            style={{
-              position: 'absolute',
-              left: '-20px',
-              top: '50%',
-              transform: 'translateY(-50%)',
-              zIndex: 10,
-              width: '44px',
-              height: '44px',
-              borderRadius: '50%',
-              background: '#FFFFFF',
-              border: '1px solid #E5E7EB',
-              color: '#000000',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
-              transition: 'all 0.2s ease',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#000000';
-              e.currentTarget.style.color = '#FFFFFF';
-              e.currentTarget.style.borderColor = '#000000';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#FFFFFF';
-              e.currentTarget.style.color = '#000000';
-              e.currentTarget.style.borderColor = '#E5E7EB';
-            }}
-          >
-            <ChevronLeft size={22} />
-          </button>
+      {/* Auto-Flowing Infinite Marquee Container */}
+      <div
+        className="marquee-wrapper"
+        style={{
+          position: 'relative',
+          width: '100%',
+          overflow: 'hidden',
+          padding: '0.5rem 0 1.5rem',
+        }}
+      >
+        {/* Left & Right Soft Fade Gradients */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            bottom: 0,
+            left: 0,
+            width: 'clamp(40px, 8vw, 120px)',
+            background: 'linear-gradient(to right, #FFFFFF, rgba(255, 255, 255, 0))',
+            zIndex: 10,
+            pointerEvents: 'none',
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            bottom: 0,
+            right: 0,
+            width: 'clamp(40px, 8vw, 120px)',
+            background: 'linear-gradient(to left, #FFFFFF, rgba(255, 255, 255, 0))',
+            zIndex: 10,
+            pointerEvents: 'none',
+          }}
+        />
 
-          {/* Video Cards Grid */}
-          <div
-            className="podcast-work-slider-grid"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-              gap: 'clamp(1rem, 1.6vw, 1.5rem)',
-            }}
-          >
-            {getVisibleVideos().map(({ video }, vIdx) => {
-              const isPlaying = activeVideoId === video.youtubeId;
-              const thumbUrl = `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
+        {/* Continuous Track */}
+        <div
+          className="marquee-track"
+          style={{
+            display: 'flex',
+            gap: '1.25rem',
+            width: 'max-content',
+          }}
+        >
+          {marqueeVideos.map((video, idx) => {
+            const isPlaying = activeVideoId === video.youtubeId;
+            const thumbUrl = `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
 
-              return (
-                <button
-                  key={`${video.id}-${vIdx}`}
-                  type="button"
-                  onClick={() => setActiveVideoId(isPlaying ? null : video.youtubeId)}
+            return (
+              <button
+                key={`${video.id}-${idx}`}
+                type="button"
+                onClick={() => setActiveVideoId(isPlaying ? null : video.youtubeId)}
+                className="marquee-video-card"
+                style={{
+                  position: 'relative',
+                  width: 'clamp(280px, 26vw, 360px)',
+                  aspectRatio: '16 / 9',
+                  flexShrink: 0,
+                  padding: 0,
+                  border: isPlaying ? '2px solid #000000' : '1px solid #E5E7EB',
+                  borderRadius: '16px',
+                  background: '#000000',
+                  overflow: 'hidden',
+                  cursor: 'pointer',
+                  textAlign: 'left',
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.06)',
+                  transition: 'transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease',
+                }}
+              >
+                {/* Thumbnail */}
+                <Image
+                  src={thumbUrl}
+                  alt={video.title}
+                  fill
+                  sizes="360px"
                   style={{
-                    position: 'relative',
-                    aspectRatio: '16 / 9',
-                    width: '100%',
-                    padding: 0,
-                    border: isPlaying ? '2px solid #000000' : '1px solid #E5E7EB',
-                    borderRadius: '14px',
-                    background: '#000000',
-                    overflow: 'hidden',
-                    cursor: 'pointer',
-                    textAlign: 'left',
-                    boxShadow: '0 6px 20px rgba(0, 0, 0, 0.08)',
-                    transition: 'all 0.3s ease',
+                    objectFit: 'cover',
+                    objectPosition: 'center',
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-3px)';
-                    e.currentTarget.style.borderColor = '#000000';
-                    e.currentTarget.style.boxShadow = '0 12px 28px rgba(0, 0, 0, 0.12)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.transform = 'none';
-                    e.currentTarget.style.borderColor = isPlaying
-                      ? '#000000'
-                      : '#E5E7EB';
-                    e.currentTarget.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.08)';
+                />
+
+                {/* Play Button Overlay */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: '46px',
+                    height: '46px',
+                    borderRadius: '50%',
+                    background: 'rgba(255, 255, 255, 0.95)',
+                    border: '1px solid rgba(0, 0, 0, 0.1)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    boxShadow: '0 4px 16px rgba(0, 0, 0, 0.25)',
+                    pointerEvents: 'none',
                   }}
                 >
-                  {/* Thumbnail */}
-                  <Image
-                    src={thumbUrl}
-                    alt={video.title}
-                    fill
-                    sizes="(max-width: 760px) 100vw, 33vw"
+                  <div
                     style={{
-                      objectFit: 'cover',
-                      objectPosition: 'center',
+                      width: 0,
+                      height: 0,
+                      borderTop: '7px solid transparent',
+                      borderBottom: '7px solid transparent',
+                      borderLeft: '11px solid #000000',
+                      marginLeft: '3px',
                     }}
                   />
+                </div>
 
-                  {/* Play Button Overlay */}
-                  <div
+                {/* Gradient Meta Banner */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    padding: '2rem 1rem 0.85rem',
+                    background:
+                      'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.98) 100%)',
+                    pointerEvents: 'none',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.2rem',
+                  }}
+                >
+                  <span
                     style={{
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      transform: 'translate(-50%, -50%)',
-                      width: '48px',
-                      height: '48px',
-                      borderRadius: '50%',
-                      background: 'rgba(255, 255, 255, 0.95)',
-                      border: '1px solid rgba(0, 0, 0, 0.1)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      boxShadow: '0 4px 16px rgba(0, 0, 0, 0.25)',
-                      pointerEvents: 'none',
+                      fontSize: '0.7rem',
+                      letterSpacing: '0.12em',
+                      textTransform: 'uppercase',
+                      color: '#E5E7EB',
+                      fontWeight: 600,
                     }}
                   >
-                    <div
-                      style={{
-                        width: 0,
-                        height: 0,
-                        borderTop: '7px solid transparent',
-                        borderBottom: '7px solid transparent',
-                        borderLeft: '11px solid #000000',
-                        marginLeft: '3px',
-                      }}
-                    />
-                  </div>
-
-                  {/* Gradient Meta Banner */}
-                  <div
+                    {video.category}
+                  </span>
+                  <h3
                     style={{
-                      position: 'absolute',
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      padding: '2rem 1rem 0.85rem',
-                      background:
-                        'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 50%, rgba(0,0,0,0.98) 100%)',
-                      pointerEvents: 'none',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: '0.2rem',
+                      fontSize: '0.88rem',
+                      fontWeight: 600,
+                      color: '#FFFFFF',
+                      lineHeight: 1.3,
+                      margin: 0,
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      display: '-webkit-box',
+                      WebkitLineClamp: 2,
+                      WebkitBoxOrient: 'vertical',
                     }}
                   >
-                    <span
-                      style={{
-                        fontSize: '0.7rem',
-                        letterSpacing: '0.12em',
-                        textTransform: 'uppercase',
-                        color: '#E5E7EB',
-                        fontWeight: 600,
-                      }}
-                    >
-                      {video.category}
-                    </span>
-                    <h3
-                      style={{
-                        fontSize: '0.9rem',
-                        fontWeight: 600,
-                        color: '#FFFFFF',
-                        lineHeight: 1.3,
-                        margin: 0,
-                        overflow: 'hidden',
-                        textOverflow: 'ellipsis',
-                        display: '-webkit-box',
-                        WebkitLineClamp: 2,
-                        WebkitBoxOrient: 'vertical',
-                      }}
-                    >
-                      {video.title}
-                    </h3>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Arrow Right */}
-          <button
-            type="button"
-            onClick={handleNext}
-            aria-label="Next podcast videos"
-            style={{
-              position: 'absolute',
-              right: '-20px',
-              top: '50%',
-              transform: 'translateY(-50%)',
-              zIndex: 10,
-              width: '44px',
-              height: '44px',
-              borderRadius: '50%',
-              background: '#FFFFFF',
-              border: '1px solid #E5E7EB',
-              color: '#000000',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
-              transition: 'all 0.2s ease',
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#000000';
-              e.currentTarget.style.color = '#FFFFFF';
-              e.currentTarget.style.borderColor = '#000000';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#FFFFFF';
-              e.currentTarget.style.color = '#000000';
-              e.currentTarget.style.borderColor = '#E5E7EB';
-            }}
-          >
-            <ChevronRight size={22} />
-          </button>
+                    {video.title}
+                  </h3>
+                </div>
+              </button>
+            );
+          })}
         </div>
+      </div>
 
+      <div className="stg-container">
         {/* Inline Active YouTube Video Player */}
         {activeVideoId && (
           <div
@@ -341,7 +274,7 @@ export default function PodcastWork() {
             flexWrap: 'wrap',
             gap: '0.75rem',
             justifyContent: 'center',
-            marginTop: '1.5rem',
+            marginTop: '1.25rem',
           }}
         >
           <a
@@ -362,14 +295,26 @@ export default function PodcastWork() {
       </div>
 
       <style jsx>{`
-        @media (max-width: 960px) {
-          :global(.podcast-work-slider-grid) {
-            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-          }
+        .marquee-track {
+          animation: marqueeScroll 32s linear infinite;
         }
-        @media (max-width: 640px) {
-          :global(.podcast-work-slider-grid) {
-            grid-template-columns: 1fr !important;
+
+        .marquee-wrapper:hover .marquee-track {
+          animation-play-state: paused;
+        }
+
+        .marquee-video-card:hover {
+          transform: translateY(-4px) scale(1.02);
+          border-color: #000000 !important;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14) !important;
+        }
+
+        @keyframes marqueeScroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(calc(-100% / 3));
           }
         }
       `}</style>
