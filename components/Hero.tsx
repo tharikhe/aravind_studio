@@ -147,15 +147,7 @@ export default function Hero({ onOpenModal }: HeroProps) {
               }}
             >
               Podcast Studio <br className="stg-hide-tp" />
-              <span
-                style={{
-                  background: 'linear-gradient(135deg, #000000 0%, #52525B 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                }}
-              >
-                in Bangalore.
-              </span>
+              <span>in Bangalore.</span>
             </h1>
 
             {/* Tight, characterful copy */}
