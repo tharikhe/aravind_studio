@@ -29,11 +29,23 @@ export default function PodcastWork() {
   };
 
   return (
-    <section className="divider-top backlight-both" id="podcast-work">
+    <section className="divider-top" id="podcast-work">
       <div className="stg-container">
         {/* Head */}
-        <div style={{ textAlign: 'center', marginBottom: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}>
-          <h2 style={{ fontSize: 'clamp(1.85rem, 3.5vw, 2.75rem)', marginBottom: '0.85rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(1.75rem, 3vw, 2.5rem)' }}>
+          <p
+            style={{
+              margin: '0 0 0.5rem',
+              fontSize: '0.75rem',
+              letterSpacing: '0.14em',
+              textTransform: 'uppercase',
+              color: 'var(--bringer-s-text-accent)',
+              fontWeight: 600,
+            }}
+          >
+            Showcase Episodes
+          </p>
+          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem' }}>
             Podcasts Shot at ARCC Media Production
           </h2>
           <p
@@ -42,7 +54,8 @@ export default function PodcastWork() {
               maxWidth: '38em',
               marginLeft: 'auto',
               marginRight: 'auto',
-              fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
+              fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)',
+              color: 'rgba(255, 255, 255, 0.72)',
             }}
           >
             Real podcast and interview episodes recorded inside our studio.
@@ -87,7 +100,7 @@ export default function PodcastWork() {
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-              gap: 'var(--stg-gap)',
+              gap: 'clamp(1rem, 1.6vw, 1.5rem)',
             }}
           >
             {getVisibleVideos().map(({ video }, vIdx) => {
@@ -104,24 +117,24 @@ export default function PodcastWork() {
                     aspectRatio: '16 / 9',
                     width: '100%',
                     padding: 0,
-                    border: isPlaying ? '2px solid #5C9DFF' : '1px solid rgba(201, 201, 201, 0.3)',
-                    borderRadius: '12px',
+                    border: isPlaying ? '2px solid #5C9DFF' : '1px solid rgba(255, 255, 255, 0.1)',
+                    borderRadius: '14px',
                     background: '#000',
                     overflow: 'hidden',
                     cursor: 'pointer',
                     textAlign: 'left',
-                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.4)',
+                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.5)',
                     transition: 'all 0.3s ease',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-4px)';
-                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.4)';
+                    e.currentTarget.style.transform = 'translateY(-3px)';
+                    e.currentTarget.style.borderColor = 'rgba(92, 157, 255, 0.5)';
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = 'none';
                     e.currentTarget.style.borderColor = isPlaying
                       ? '#5C9DFF'
-                      : 'rgba(201, 201, 201, 0.3)';
+                      : 'rgba(255, 255, 255, 0.1)';
                   }}
                 >
                   {/* Thumbnail */}
@@ -143,15 +156,15 @@ export default function PodcastWork() {
                       top: '50%',
                       left: '50%',
                       transform: 'translate(-50%, -50%)',
-                      width: '48px',
-                      height: '48px',
+                      width: '46px',
+                      height: '46px',
                       borderRadius: '50%',
-                      background: 'rgba(0, 0, 0, 0.65)',
+                      background: 'rgba(0, 0, 0, 0.7)',
                       border: '1px solid rgba(255, 255, 255, 0.4)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
-                      boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
+                      boxShadow: '0 4px 16px rgba(0, 0, 0, 0.5)',
                       pointerEvents: 'none',
                     }}
                   >
@@ -161,7 +174,7 @@ export default function PodcastWork() {
                         height: 0,
                         borderTop: '7px solid transparent',
                         borderBottom: '7px solid transparent',
-                        borderLeft: '12px solid #fff',
+                        borderLeft: '11px solid #fff',
                         marginLeft: '3px',
                       }}
                     />
@@ -176,7 +189,7 @@ export default function PodcastWork() {
                       right: 0,
                       padding: '2rem 1rem 0.85rem',
                       background:
-                        'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 50%, rgba(0,0,0,0.95) 100%)',
+                        'linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 50%, rgba(0,0,0,0.95) 100%)',
                       pointerEvents: 'none',
                       display: 'flex',
                       flexDirection: 'column',
@@ -188,7 +201,7 @@ export default function PodcastWork() {
                         fontSize: '0.7rem',
                         letterSpacing: '0.12em',
                         textTransform: 'uppercase',
-                        color: 'rgba(255, 255, 255, 0.75)',
+                        color: '#5C9DFF',
                         fontWeight: 600,
                       }}
                     >
@@ -196,7 +209,7 @@ export default function PodcastWork() {
                     </span>
                     <h3
                       style={{
-                        fontSize: '0.92rem',
+                        fontSize: '0.9rem',
                         fontWeight: 600,
                         color: '#F5F7FA',
                         lineHeight: 1.3,
@@ -258,7 +271,7 @@ export default function PodcastWork() {
               aspectRatio: '16 / 9',
               borderRadius: '16px',
               overflow: 'hidden',
-              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.8)',
+              boxShadow: '0 24px 60px rgba(0, 0, 0, 0.85)',
               border: '1px solid rgba(92, 157, 255, 0.4)',
               background: '#000',
               animation: 'fadeIn 0.3s ease',
@@ -310,7 +323,7 @@ export default function PodcastWork() {
             flexWrap: 'wrap',
             gap: '0.75rem',
             justifyContent: 'center',
-            marginTop: '2rem',
+            marginTop: '1.5rem',
           }}
         >
           <a

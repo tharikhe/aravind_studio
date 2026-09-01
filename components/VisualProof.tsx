@@ -32,13 +32,13 @@ export default function VisualProof() {
   };
 
   return (
-    <section className="divider-top backlight-both" id="podcast-frames">
+    <section className="divider-top" id="podcast-frames">
       <div className="stg-container">
         {/* Head */}
         <div style={{ textAlign: 'center', marginBottom: 'clamp(1.75rem, 3vw, 2.5rem)' }}>
           <p
             style={{
-              margin: '0 0 0.65rem',
+              margin: '0 0 0.5rem',
               fontSize: '0.75rem',
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
@@ -48,7 +48,7 @@ export default function VisualProof() {
           >
             Contact Sheet
           </p>
-          <h2 style={{ fontSize: 'clamp(1.85rem, 3.5vw, 2.75rem)', marginBottom: '0.85rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem' }}>
             See What Your Podcast Can Look Like
           </h2>
           <p
@@ -57,10 +57,11 @@ export default function VisualProof() {
               maxWidth: '38em',
               marginLeft: 'auto',
               marginRight: 'auto',
-              fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
+              fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)',
+              color: 'rgba(255, 255, 255, 0.72)',
             }}
           >
-            Real podcast frames shot at ARCC Media Production.
+            Real podcast frames shot at ARCC Media Production across different lighting setups and camera configurations.
           </p>
         </div>
 
@@ -70,7 +71,7 @@ export default function VisualProof() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
-            gap: 'var(--stg-gap)',
+            gap: 'clamp(0.75rem, 1.4vw, 1.15rem)',
           }}
         >
           {VISUAL_FRAMES.map((frame, idx) => {
@@ -81,7 +82,7 @@ export default function VisualProof() {
                 onClick={() => handleCardClick(idx)}
                 style={{
                   position: 'relative',
-                  background: 'rgba(0, 0, 0, 0.35)',
+                  background: 'rgba(14, 17, 23, 0.6)',
                   border: isSelected
                     ? '1px solid #5C9DFF'
                     : '1px solid rgba(255, 255, 255, 0.08)',
@@ -89,14 +90,14 @@ export default function VisualProof() {
                   overflow: 'hidden',
                   cursor: 'pointer',
                   boxShadow: isSelected
-                    ? '0 0 0 1px rgba(92, 157, 255, 0.3), 0 8px 24px rgba(0,0,0,0.5)'
+                    ? '0 0 0 1px rgba(92, 157, 255, 0.35), 0 10px 28px rgba(0,0,0,0.6)'
                     : '0 2px 10px rgba(0,0,0,0.2)',
                   transition: 'all 0.25s ease',
                   transform: isSelected ? 'scale(1.02)' : 'none',
                 }}
                 onMouseEnter={(e) => {
                   if (!isSelected) {
-                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.22)';
+                    e.currentTarget.style.borderColor = 'rgba(92, 157, 255, 0.4)';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }
                 }}
@@ -116,10 +117,12 @@ export default function VisualProof() {
                     fontSize: '0.68rem',
                     letterSpacing: '0.06em',
                     fontFamily: 'ui-monospace, monospace',
-                    color: 'rgba(255, 255, 255, 0.85)',
-                    background: 'rgba(0, 0, 0, 0.65)',
-                    padding: '0.2em 0.45em',
+                    color: '#fff',
+                    background: 'rgba(7, 9, 13, 0.8)',
+                    backdropFilter: 'blur(4px)',
+                    padding: '2px 6px',
                     borderRadius: '4px',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
                   }}
                 >
                   {frame.index}
@@ -154,11 +157,11 @@ export default function VisualProof() {
           <div
             style={{
               marginTop: '2rem',
-              background: 'rgba(14, 17, 23, 0.95)',
+              background: 'rgba(14, 17, 23, 0.98)',
               border: '1px solid rgba(92, 157, 255, 0.4)',
               borderRadius: '16px',
               overflow: 'hidden',
-              boxShadow: '0 20px 56px rgba(0, 0, 0, 0.75)',
+              boxShadow: '0 24px 60px rgba(0, 0, 0, 0.8)',
               display: 'flex',
               flexWrap: 'wrap',
               animation: 'fadeIn 0.3s ease',
@@ -258,7 +261,7 @@ export default function VisualProof() {
 
                 <p
                   style={{
-                    fontSize: '0.95rem',
+                    fontSize: '0.92rem',
                     lineHeight: 1.6,
                     color: 'rgba(255, 255, 255, 0.8)',
                     margin: 0,
@@ -326,7 +329,12 @@ export default function VisualProof() {
         }
         @media (max-width: 760px) {
           :global(.frame-grid) {
-            grid-template-columns: minmax(0, 1fr) !important;
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          }
+        }
+        @media (max-width: 480px) {
+          :global(.frame-grid) {
+            grid-template-columns: 1fr !important;
           }
         }
       `}</style>

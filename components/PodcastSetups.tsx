@@ -2,10 +2,14 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, ArrowRight } from 'lucide-react';
 import { PODCAST_SETUPS, PodcastSetup } from '@/data/setups';
 
-export default function PodcastSetups() {
+interface PodcastSetupsProps {
+  onOpenModal?: (inquiry?: string) => void;
+}
+
+export default function PodcastSetups({ onOpenModal }: PodcastSetupsProps) {
   const [selectedSetupIndex, setSelectedSetupIndex] = useState<number | null>(null);
   const [currentGalleryIndex, setCurrentGalleryIndex] = useState(0);
 
@@ -48,13 +52,13 @@ export default function PodcastSetups() {
   };
 
   return (
-    <section className="divider-top backlight-both" id="podcast-setups">
+    <section className="divider-top" id="podcast-setups">
       <div className="stg-container">
         {/* Head */}
-        <div style={{ textAlign: 'center', marginBottom: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(1.75rem, 3vw, 2.5rem)' }}>
           <p
             style={{
-              margin: '0 0 0.65rem',
+              margin: '0 0 0.5rem',
               fontSize: '0.75rem',
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
@@ -64,7 +68,7 @@ export default function PodcastSetups() {
           >
             Inside the Facility
           </p>
-          <h2 style={{ fontSize: 'clamp(1.85rem, 3.5vw, 2.75rem)', marginBottom: '0.85rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem' }}>
             Explore Our Podcast Setups
           </h2>
           <p
@@ -73,7 +77,8 @@ export default function PodcastSetups() {
               maxWidth: '38em',
               marginLeft: 'auto',
               marginRight: 'auto',
-              fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
+              fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)',
+              color: 'rgba(255, 255, 255, 0.72)',
             }}
           >
             Different production environments across the ARCC Media Production facility, each configured for a
@@ -87,7 +92,7 @@ export default function PodcastSetups() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-            gap: 'var(--stg-gap)',
+            gap: 'clamp(1rem, 1.8vw, 1.5rem)',
             alignItems: 'start',
           }}
         >
@@ -98,22 +103,22 @@ export default function PodcastSetups() {
                 key={setup.index}
                 onClick={() => handleCardClick(idx)}
                 style={{
-                  background: 'rgba(26, 29, 36, 0.75)',
+                  background: 'linear-gradient(160deg, rgba(26, 29, 36, 0.8) 0%, rgba(14, 17, 23, 0.7) 100%)',
                   border: isSelected
                     ? '1px solid #5C9DFF'
                     : '1px solid rgba(255, 255, 255, 0.08)',
                   boxShadow: isSelected
-                    ? '0 0 0 1px rgba(92, 157, 255, 0.3), 0 12px 32px rgba(0,0,0,0.45)'
-                    : '0 4px 16px rgba(0,0,0,0.25)',
-                  borderRadius: '12px',
+                    ? '0 0 0 1px rgba(92, 157, 255, 0.4), 0 16px 40px rgba(0,0,0,0.6)'
+                    : '0 4px 20px rgba(0,0,0,0.3)',
+                  borderRadius: '14px',
                   overflow: 'hidden',
                   cursor: 'pointer',
                   transition: 'all 0.25s ease',
-                  transform: isSelected ? 'scale(1.02)' : 'none',
+                  transform: isSelected ? 'scale(1.015)' : 'none',
                 }}
                 onMouseEnter={(e) => {
                   if (!isSelected) {
-                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.25)';
+                    e.currentTarget.style.borderColor = 'rgba(92, 157, 255, 0.35)';
                     e.currentTarget.style.transform = 'translateY(-3px)';
                   }
                 }}
@@ -149,8 +154,8 @@ export default function PodcastSetups() {
                       position: 'absolute',
                       top: '10px',
                       left: '10px',
-                      background: 'rgba(7, 9, 13, 0.75)',
-                      backdropFilter: 'blur(4px)',
+                      background: 'rgba(7, 9, 13, 0.8)',
+                      backdropFilter: 'blur(6px)',
                       padding: '3px 8px',
                       borderRadius: '4px',
                       fontSize: '0.7rem',
@@ -158,22 +163,38 @@ export default function PodcastSetups() {
                       color: '#5C9DFF',
                       letterSpacing: '0.08em',
                       textTransform: 'uppercase',
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
                     }}
                   >
                     {setup.tag}
                   </div>
+
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: '10px',
+                      right: '10px',
+                      background: 'rgba(0, 0, 0, 0.65)',
+                      padding: '2px 7px',
+                      borderRadius: '4px',
+                      fontSize: '0.68rem',
+                      color: 'rgba(255, 255, 255, 0.8)',
+                    }}
+                  >
+                    Click to View Setup →
+                  </div>
                 </div>
 
-                <div style={{ padding: '1.1rem 1.25rem 1.35rem' }}>
-                  <h4 style={{ fontSize: '1.2rem', marginBottom: '0.35rem', color: '#F5F7FA' }}>
+                <div style={{ padding: '1.1rem 1.25rem 1.25rem' }}>
+                  <h4 style={{ fontSize: '1.15rem', marginBottom: '0.35rem', color: '#F5F7FA', fontWeight: 600 }}>
                     {setup.title}
                   </h4>
                   <p
                     style={{
                       margin: 0,
-                      fontSize: '0.875rem',
+                      fontSize: '0.86rem',
                       lineHeight: 1.5,
-                      color: 'rgba(255, 255, 255, 0.75)',
+                      color: 'rgba(255, 255, 255, 0.72)',
                     }}
                   >
                     {setup.desc}
@@ -189,11 +210,11 @@ export default function PodcastSetups() {
           <div
             style={{
               marginTop: '2rem',
-              background: 'rgba(14, 17, 23, 0.95)',
+              background: 'rgba(14, 17, 23, 0.98)',
               border: '1px solid rgba(92, 157, 255, 0.4)',
               borderRadius: '16px',
               overflow: 'hidden',
-              boxShadow: '0 20px 56px rgba(0, 0, 0, 0.75)',
+              boxShadow: '0 24px 60px rgba(0, 0, 0, 0.8)',
               display: 'flex',
               flexWrap: 'wrap',
               animation: 'fadeIn 0.3s ease',
@@ -344,9 +365,26 @@ export default function PodcastSetups() {
                 <h3 style={{ fontSize: '1.45rem', marginBottom: '0.85rem', color: '#F5F7FA' }}>
                   {selectedSetup.title}
                 </h3>
-                <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.8)' }}>
+                <p style={{ fontSize: '0.92rem', lineHeight: 1.6, color: 'rgba(255, 255, 255, 0.8)' }}>
                   {selectedSetup.desc}
                 </p>
+
+                {onOpenModal && (
+                  <button
+                    type="button"
+                    className="bringer-button"
+                    onClick={() => onOpenModal(`Setup ${selectedSetup.index}: ${selectedSetup.title}`)}
+                    style={{
+                      marginTop: '1.25rem',
+                      width: '100%',
+                      fontSize: '0.88rem',
+                      padding: '0.75rem 1.25rem',
+                    }}
+                  >
+                    <span>Book This Setup</span>
+                    <ArrowRight size={15} />
+                  </button>
+                )}
               </div>
 
               {/* Prev / Next Setup Nav */}

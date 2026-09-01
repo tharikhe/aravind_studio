@@ -43,31 +43,31 @@ export default function Home() {
 
       {/* Main Sections Content */}
       <main id="bringer-main" style={{ flex: '1 0 auto' }}>
-        {/* 1. Hero Section */}
+        {/* 1. Hero Section with Live Studio Viewfinder */}
         <Hero onOpenModal={handleOpenModal} />
 
-        {/* 2. Studio Infrastructure / Features (14 items) */}
+        {/* 2. Studio Infrastructure & Features (Interactive Filterable 14 Amenities) */}
         <StudioFeatures />
 
         {/* 3. Podcast Setups (10 Bento Cards with Inline Gallery Expander) */}
-        <PodcastSetups />
+        <PodcastSetups onOpenModal={handleOpenModal} />
 
-        {/* 4. Visual Proof Contact Sheet (15 Frames with Inline Viewer) */}
+        {/* 4. Visual Proof Contact Sheet (15 Frames with High-Res Viewer) */}
         <VisualProof />
 
         {/* 5. Podcast Work / Showreel Slider with Inline YouTube Player */}
         <PodcastWork />
 
-        {/* 6. What You Can Create Here (8 formats) */}
+        {/* 6. What You Can Create Here (8 Production Formats) */}
         <WhatYouCanCreate />
 
-        {/* 7. Why Choose Winterfox (7 numbered points) */}
+        {/* 7. Why Choose ARCC (7 Value Points) */}
         <WhyChoose />
 
-        {/* 8. Need a Custom Setup (6 items) */}
-        <CustomShoot />
+        {/* 8. Need a Custom Setup (6 Bespoke Adaptations) */}
+        <CustomShoot onOpenModal={handleOpenModal} />
 
-        {/* 9. Podcast Editing Support (6 post-production services) */}
+        {/* 9. Podcast Editing Support (6 Post-Production Services) */}
         <EditingSupport />
 
         {/* 10. We Also Support Complementary Services */}

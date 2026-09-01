@@ -27,11 +27,23 @@ export default function GoogleReviews() {
   };
 
   return (
-    <section className="divider-top backlight-both" id="google-reviews">
+    <section className="divider-top" id="google-reviews">
       <div className="stg-container">
         {/* Head */}
         <div style={{ textAlign: 'center', marginBottom: 'clamp(1.75rem, 3vw, 2.5rem)' }}>
-          <h2 style={{ fontSize: 'clamp(1.85rem, 3.5vw, 2.75rem)', marginBottom: '0.85rem' }}>
+          <p
+            style={{
+              margin: '0 0 0.5rem',
+              fontSize: '0.75rem',
+              letterSpacing: '0.14em',
+              textTransform: 'uppercase',
+              color: 'var(--bringer-s-text-accent)',
+              fontWeight: 600,
+            }}
+          >
+            Verified Feedback
+          </p>
+          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem' }}>
             What Clients Say About ARCC Media Production
           </h2>
           <p
@@ -40,10 +52,11 @@ export default function GoogleReviews() {
               maxWidth: '38em',
               marginLeft: 'auto',
               marginRight: 'auto',
-              fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
+              fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)',
+              color: 'rgba(255, 255, 255, 0.72)',
             }}
           >
-            Real feedback from clients who reviewed ARCC Media Production on Google.
+            Real feedback from creators, brands, and podcast hosts recorded at our Indiranagar studio.
           </p>
 
           {/* Google Rating Badge */}
@@ -52,33 +65,31 @@ export default function GoogleReviews() {
               display: 'inline-flex',
               flexDirection: 'column',
               alignItems: 'center',
-              margin: '1.5rem auto 0',
-              padding: '0.85rem 1.75rem',
-              border: '1px solid rgba(255, 255, 255, 0.14)',
+              margin: '1.25rem auto 0',
+              padding: '0.75rem 1.6rem',
+              border: '1px solid rgba(255, 255, 255, 0.12)',
               borderRadius: '12px',
-              background: 'rgba(0, 0, 0, 0.35)',
-              boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.05)',
+              background: 'rgba(26, 29, 36, 0.6)',
+              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.25)',
             }}
           >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+              <div style={{ display: 'flex', gap: '2px', color: '#FBBC04' }}>
+                {[...Array(5)].map((_, sIdx) => (
+                  <Star key={sIdx} size={15} fill="#FBBC04" strokeWidth={0} />
+                ))}
+              </div>
+              <span style={{ fontSize: '1rem', fontWeight: 700, color: '#F5F7FA' }}>4.9 / 5.0</span>
+            </div>
             <p
               style={{
-                margin: 0,
-                fontSize: '1.05rem',
-                fontWeight: 600,
-                color: '#F5F7FA',
-              }}
-            >
-              Rated 4.9/5 on Google
-            </p>
-            <p
-              style={{
-                margin: '0.25rem 0 0',
-                fontSize: '0.8rem',
+                margin: '0.2rem 0 0',
+                fontSize: '0.78rem',
                 letterSpacing: '0.04em',
-                color: 'rgba(255, 255, 255, 0.62)',
+                color: 'rgba(255, 255, 255, 0.65)',
               }}
             >
-              Based on real client reviews
+              Verified Google Reviews
             </p>
           </div>
         </div>
@@ -121,7 +132,7 @@ export default function GoogleReviews() {
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-              gap: 'var(--stg-gap)',
+              gap: 'clamp(1rem, 1.6vw, 1.5rem)',
             }}
           >
             {getVisibleReviews().map((review, idx) => (
@@ -132,21 +143,23 @@ export default function GoogleReviews() {
                   display: 'flex',
                   flexDirection: 'column',
                   gap: '1rem',
-                  padding: '1.65rem 1.45rem',
+                  padding: '1.5rem 1.35rem',
                   minHeight: '100%',
-                  background: 'rgba(26, 29, 36, 0.75)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                  borderRadius: '12px',
+                  background: 'linear-gradient(160deg, rgba(26, 29, 36, 0.8) 0%, rgba(14, 17, 23, 0.7) 100%)',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  borderRadius: '14px',
                   boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
                   transition: 'all 0.25s ease',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(92, 157, 255, 0.35)';
+                  e.currentTarget.style.borderColor = 'rgba(92, 157, 255, 0.4)';
                   e.currentTarget.style.transform = 'translateY(-3px)';
+                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(63, 110, 233, 0.15)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
                   e.currentTarget.style.transform = 'none';
+                  e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
                 }}
               >
                 {/* Top: Stars + Google Mark */}
@@ -160,7 +173,7 @@ export default function GoogleReviews() {
                 >
                   <div style={{ display: 'flex', gap: '3px', color: '#FBBC04' }}>
                     {[...Array(5)].map((_, sIdx) => (
-                      <Star key={sIdx} size={16} fill="#FBBC04" strokeWidth={0} />
+                      <Star key={sIdx} size={15} fill="#FBBC04" strokeWidth={0} />
                     ))}
                   </div>
 
@@ -204,9 +217,9 @@ export default function GoogleReviews() {
                   style={{
                     flex: '1 1 auto',
                     margin: 0,
-                    fontSize: '0.88rem',
+                    fontSize: '0.86rem',
                     lineHeight: 1.6,
-                    color: 'rgba(255, 255, 255, 0.88)',
+                    color: 'rgba(255, 255, 255, 0.85)',
                     fontStyle: 'normal',
                   }}
                 >

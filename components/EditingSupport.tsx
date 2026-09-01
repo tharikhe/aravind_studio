@@ -1,31 +1,38 @@
 'use client';
 
 import React from 'react';
+import { Scissors, Smartphone, Volume2, Sliders, PlaySquare, Image as ImageIcon } from 'lucide-react';
 
 const EDITING_ITEMS = [
   {
-    title: 'Full episode editing',
-    desc: 'Structured edits with pacing, cuts, and platform-ready masters.',
+    title: 'Full Episode Editing',
+    desc: 'Structured multicam switching, paced cuts, graphic lower thirds, and master exports.',
+    icon: Scissors,
   },
   {
-    title: 'Shorts and reels',
-    desc: 'Vertical and short-form clips from the same podcast session.',
+    title: 'Shorts, Reels & TikToks',
+    desc: 'High-hook vertical clips with dynamic captions and zooms extracted from your recording.',
+    icon: Smartphone,
   },
   {
-    title: 'Audio cleanup',
-    desc: 'Noise reduction, levelling, and dialogue polish.',
+    title: 'Broadcast Audio Cleanup',
+    desc: 'Advanced noise removal, voice leveling, EQ compression, and acoustic mastering.',
+    icon: Volume2,
   },
   {
-    title: 'Colour correction',
-    desc: 'Consistent colour across cameras and episodes.',
+    title: 'Cinematic Colour Grading',
+    desc: 'Consistent colour tone and LUT application matching across multi-camera Sony angles.',
+    icon: Sliders,
   },
   {
-    title: 'Intro/outro',
-    desc: 'Branded openers and closers for recurring series.',
+    title: 'Custom Intro & Outro Motion',
+    desc: 'Branded animated openers, musical stingers, and calls-to-action for show continuity.',
+    icon: PlaySquare,
   },
   {
-    title: 'Thumbnail support',
-    desc: 'Episode thumbnails aligned to your show identity.',
+    title: 'High-CTR YouTube Thumbnails',
+    desc: 'Click-optimized episode cover art and thumbnails designed for maximum YouTube reach.',
+    icon: ImageIcon,
   },
 ];
 
@@ -34,8 +41,20 @@ export default function EditingSupport() {
     <section className="divider-top" id="editing-support">
       <div className="stg-container">
         {/* Head */}
-        <div style={{ textAlign: 'center', marginBottom: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}>
-          <h2 style={{ fontSize: 'clamp(1.85rem, 3.5vw, 2.75rem)', marginBottom: '0.85rem' }}>
+        <div style={{ textAlign: 'center', marginBottom: 'clamp(1.75rem, 3vw, 2.5rem)' }}>
+          <p
+            style={{
+              margin: '0 0 0.5rem',
+              fontSize: '0.75rem',
+              letterSpacing: '0.14em',
+              textTransform: 'uppercase',
+              color: 'var(--bringer-s-text-accent)',
+              fontWeight: 600,
+            }}
+          >
+            Post-Production
+          </p>
+          <h2 style={{ fontSize: 'clamp(1.85rem, 3.2vw, 2.6rem)', marginBottom: '0.75rem' }}>
             Podcast Editing Support
           </h2>
           <p
@@ -44,7 +63,8 @@ export default function EditingSupport() {
               maxWidth: '38em',
               marginLeft: 'auto',
               marginRight: 'auto',
-              fontSize: 'clamp(0.95rem, 1.3vw, 1.1rem)',
+              fontSize: 'clamp(0.95rem, 1.2vw, 1.05rem)',
+              color: 'rgba(255, 255, 255, 0.72)',
             }}
           >
             Shoot once and convert the same session into full episodes, reels, shorts, teasers,
@@ -58,45 +78,65 @@ export default function EditingSupport() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
-            gap: 'var(--stg-gap)',
+            gap: 'clamp(1rem, 1.6vw, 1.5rem)',
           }}
         >
-          {EDITING_ITEMS.map((item, idx) => (
-            <div
-              key={idx}
-              className="bringer-block"
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                padding: '1.6rem 1.4rem',
-                minHeight: '100%',
-                background: 'rgba(26, 29, 36, 0.65)',
-                border: '1px solid rgba(255, 255, 255, 0.08)',
-                borderRadius: '12px',
-                transition: 'all 0.25s ease',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(92, 157, 255, 0.35)';
-                e.currentTarget.style.transform = 'translateY(-3px)';
-                e.currentTarget.style.boxShadow = '0 12px 32px rgba(0,0,0,0.35)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
-                e.currentTarget.style.transform = 'none';
-                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.25)';
-              }}
-            >
-              <div>
-                <h4 style={{ fontSize: '1.2rem', marginBottom: '0.65rem', color: '#F5F7FA' }}>
-                  {item.title}
-                </h4>
-                <p style={{ margin: 0, fontSize: '0.9rem', lineHeight: 1.5, color: 'rgba(255, 255, 255, 0.72)' }}>
-                  {item.desc}
-                </p>
+          {EDITING_ITEMS.map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={idx}
+                className="bringer-block"
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '0.75rem',
+                  padding: '1.5rem 1.35rem',
+                  minHeight: '100%',
+                  background: 'linear-gradient(160deg, rgba(26, 29, 36, 0.75) 0%, rgba(14, 17, 23, 0.6) 100%)',
+                  border: '1px solid rgba(255, 255, 255, 0.08)',
+                  borderRadius: '14px',
+                  transition: 'all 0.25s ease',
+                  boxShadow: '0 4px 16px rgba(0, 0, 0, 0.25)',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(92, 157, 255, 0.4)';
+                  e.currentTarget.style.transform = 'translateY(-3px)';
+                  e.currentTarget.style.boxShadow = '0 10px 28px rgba(63, 110, 233, 0.18)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.08)';
+                  e.currentTarget.style.transform = 'none';
+                  e.currentTarget.style.boxShadow = '0 4px 16px rgba(0, 0, 0, 0.25)';
+                }}
+              >
+                <div
+                  style={{
+                    width: '36px',
+                    height: '36px',
+                    borderRadius: '8px',
+                    background: 'rgba(63, 110, 233, 0.15)',
+                    border: '1px solid rgba(92, 157, 255, 0.3)',
+                    color: '#5C9DFF',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '0.25rem',
+                  }}
+                >
+                  <Icon size={18} />
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '1.1rem', marginBottom: '0.4rem', color: '#F5F7FA', fontWeight: 600 }}>
+                    {item.title}
+                  </h4>
+                  <p style={{ margin: 0, fontSize: '0.86rem', lineHeight: 1.55, color: 'rgba(255, 255, 255, 0.72)' }}>
+                    {item.desc}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
