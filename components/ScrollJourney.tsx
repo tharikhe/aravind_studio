@@ -4,7 +4,7 @@
 // An ultra-lightweight requestAnimationFrame loop lerps current progress toward the scroll target (0.08 factor) and mutates the DOM directly via refs for 60fps jank-free rendering without React state thrashing.
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Mic, Video, Briefcase, GraduationCap, Film } from 'lucide-react';
+import { LucideIcon, Mic, Video, Briefcase, GraduationCap, Film } from 'lucide-react';
 
 export interface MilestoneItem {
   id: string;
@@ -12,7 +12,7 @@ export interface MilestoneItem {
   title: string;
   desc: string;
   threshold: number; // progress 0..1
-  icon: React.ComponentType<{ size?: number; className?: string; style?: React.CSSProperties }>;
+  icon: LucideIcon;
 }
 
 const DEFAULT_MILESTONES: MilestoneItem[] = [

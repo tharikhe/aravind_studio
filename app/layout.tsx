@@ -10,6 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://arccmediaproduction.com'),
   title: 'Podcast Studio in Bangalore | ARCC Media Production',
   description:
     'Professional podcast studio in Bangalore by ARCC Media Production for video podcasts, founder interviews, brand podcasts, YouTube shows, editing, reels, and studio shoots in Indiranagar.',
