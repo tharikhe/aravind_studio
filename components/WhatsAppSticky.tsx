@@ -5,7 +5,7 @@ import React from 'react';
 export default function WhatsAppSticky() {
   return (
     <a
-      href="https://wa.me/919605533366?text=Hi%20ARCC%20Media%20Production%2C%20I%20would%20like%20a%20quote."
+      href="https://wa.me/918248288388?text=Hi%20ARCC%20Media%20Production%2C%20I%20would%20like%20a%20quote."
       className="wf-whatsapp-sticky"
       target="_blank"
       rel="noopener noreferrer"

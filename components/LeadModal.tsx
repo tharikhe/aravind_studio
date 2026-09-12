@@ -26,6 +26,7 @@ export default function LeadModal({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [whatsappUrl, setWhatsappUrl] = useState('');
 
   useEffect(() => {
     if (defaultService) {
@@ -58,18 +59,31 @@ export default function LeadModal({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !phone.trim() || !message.trim()) {
-      setErrorMessage('Please fill in all required fields (Name, Phone, and Project Details).');
+      setErrorMessage('Please fill in Name, Phone, and Project Requirements.');
       return;
     }
 
     setErrorMessage('');
     setIsSubmitting(true);
 
-    // Simulate reliable API response
+    const waText = `Hi ARCC Media Production, I would like to book a studio session:
+
+*Name:* ${name.trim()}
+*Phone / WhatsApp:* ${phone.trim()}${email.trim() ? `\n*Email:* ${email.trim()}` : ''}
+*Service:* ${service}
+*Preferred Date:* ${date || 'Flexible / To be discussed'}
+*Project Details:* ${message.trim()}`;
+
+    const waUrl = `https://wa.me/918248288388?text=${encodeURIComponent(waText)}`;
+    setWhatsappUrl(waUrl);
+
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 800);
+      if (typeof window !== 'undefined') {
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
+      }
+    }, 400);
   };
 
   const handleReset = () => {
@@ -84,295 +98,372 @@ export default function LeadModal({
 
   return (
     <div
-      className="wf-lead-modal is-open"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="wf-lead-modal-title"
+      data-lenis-prevent
       style={{
         position: 'fixed',
         inset: 0,
-        zIndex: 10000,
+        zIndex: 1000,
+        background: 'rgba(0, 0, 0, 0.92)',
+        backdropFilter: 'blur(16px)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '1.25rem',
-        background: 'rgba(0, 0, 0, 0.45)',
-        backdropFilter: 'blur(8px)',
-        WebkitBackdropFilter: 'blur(8px)',
-        animation: 'fadeIn 0.2s ease-out',
+        padding: 'clamp(1rem, 3vw, 2rem)',
       }}
+      onClick={onClose}
     >
       <div
-        className="wf-lead-modal__backdrop"
-        onClick={onClose}
-        style={{
-          position: 'absolute',
-          inset: 0,
-          cursor: 'pointer',
-        }}
-      />
-
-      <div
-        className="wf-lead-modal__panel bringer-block"
         style={{
           position: 'relative',
-          zIndex: 1,
           width: '100%',
-          maxWidth: '520px',
-          maxHeight: 'calc(100vh - 2.5rem)',
-          overflowY: 'auto',
-          padding: '2.25rem 2rem',
-          margin: 0,
-          background: '#FFFFFF',
-          border: '1px solid #E5E7EB',
-          borderRadius: '18px',
-          boxShadow: '0 24px 60px rgba(0, 0, 0, 0.15)',
+          maxWidth: '560px',
+          background: '#121212',
+          border: '1px solid rgba(255, 255, 255, 0.16)',
+          padding: 'clamp(2rem, 4vw, 2.75rem)',
+          color: '#ffffff',
+          boxShadow: '0 24px 60px rgba(0, 0, 0, 0.8)',
         }}
+        onClick={(e) => e.stopPropagation()}
       >
+        {/* Viewfinder Corner Reticle Marks */}
+        <span className="viewfinder-corner-tl" style={{ top: 0, left: 0, width: 14, height: 14 }} />
+        <span className="viewfinder-corner-tr" style={{ top: 0, right: 0, width: 14, height: 14 }} />
+        <span className="viewfinder-corner-bl" style={{ bottom: 0, left: 0, width: 14, height: 14 }} />
+        <span className="viewfinder-corner-br" style={{ bottom: 0, right: 0, width: 14, height: 14 }} />
+
+        {/* Close button */}
         <button
           type="button"
           onClick={onClose}
           aria-label="Close modal"
           style={{
             position: 'absolute',
-            top: '1.25rem',
-            right: '1.25rem',
-            width: '36px',
-            height: '36px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            color: '#52525B',
-            background: '#F3F4F6',
-            border: '1px solid #E5E7EB',
-            borderRadius: '50%',
+            top: '18px',
+            right: '18px',
+            color: 'rgba(255, 255, 255, 0.65)',
+            background: 'none',
+            border: 'none',
             cursor: 'pointer',
-            transition: 'all 0.2s ease',
+            padding: '4px',
+            transition: 'color 0.2s ease',
           }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.color = '#000000';
-            e.currentTarget.style.background = '#E5E7EB';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.color = '#52525B';
-            e.currentTarget.style.background = '#F3F4F6';
-          }}
+          onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
+          onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.65)')}
         >
-          <X size={18} />
+          <X size={22} />
         </button>
 
         {isSubmitted ? (
           <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
-            <CheckCircle2 size={56} style={{ color: '#10B981', margin: '0 auto 1rem' }} />
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.75rem', color: '#0A0A0A' }}>
-              Enquiry Received!
-            </h3>
-            <p style={{ color: '#4A5568', lineHeight: 1.6, marginBottom: '1.75rem' }}>
-              Thank you, <strong style={{ color: '#000' }}>{name}</strong>. Our ARCC Media Production team will contact you at <strong style={{ color: '#000' }}>{phone}</strong> within one business day.
-            </p>
-            <button
-              type="button"
-              className="bringer-button"
-              onClick={handleReset}
-              style={{ width: '100%' }}
+            <div
+              style={{
+                width: '54px',
+                height: '54px',
+                borderRadius: '50%',
+                border: '1.5px solid #ffffff',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                margin: '0 auto 1.5rem',
+                color: '#ffffff',
+              }}
             >
-              Done
-            </button>
+              <CheckCircle2 size={28} />
+            </div>
+
+            <h3
+              style={{
+                fontSize: '1.25rem',
+                fontWeight: 700,
+                letterSpacing: '0.18em',
+                textTransform: 'uppercase',
+                marginBottom: '0.75rem',
+                color: '#ffffff',
+              }}
+            >
+              Request Confirmed
+            </h3>
+            <p style={{ fontSize: '0.86rem', color: '#a1a1aa', lineHeight: 1.6, marginBottom: '2rem' }}>
+              Thank you, {name}. Our atelier production manager will review your specs and contact you within 2 hours.
+            </p>
+
+            <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              {whatsappUrl && (
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-glissando"
+                  style={{
+                    background: '#25D366',
+                    borderColor: '#25D366',
+                    color: '#ffffff',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    textDecoration: 'none',
+                  }}
+                >
+                  Open in WhatsApp →
+                </a>
+              )}
+              <button
+                type="button"
+                className="btn-glissando btn-glissando-light"
+                onClick={handleReset}
+              >
+                Close Window
+              </button>
+            </div>
           </div>
         ) : (
-          <>
-            <div style={{ marginBottom: '1.25rem' }}>
-              <div style={{ position: 'relative', height: '34px', width: '140px', marginBottom: '0.75rem', filter: 'invert(1)' }}>
-                <Image
-                  src="/logo.png"
-                  alt="ARCC Media Production"
-                  fill
-                  style={{ objectFit: 'contain', objectPosition: 'left center' }}
-                />
-              </div>
-              <h3 id="wf-lead-modal-title" style={{ fontSize: '1.4rem', marginBottom: '0.35rem', color: '#0A0A0A' }}>
-                Tell us about your project
-              </h3>
-              <p style={{ fontSize: '0.875rem', color: '#52525B', margin: 0 }}>
-                Share a few details and our production team will respond within one business day.
-              </p>
+          <div>
+            <div
+              style={{
+                position: 'relative',
+                height: '34px',
+                width: '125px',
+                marginBottom: '1rem',
+              }}
+            >
+              <Image
+                src="/logo.png"
+                alt="ARCC Media Production"
+                fill
+                style={{
+                  objectFit: 'contain',
+                  objectPosition: 'left center',
+                  mixBlendMode: 'screen',
+                }}
+              />
             </div>
+            <span
+              style={{
+                display: 'block',
+                fontSize: '0.68rem',
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
+                color: '#a1a1aa',
+                fontWeight: 600,
+                marginBottom: '0.35rem',
+              }}
+            >
+              Direct Studio Booking
+            </span>
+            <h3
+              style={{
+                fontSize: '1.35rem',
+                fontWeight: 700,
+                letterSpacing: '0.16em',
+                textTransform: 'uppercase',
+                color: '#ffffff',
+                marginBottom: '0.5rem',
+              }}
+            >
+              Reserve Atelier Session
+            </h3>
+            <span
+              style={{
+                display: 'block',
+                width: '30px',
+                height: '2px',
+                background: '#ffffff',
+                marginBottom: '1.75rem',
+              }}
+            />
 
             {errorMessage && (
               <div
                 style={{
-                  background: 'rgba(239, 68, 68, 0.1)',
-                  border: '1px solid rgba(239, 68, 68, 0.3)',
-                  color: '#b91c1c',
-                  padding: '0.75rem 1rem',
-                  borderRadius: '8px',
-                  fontSize: '0.85rem',
-                  marginBottom: '1rem',
+                  padding: '0.65rem 1rem',
+                  background: 'rgba(255, 255, 255, 0.08)',
+                  border: '1px solid rgba(255, 255, 255, 0.25)',
+                  fontSize: '0.78rem',
+                  color: '#ffffff',
+                  marginBottom: '1.25rem',
                 }}
               >
                 {errorMessage}
               </div>
             )}
 
-            <form onSubmit={handleSubmit}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#18181B', fontWeight: 600, marginBottom: '0.35rem' }}>
-                    Your Name <span style={{ color: '#EF4444' }}>*</span>
-                  </label>
-                  <input
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Your Name"
-                    required
-                    style={{
-                      width: '100%',
-                      padding: '0.75rem 1rem',
-                      background: '#F8F9FA',
-                      border: '1px solid #E5E7EB',
-                      borderRadius: '8px',
-                      color: '#000',
-                      fontSize: '0.9rem',
-                    }}
-                  />
-                </div>
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <div>
+                <label
+                  style={{
+                    display: 'block',
+                    fontSize: '0.68rem',
+                    letterSpacing: '0.16em',
+                    textTransform: 'uppercase',
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    marginBottom: '0.35rem',
+                    fontWeight: 600,
+                  }}
+                >
+                  Your Name *
+                </label>
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. Alex Morgan"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem 1rem',
+                    background: '#0a0a0a',
+                    border: '1px solid rgba(255, 255, 255, 0.15)',
+                    color: '#ffffff',
+                    fontSize: '0.85rem',
+                    outline: 'none',
+                    boxSizing: 'border-box',
+                  }}
+                />
+              </div>
 
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#18181B', fontWeight: 600, marginBottom: '0.35rem' }}>
-                    Your Phone <span style={{ color: '#EF4444' }}>*</span>
+                  <label
+                    style={{
+                      display: 'block',
+                      fontSize: '0.68rem',
+                      letterSpacing: '0.16em',
+                      textTransform: 'uppercase',
+                      color: 'rgba(255, 255, 255, 0.7)',
+                      marginBottom: '0.35rem',
+                      fontWeight: 600,
+                    }}
+                  >
+                    Phone / WhatsApp *
                   </label>
                   <input
                     type="tel"
+                    required
+                    placeholder="+91 98765 43210"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    placeholder="+91 98765 43210"
-                    required
                     style={{
                       width: '100%',
                       padding: '0.75rem 1rem',
-                      background: '#F8F9FA',
-                      border: '1px solid #E5E7EB',
-                      borderRadius: '8px',
-                      color: '#000',
-                      fontSize: '0.9rem',
+                      background: '#0a0a0a',
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      color: '#ffffff',
+                      fontSize: '0.85rem',
+                      outline: 'none',
+                      boxSizing: 'border-box',
                     }}
                   />
                 </div>
 
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#18181B', fontWeight: 600, marginBottom: '0.35rem' }}>
-                    Your Email <span style={{ opacity: 0.6 }}>(optional)</span>
-                  </label>
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="email@example.com"
+                  <label
                     style={{
-                      width: '100%',
-                      padding: '0.75rem 1rem',
-                      background: '#F8F9FA',
-                      border: '1px solid #E5E7EB',
-                      borderRadius: '8px',
-                      color: '#000',
-                      fontSize: '0.9rem',
-                    }}
-                  />
-                </div>
-
-                <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#18181B', fontWeight: 600, marginBottom: '0.35rem' }}>
-                    Service of interest
-                  </label>
-                  <select
-                    value={service}
-                    onChange={(e) => setService(e.target.value)}
-                    style={{
-                      width: '100%',
-                      padding: '0.75rem 1rem',
-                      background: '#F8F9FA',
-                      border: '1px solid #E5E7EB',
-                      borderRadius: '8px',
-                      color: '#000',
-                      fontSize: '0.9rem',
-                      cursor: 'pointer',
+                      display: 'block',
+                      fontSize: '0.68rem',
+                      letterSpacing: '0.16em',
+                      textTransform: 'uppercase',
+                      color: 'rgba(255, 255, 255, 0.7)',
+                      marginBottom: '0.35rem',
+                      fontWeight: 600,
                     }}
                   >
-                    <option value="Podcast Production">Podcast Production</option>
-                    <option value="Studio Visit">Studio Visit / Recce</option>
-                    <option value="Video Production">Video Production</option>
-                    <option value="Corporate Videos">Corporate Videos</option>
-                    <option value="Commercial Ad Films">Commercial Ad Films</option>
-                    <option value="Green Screen Production">Green Screen Production</option>
-                    <option value="Product & E-Commerce Shoots">Product & E-Commerce Shoots</option>
-                    <option value="Video Editing & Post Production">Video Editing & Post Production</option>
-                    <option value="Live Streaming">Live Streaming</option>
-                  </select>
-                </div>
-
-                {service === 'Studio Visit' && (
-                  <div>
-                    <label style={{ display: 'block', fontSize: '0.8rem', color: '#18181B', fontWeight: 600, marginBottom: '0.35rem' }}>
-                      Preferred visit date
-                    </label>
-                    <input
-                      type="date"
-                      value={date}
-                      onChange={(e) => setDate(e.target.value)}
-                      style={{
-                        width: '100%',
-                        padding: '0.75rem 1rem',
-                        background: '#F8F9FA',
-                        border: '1px solid #E5E7EB',
-                        borderRadius: '8px',
-                        color: '#000',
-                        fontSize: '0.9rem',
-                      }}
-                    />
-                  </div>
-                )}
-
-                <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#18181B', fontWeight: 600, marginBottom: '0.35rem' }}>
-                    Project details <span style={{ color: '#EF4444' }}>*</span>
+                    Preferred Date
                   </label>
-                  <textarea
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Tell us about your shoot dates, deliverables, format, and budget range"
-                    required
-                    rows={3}
+                  <input
+                    type="date"
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
                     style={{
                       width: '100%',
                       padding: '0.75rem 1rem',
-                      background: '#F8F9FA',
-                      border: '1px solid #E5E7EB',
-                      borderRadius: '8px',
-                      color: '#000',
-                      fontSize: '0.9rem',
-                      resize: 'vertical',
+                      background: '#0a0a0a',
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      color: '#ffffff',
+                      fontSize: '0.85rem',
+                      outline: 'none',
+                      boxSizing: 'border-box',
                     }}
                   />
                 </div>
+              </div>
 
+              <div>
+                <label
+                  style={{
+                    display: 'block',
+                    fontSize: '0.68rem',
+                    letterSpacing: '0.16em',
+                    textTransform: 'uppercase',
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    marginBottom: '0.35rem',
+                    fontWeight: 600,
+                  }}
+                >
+                  Selected Setup / Service
+                </label>
+                <input
+                  type="text"
+                  value={service}
+                  onChange={(e) => setService(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem 1rem',
+                    background: '#0a0a0a',
+                    border: '1px solid rgba(255, 255, 255, 0.15)',
+                    color: '#ffffff',
+                    fontSize: '0.85rem',
+                    outline: 'none',
+                    boxSizing: 'border-box',
+                  }}
+                />
+              </div>
+
+              <div>
+                <label
+                  style={{
+                    display: 'block',
+                    fontSize: '0.68rem',
+                    letterSpacing: '0.16em',
+                    textTransform: 'uppercase',
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    marginBottom: '0.35rem',
+                    fontWeight: 600,
+                  }}
+                >
+                  Production Requirements *
+                </label>
+                <textarea
+                  required
+                  rows={3}
+                  placeholder="Number of guests, target broadcast format, editing requirements..."
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  style={{
+                    width: '100%',
+                    padding: '0.75rem 1rem',
+                    background: '#0a0a0a',
+                    border: '1px solid rgba(255, 255, 255, 0.15)',
+                    color: '#ffffff',
+                    fontSize: '0.85rem',
+                    outline: 'none',
+                    resize: 'none',
+                    boxSizing: 'border-box',
+                  }}
+                />
+              </div>
+
+              <div style={{ marginTop: '1rem' }}>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bringer-button"
-                  style={{
-                    width: '100%',
-                    marginTop: '0.5rem',
-                    padding: '0.95rem 1.5rem',
-                    fontSize: '0.95rem',
-                    opacity: isSubmitting ? 0.7 : 1,
-                  }}
+                  className="btn-glissando btn-glissando-light"
+                  style={{ width: '100%' }}
                 >
-                  {isSubmitting ? 'Sending Enquiry...' : 'Send Enquiry'}
+                  {isSubmitting ? 'Transmitting Request...' : 'Submit Atelier Request'}
                 </button>
               </div>
             </form>
-          </>
+          </div>
         )}
       </div>
     </div>

@@ -3,264 +3,269 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ArrowUp, Instagram, Youtube, Linkedin, Twitter } from 'lucide-react';
 
 export default function Footer() {
-  const exploreLinks = [
-    { label: 'Studio', href: '#podcast-setups' },
-    { label: 'Production Services', href: '#studio-features' },
-    { label: 'Work', href: '#podcast-work' },
-    { label: 'Frames', href: '#podcast-frames' },
-    { label: 'Why Choose', href: '#why-choose' },
-    { label: 'About', href: '#what-you-can-create' },
-  ];
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
-  const resourceLinks = [
-    { label: 'Video Production', href: '#studio-features' },
-    { label: 'Podcast Production', href: '#podcast-setups' },
-    { label: 'Podcast Production Experience', href: '#podcast-work' },
-    { label: 'Video Editing', href: '#editing-support' },
-    { label: 'Studio Production', href: '#custom-shoot' },
-    { label: 'Corporate Videos', href: '#other-services' },
-    { label: 'Product Shoots', href: '#other-services' },
-    { label: 'Reviews', href: '#google-reviews' },
-    { label: 'Studio Location', href: '#studio-location' },
+  const navLinks = [
+    { label: 'HOME', href: '#glissando-hero' },
+    { label: 'ABOUT', href: '#glissando-welcome' },
+    { label: 'WORKS', href: '#glissando-works' },
+    { label: 'SERVICES', href: '#glissando-services' },
+    { label: 'TEAM', href: '#glissando-team' },
+    { label: 'CLIENTS', href: '#glissando-clients' },
+    { label: 'PRICING', href: '#glissando-pricing' },
+    { label: 'LOCATION', href: '#studio-location' },
   ];
 
   return (
     <footer
-      id="bringer-footer"
+      id="glissando-footer"
       style={{
-        borderTop: '1px solid #E5E7EB',
-        background: '#F8F9FA',
-        paddingTop: 'clamp(3rem, 5vw, 4.5rem)',
-        paddingBottom: '2.5rem',
+        background: '#070707',
+        color: '#ffffff',
+        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+        paddingTop: 'clamp(4rem, 6vw, 5.5rem)',
+        paddingBottom: '3.5rem',
+        position: 'relative',
+        zIndex: 1,
       }}
     >
       <div className="stg-container">
-        {/* Widgets Row */}
+        {/* Top Footer Row */}
         <div
-          className="stg-row"
           style={{
-            rowGap: '2.5rem',
-            marginBottom: '3rem',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '2rem',
+            paddingBottom: '3rem',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
           }}
         >
-          {/* Brand Info Widget */}
-          <div className="stg-col-5 stg-tp-col-12">
-            <Link
-              href="/"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                textDecoration: 'none',
-                marginBottom: '1.25rem',
-              }}
-            >
-              <div
-                style={{
-                  position: 'relative',
-                  height: '46px',
-                  width: '200px',
-                  filter: 'invert(1)',
-                }}
-              >
-                <Image
-                  src="/logo.png"
-                  alt="ARCC Media Production"
-                  fill
-                  style={{
-                    objectFit: 'contain',
-                    objectPosition: 'left center',
-                  }}
-                />
-              </div>
-            </Link>
-
-            <p
-              style={{
-                fontSize: '0.9rem',
-                lineHeight: 1.6,
-                color: '#4A5568',
-                marginBottom: '1rem',
-                maxWidth: '380px',
-              }}
-            >
-              ARCC Media Production is a full-service video production company with an in-house content studio, helping
-              teams plan, shoot, edit, and deliver content from one place.
-            </p>
-
-            <p
-              style={{
-                fontSize: '0.85rem',
-                lineHeight: 1.5,
-                color: '#71717A',
-                marginBottom: '0.5rem',
-                maxWidth: '380px',
-              }}
-            >
-              ARCC Media Production, 2nd floor, 8th main, 80 feet road, next to Bata showroom, HAL 2nd
-              stage, Indiranagar, Bengaluru, 560038
-            </p>
-
-            <p style={{ fontSize: '0.95rem', marginBottom: '1.25rem' }}>
-              <a href="tel:+919605533366" style={{ color: '#000000', fontWeight: 700, textDecoration: 'underline' }}>
-                +91 960 55 333 66
-              </a>
-            </p>
-
+          {/* Logo with Viewfinder Framing */}
+          <Link
+            href="/"
+            aria-label="ARCC Media Production Home"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              textDecoration: 'none',
+              position: 'relative',
+              padding: '6px 14px',
+              transition: 'opacity 0.2s ease',
+            }}
+          >
             <span
               style={{
-                display: 'block',
-                fontSize: '0.75rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.1em',
-                color: '#71717A',
-                marginBottom: '0.65rem',
-                fontWeight: 600,
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '8px',
+                height: '8px',
+                borderTop: '1.5px solid #ffffff',
+                borderLeft: '1.5px solid #ffffff',
+              }}
+            />
+            <span
+              style={{
+                position: 'absolute',
+                top: 0,
+                right: 0,
+                width: '8px',
+                height: '8px',
+                borderTop: '1.5px solid #ffffff',
+                borderRight: '1.5px solid #ffffff',
+              }}
+            />
+            <span
+              style={{
+                position: 'absolute',
+                bottom: 0,
+                left: 0,
+                width: '8px',
+                height: '8px',
+                borderBottom: '1.5px solid #ffffff',
+                borderLeft: '1.5px solid #ffffff',
+              }}
+            />
+            <span
+              style={{
+                position: 'absolute',
+                bottom: 0,
+                right: 0,
+                width: '8px',
+                height: '8px',
+                borderBottom: '1.5px solid #ffffff',
+                borderRight: '1.5px solid #ffffff',
+              }}
+            />
+
+            <div
+              style={{
+                position: 'relative',
+                height: '42px',
+                width: '145px',
+                display: 'flex',
+                alignItems: 'center',
               }}
             >
-              Follow us:
-            </span>
-
-            {/* Social Links */}
-            <div style={{ display: 'flex', gap: '0.75rem' }}>
-              <a
-                href="https://www.instagram.com/arccmediaproduction/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
+              <Image
+                src="/logo.png"
+                alt="ARCC Media Production"
+                fill
                 style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '50%',
-                  background: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#000000',
-                  boxShadow: '0 2px 6px rgba(0, 0, 0, 0.05)',
-                  transition: 'all 0.2s ease',
+                  objectFit: 'contain',
+                  objectPosition: 'center',
+                  mixBlendMode: 'screen',
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#000000';
-                  e.currentTarget.style.color = '#FFFFFF';
-                  e.currentTarget.style.borderColor = '#000000';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = '#FFFFFF';
-                  e.currentTarget.style.color = '#000000';
-                  e.currentTarget.style.borderColor = '#E5E7EB';
-                }}
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                </svg>
-              </a>
-
-              <a
-                href="https://www.linkedin.com/company/arccmediaproduction/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '50%',
-                  background: '#FFFFFF',
-                  border: '1px solid #E5E7EB',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#000000',
-                  boxShadow: '0 2px 6px rgba(0, 0, 0, 0.05)',
-                  transition: 'all 0.2s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#000000';
-                  e.currentTarget.style.color = '#FFFFFF';
-                  e.currentTarget.style.borderColor = '#000000';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = '#FFFFFF';
-                  e.currentTarget.style.color = '#000000';
-                  e.currentTarget.style.borderColor = '#E5E7EB';
-                }}
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                  <rect x="2" y="9" width="4" height="12" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
-              </a>
+              />
             </div>
-          </div>
+          </Link>
 
-          {/* Explore Links */}
-          <div className="stg-col-3 stg-tp-col-6">
-            <h6 style={{ fontSize: '1rem', color: '#0A0A0A', marginBottom: '1.25rem', fontWeight: 700 }}>Explore</h6>
-            <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-              {exploreLinks.map((item, idx) => (
-                <li key={idx}>
-                  <a
-                    href={item.href}
-                    style={{
-                      fontSize: '0.88rem',
-                      color: '#4A5568',
-                      transition: 'color 0.2s ease',
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#000000')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = '#4A5568')}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Glissando Uppercase Nav Links */}
+          <ul
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: 'clamp(1rem, 2vw, 1.75rem)',
+              listStyle: 'none',
+              margin: 0,
+              padding: 0,
+            }}
+          >
+            {navLinks.map((link, idx) => (
+              <li key={idx}>
+                <a
+                  href={link.href}
+                  style={{
+                    fontSize: '0.72rem',
+                    fontWeight: 600,
+                    letterSpacing: '0.18em',
+                    textTransform: 'uppercase',
+                    color: 'rgba(255, 255, 255, 0.65)',
+                    transition: 'color 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255, 255, 255, 0.65)')}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-          {/* Resources Links */}
-          <div className="stg-col-4 stg-tp-col-6">
-            <h6 style={{ fontSize: '1rem', color: '#0A0A0A', marginBottom: '1.25rem', fontWeight: 700 }}>Resources</h6>
-            <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-              {resourceLinks.map((item, idx) => (
-                <li key={idx}>
-                  <a
-                    href={item.href}
-                    style={{
-                      fontSize: '0.88rem',
-                      color: '#4A5568',
-                      transition: 'color 0.2s ease',
-                    }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = '#000000')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = '#4A5568')}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Smooth Back to Top */}
+          <button
+            type="button"
+            onClick={scrollToTop}
+            aria-label="Back to top"
+            style={{
+              width: '38px',
+              height: '38px',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: '#ffffff',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = '#ffffff';
+              e.currentTarget.style.color = '#000000';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'transparent';
+              e.currentTarget.style.color = '#ffffff';
+            }}
+          >
+            <ArrowUp size={16} />
+          </button>
         </div>
 
-        {/* Footer Line */}
+        {/* Bottom Metadata & Copyright */}
         <div
           style={{
-            paddingTop: '1.75rem',
-            borderTop: '1px solid #E5E7EB',
             display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
             alignItems: 'center',
-            gap: '1rem',
-            fontSize: '0.85rem',
-            color: '#71717A',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '1.5rem',
+            paddingTop: '2.5rem',
+            fontSize: '0.72rem',
+            color: 'rgba(255, 255, 255, 0.45)',
+            letterSpacing: '0.1em',
+            textTransform: 'uppercase',
           }}
         >
-          <div>Made with excellence in Bengaluru.</div>
-          <div>Copyright &copy; 2026 ARCC Media Production. All Rights Reserved.</div>
+          <p style={{ margin: 0 }}>
+            &copy; {new Date().getFullYear()} ARCC MEDIA PRODUCTION · MINIMALIST BROADCAST ATELIER
+          </p>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+            <span
+              style={{
+                width: '30px',
+                height: '30px',
+                borderRadius: '50%',
+                border: '1px solid rgba(255, 255, 255, 0.15)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'rgba(255, 255, 255, 0.6)',
+              }}
+            >
+              <Instagram size={13} />
+            </span>
+            <span
+              style={{
+                width: '30px',
+                height: '30px',
+                borderRadius: '50%',
+                border: '1px solid rgba(255, 255, 255, 0.15)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'rgba(255, 255, 255, 0.6)',
+              }}
+            >
+              <Youtube size={13} />
+            </span>
+            <span
+              style={{
+                width: '30px',
+                height: '30px',
+                borderRadius: '50%',
+                border: '1px solid rgba(255, 255, 255, 0.15)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'rgba(255, 255, 255, 0.6)',
+              }}
+            >
+              <Twitter size={13} />
+            </span>
+            <span
+              style={{
+                width: '30px',
+                height: '30px',
+                borderRadius: '50%',
+                border: '1px solid rgba(255, 255, 255, 0.15)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'rgba(255, 255, 255, 0.6)',
+              }}
+            >
+              <Linkedin size={13} />
+            </span>
+          </div>
         </div>
       </div>
     </footer>

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import 'lenis/dist/lenis.css';
 import './globals.css';
+import SmoothScroll from '@/components/SmoothScroll';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -13,13 +15,13 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://arccmediaproduction.com'),
   title: 'Podcast Studio in Bangalore | ARCC Media Production',
   description:
-    'Professional podcast studio in Bangalore by ARCC Media Production for video podcasts, founder interviews, brand podcasts, YouTube shows, editing, reels, and studio shoots in Indiranagar.',
+    'Professional photography and podcast studio in Bangalore by ARCC Media Production for video podcasts, founder interviews, brand films, studio shoots, editing, and post-production near Bannerghatta Main Road.',
   keywords: [
     'ARCC Media Production',
     'ARCC Podcast Studio Bangalore',
     'Podcast Studio in Bangalore',
     'video podcast studio Bangalore',
-    'podcast recording studio Indiranagar',
+    'podcast recording studio Bannerghatta',
     'YouTube podcast studio Bangalore',
     'podcast editing Bangalore',
     'podcast shoot Bangalore',
@@ -36,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Podcast Studio in Bangalore | ARCC Media Production',
     description:
-      'Professional podcast studio in Bangalore by ARCC Media Production for video podcasts, founder interviews, brand podcasts, YouTube shows, editing, reels, and studio shoots in Indiranagar.',
+      'Professional photography and podcast studio in Bangalore by ARCC Media Production for video podcasts, founder interviews, brand films, studio shoots, editing, and post-production near Bannerghatta Main Road.',
     url: 'https://arccmediaproduction.com/',
     siteName: 'ARCC Media Production',
     images: [
@@ -54,7 +56,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Podcast Studio in Bangalore | ARCC Media Production',
     description:
-      'Professional podcast studio in Bangalore by ARCC Media Production for video podcasts, founder interviews, brand podcasts, YouTube shows, editing, reels, and studio shoots in Indiranagar.',
+      'Professional photography and podcast studio in Bangalore by ARCC Media Production for video podcasts, founder interviews, brand films, studio shoots, editing, and post-production near Bannerghatta Main Road.',
     images: ['/og-image.png'],
   },
   robots: {
@@ -71,17 +73,17 @@ const jsonLd = {
       name: 'ARCC Media Production',
       image: 'https://arccmediaproduction.com/og-image.png',
       url: 'https://arccmediaproduction.com/',
-      telephone: '+91-9605533366',
+      telephone: '+91-8248288388',
       email: 'business@arccmediaproduction.com',
       description:
-        'ARCC Media Production is a professional podcast studio in Indiranagar, Bangalore, offering video podcast recording, multi-camera setups, studio shoots, editing, reels, and post-production support.',
+        'ARCC Media Production is a professional photography and podcast studio near Bannerghatta Main Road, Bangalore, offering video podcast recording, multi-camera setups, studio shoots, editing, reels, and post-production support.',
       address: {
         '@type': 'PostalAddress',
         streetAddress:
-          '2nd floor, 8th main, 80 feet road, next to Bata showroom, HAL 2nd stage, Indiranagar',
+          '1st Cross, Venkateshwara Temple Street, C.K. Palya Road, Bannerghatta Main Road',
         addressLocality: 'Bengaluru',
         addressRegion: 'Karnataka',
-        postalCode: '560038',
+        postalCode: '560083',
         addressCountry: 'IN',
       },
       geo: {
@@ -114,7 +116,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }
