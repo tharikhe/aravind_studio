@@ -8,6 +8,7 @@ import GallerySection from '@/components/GallerySection';
 import HeroVideo from '@/components/HeroVideo';
 import LeadModal from '@/components/LeadModal';
 import MotionReel from '@/components/MotionReel';
+import HorizontalShowcase from '@/components/HorizontalShowcase';
 import { services } from '@/lib/services';
 
 const studioFrames = [
@@ -74,6 +75,8 @@ export default function Home() {
           </div>
           <div className="arcc-hero-caption"><span>ARCC / 12.9702° N, 77.6445° E</span><span>EST. 2021</span></div>
         </section>
+
+        <HorizontalShowcase />
 
         <section className="arcc-intro" aria-labelledby="intro-title">
           <div className="arcc-intro-media">
