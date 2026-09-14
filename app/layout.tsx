@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import 'lenis/dist/lenis.css';
 import './globals.css';
 import SmoothScroll from '@/components/SmoothScroll';
+import CustomCursor from '@/components/CustomCursor';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -117,6 +118,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <CustomCursor />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

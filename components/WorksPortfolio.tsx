@@ -423,7 +423,6 @@ export default function WorksPortfolio({ onOpenModal }: WorksPortfolioProps) {
                 loading="lazy"
                 style={{
                   objectFit: 'cover',
-                  filter: 'grayscale(100%) contrast(110%)',
                 }}
               />
             </div>
@@ -531,6 +530,14 @@ export default function WorksPortfolio({ onOpenModal }: WorksPortfolioProps) {
       )}
 
       <style jsx>{`
+        .mono-img {
+          filter: grayscale(100%) contrast(110%);
+          transition: filter 0.45s ease, transform 0.6s cubic-bezier(0.2, 0.75, 0.2, 1);
+        }
+        .work-card:hover .mono-img {
+          filter: grayscale(0%) contrast(102%) !important;
+          transform: scale(1.05);
+        }
         .work-card:hover .card-overlay {
           opacity: 1 !important;
         }
