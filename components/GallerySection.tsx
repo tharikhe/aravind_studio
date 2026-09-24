@@ -1,8 +1,9 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { ArrowLeft, ArrowRight, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, X } from 'lucide-react';
 
 const galleryItems = [
   { src: '/images/gallery/gallery-01.jpeg', alt: 'ARCC production gallery image 1', layout: 'gallery-tile-tall' },
@@ -57,9 +58,16 @@ export default function GallerySection() {
         ))}
       </div>
 
+      <div className="arcc-gallery-footer">
+        <p>Explore full categorized collections across weddings, fashion, podcasts, commercial products, and studio spaces.</p>
+        <Link href="/gallery" className="arcc-gallery-more-btn">
+          See more <ArrowUpRight size={16} />
+        </Link>
+      </div>
+
       {selected && selectedIndex !== null && (
         <div className="gallery-viewer" data-lenis-prevent role="dialog" aria-modal="true" aria-label={'Gallery image ' + (selectedIndex + 1)} onClick={closeViewer}>
-          <div className="gallery-viewer-top"><span>ARCC / FRAME 0{selectedIndex + 1} / 08</span><button onClick={closeViewer} aria-label="Close gallery viewer"><X size={22} /></button></div>
+          <div className="gallery-viewer-top"><span>ARCC / FRAME 0{selectedIndex + 1} / 0{galleryItems.length}</span><button onClick={closeViewer} aria-label="Close gallery viewer"><X size={22} /></button></div>
           <div className="gallery-viewer-image" onClick={(event) => event.stopPropagation()}>
             <Image src={selected.src} alt={selected.alt} fill loading="lazy" sizes="92vw" />
           </div>

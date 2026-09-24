@@ -150,7 +150,7 @@ export default function StudioLocation({ onOpenModal }: StudioLocationProps) {
                   </h4>
                 </div>
                 <p style={{ fontSize: '0.82rem', lineHeight: 1.6, color: '#52525b', paddingLeft: '1.5rem', margin: 0 }}>
-                  +91 824 828 8388 · business@arccmediaproduction.com
+                  +91 824 828 8388 · info@arccmp.com
                 </p>
               </div>
             </div>

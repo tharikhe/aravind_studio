@@ -75,7 +75,7 @@ const jsonLd = {
       image: 'https://arccmediaproduction.com/og-image.png',
       url: 'https://arccmediaproduction.com/',
       telephone: '+91-8248288388',
-      email: 'business@arccmediaproduction.com',
+      email: 'info@arccmp.com',
       description:
         'ARCC Media Production is a professional photography and podcast studio near Bannerghatta Main Road, Bangalore, offering video podcast recording, multi-camera setups, studio shoots, editing, reels, and post-production support.',
       address: {
