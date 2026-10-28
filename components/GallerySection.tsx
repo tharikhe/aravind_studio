@@ -6,13 +6,13 @@ import { useEffect, useState } from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight, X } from 'lucide-react';
 
 const galleryItems = [
-  { src: '/images/gallery/gallery-01.jpeg', alt: 'ARCC production gallery image 1', layout: 'gallery-tile-tall' },
-  { src: '/images/gallery/gallery-02.jpeg', alt: 'ARCC production gallery image 2', layout: 'gallery-tile-wide' },
-  { src: '/images/gallery/gallery-04.jpeg', alt: 'ARCC production gallery image 4', layout: 'gallery-tile-tall' },
-  { src: '/images/gallery/gallery-05.jpeg', alt: 'ARCC production gallery image 5', layout: 'gallery-tile-square' },
-  { src: '/images/gallery/gallery-06.jpeg', alt: 'ARCC production gallery image 6', layout: 'gallery-tile-wide' },
-  { src: '/images/gallery/gallery-07.jpeg', alt: 'ARCC production gallery image 7', layout: 'gallery-tile-square' },
-  { src: '/images/gallery/gallery-08.jpeg', alt: 'ARCC production gallery image 8', layout: 'gallery-tile-square' },
+  { src: '/images/gallery/gallery-01.jpeg', alt: 'Professional studio portrait session with cinema lighting at ARCC Bangalore', layout: 'gallery-tile-tall' },
+  { src: '/images/gallery/gallery-02.jpeg', alt: 'Multi-camera podcast recording setup with Aputure lighting at ARCC studio', layout: 'gallery-tile-wide' },
+  { src: '/images/gallery/gallery-04.jpeg', alt: 'Founder interview video shoot with branded backdrop at ARCC studio Bangalore', layout: 'gallery-tile-tall' },
+  { src: '/images/gallery/gallery-05.jpeg', alt: 'Commercial product photography on white infinity cyc at ARCC Bannerghatta', layout: 'gallery-tile-square' },
+  { src: '/images/gallery/gallery-06.jpeg', alt: 'Corporate event coverage with multi-camera cinematic setup by ARCC Media Production', layout: 'gallery-tile-wide' },
+  { src: '/images/gallery/gallery-07.jpeg', alt: 'Fashion editorial photoshoot with professional studio lighting at ARCC Bangalore', layout: 'gallery-tile-square' },
+  { src: '/images/gallery/gallery-08.jpeg', alt: 'Brand film production behind-the-scenes at ARCC Media Production studio', layout: 'gallery-tile-square' },
 ];
 
 export default function GallerySection() {

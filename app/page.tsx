@@ -12,10 +12,10 @@ import HorizontalShowcase from '@/components/HorizontalShowcase';
 import { services } from '@/lib/services';
 
 const studioFrames = [
-  { image: '/images/setups/setup-brand-grey.jpg', name: 'The Conversation Room', note: '2–4 people · video podcast' },
-  { image: '/images/setups/setup-executive-dark.jpg', name: 'The Black Room', note: 'Founder films · interviews' },
-  { image: '/images/setups/setup-white-infinity.jpg', name: 'The Infinite', note: 'Product · portrait · campaign' },
-  { image: '/images/setups/setup-round-table.jpg', name: 'The Round Table', note: 'Panels · community formats' },
+  { image: '/images/setups/setup-brand-grey.jpg', name: 'The Conversation Room', note: '2–4 people · video podcast', alt: 'ARCC podcast studio conversation room setup for 2-4 person video podcasts in Bangalore' },
+  { image: '/images/setups/setup-executive-dark.jpg', name: 'The Black Room', note: 'Founder films · interviews', alt: 'Dark executive studio setup for founder films and interviews at ARCC Bangalore' },
+  { image: '/images/setups/setup-white-infinity.jpg', name: 'The Infinite', note: 'Product · portrait · campaign', alt: 'White infinity cyclorama studio for product photography and portraits at ARCC' },
+  { image: '/images/setups/setup-round-table.jpg', name: 'The Round Table', note: 'Panels · community formats', alt: 'Round table panel discussion studio setup for multi-person recordings at ARCC' },
 ];
 
 export default function Home() {
@@ -66,7 +66,7 @@ export default function Home() {
           <HeroVideo />
           <div className="arcc-hero-shade" />
           <div className="arcc-hero-copy">
-            <p className="arcc-kicker"></p>
+            <p className="arcc-kicker">Podcast &amp; Photography Studio in Bangalore</p>
             <h1 id="hero-title">One studio.<br /><em>Countless stories.</em></h1>
             <div className="arcc-hero-bottom">
               <p>A compact creative studio in Bangalore for clear ideas, intimate conversations and images with intent.</p>
@@ -117,7 +117,7 @@ export default function Home() {
           <div className="arcc-frame-grid">
             {studioFrames.map((frame, index) => (
               <article className={`arcc-frame arcc-frame-${index + 1}`} key={frame.name}>
-                <Image src={frame.image} alt={frame.name} fill loading="lazy" sizes="(max-width: 720px) 100vw, 50vw" />
+                <Image src={frame.image} alt={frame.alt} fill loading="lazy" sizes="(max-width: 720px) 100vw, 50vw" />
                 <div className="arcc-frame-overlay" />
                 <div className="arcc-frame-meta"><span>0{index + 1}</span><div><h3>{frame.name}</h3><p>{frame.note}</p></div></div>
               </article>
@@ -138,7 +138,7 @@ export default function Home() {
         </section>
 
         <section className="arcc-quote" aria-label="Studio statement">
-          <Image src="/images/setups/setup-warm-lounge.jpg" alt="Warm lounge studio setting" fill loading="lazy" sizes="100vw" />
+          <Image src="/images/setups/setup-warm-lounge.jpg" alt="Warm lounge studio setting at ARCC Media Production Bangalore near Bannerghatta Road" fill loading="lazy" sizes="100vw" />
           <div className="arcc-quote-wash" />
           <div><p className="arcc-section-label">Bannerghatta, Bangalore</p><h2>Good light.<br />Better listening.</h2><button className="arcc-outline-light" onClick={() => setBookingOpen(true)}>Start a booking <ArrowUpRight size={16} /></button></div>
         </section>
@@ -150,6 +150,7 @@ export default function Home() {
             <div className="arcc-contact-details">
               <p>1st Cross, Venkateshwara Temple Street<br />C.K. Palya Road, Bannerghatta Main Road<br />Bangalore 560083</p>
               <p><a href="tel:+918248288388">+91 824 828 8388</a><br /><a href="mailto:info@arccmp.com">info@arccmp.com</a></p>
+              <a href="https://maps.google.com/?q=12.8398,77.5922" target="_blank" rel="noopener noreferrer" className="arcc-directions-link" aria-label="Get directions to ARCC Media Production on Google Maps">📍 Get directions on Google Maps</a>
               <button className="arcc-book-large" onClick={() => setBookingOpen(true)}>Book the studio <ArrowUpRight size={21} /></button>
             </div>
           </div>

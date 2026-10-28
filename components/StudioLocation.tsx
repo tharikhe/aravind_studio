@@ -39,7 +39,7 @@ export default function StudioLocation({ onOpenModal }: StudioLocationProps) {
           <h2 className="glissando-title on-light">Studio Location</h2>
           <span className="glissando-dash" style={{ color: '#0a0a0a' }} />
           <p className="glissando-subtext on-light">
-            Conveniently situated in prime Indiranagar with dedicated soundproof stages, creator suites, and valet access.
+            Conveniently situated near Bannerghatta Main Road with dedicated soundproof stages, creator suites, and easy access from JP Nagar, BTM Layout, and Electronic City.
           </p>
         </div>
 
@@ -85,7 +85,7 @@ export default function StudioLocation({ onOpenModal }: StudioLocationProps) {
                   marginBottom: '1rem',
                 }}
               >
-                Coordinates: 12.9730° N, 77.6467° E
+                Coordinates: 12.8398° N, 77.5922° E
               </span>
 
               {/* Address */}
@@ -179,7 +179,7 @@ export default function StudioLocation({ onOpenModal }: StudioLocationProps) {
           >
             <iframe
               title="ARCC Media Production Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.0264147714896!2d77.64450937507647!3d12.970172987345152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16a67f1b748d%3A0x6a0a0a0a0a0a0a0a!2sIndiranagar%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.5!2d77.5900!3d12.8398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBannerghatta%20Main%20Road%2C%20Bengaluru%2C%20Karnataka%20560083!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{

@@ -19,6 +19,17 @@ export function generateMetadata({ params }: ServicePageProps): Metadata {
   return {
     title: service.title + ' in Bangalore | ARCC Media Production',
     description: service.summary,
+    alternates: {
+      canonical: `/services/${params.slug}`,
+    },
+    openGraph: {
+      title: service.title + ' in Bangalore | ARCC Media Production',
+      description: service.summary,
+      url: `https://arccmediaproduction.com/services/${params.slug}`,
+      siteName: 'ARCC Media Production',
+      type: 'website',
+      locale: 'en_IN',
+    },
   };
 }
 
@@ -27,5 +38,62 @@ export default function ServicePage({ params }: ServicePageProps) {
 
   if (!service) notFound();
 
-  return <ServiceExperience service={service} />;
+  const serviceJsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Service',
+        name: service.title,
+        description: service.summary,
+        url: `https://arccmediaproduction.com/services/${service.slug}`,
+        provider: {
+          '@id': 'https://arccmediaproduction.com/#organization',
+        },
+        areaServed: {
+          '@type': 'City',
+          name: 'Bangalore',
+        },
+        serviceType: service.detail,
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: service.title + ' Services',
+          itemListElement: service.offerings.map((offering, index) => ({
+            '@type': 'Offer',
+            itemOffered: {
+              '@type': 'Service',
+              name: offering,
+            },
+            position: index + 1,
+          })),
+        },
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://arccmediaproduction.com/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: service.title,
+            item: `https://arccmediaproduction.com/services/${service.slug}`,
+          },
+        ],
+      },
+    ],
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <ServiceExperience service={service} />
+    </>
+  );
 }
