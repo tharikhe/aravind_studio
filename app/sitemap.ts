@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { services } from '@/lib/services';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://arccmediaproduction.com';
+  const baseUrl = 'https://www.arccmp.com';
 
   const staticPages: MetadataRoute.Sitemap = [
     {

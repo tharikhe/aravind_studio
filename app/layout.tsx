@@ -13,7 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://arccmediaproduction.com'),
+  metadataBase: new URL('https://www.arccmp.com'),
   title: 'Podcast Studio in Bangalore | ARCC Media Production',
   description:
     'Professional photography and podcast studio in Bangalore by ARCC Media Production for video podcasts, founder interviews, brand films, studio shoots, editing, and post-production near Bannerghatta Main Road.',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: 'Podcast Studio in Bangalore | ARCC Media Production',
     description:
       'Professional photography and podcast studio in Bangalore by ARCC Media Production for video podcasts, founder interviews, brand films, studio shoots, editing, and post-production near Bannerghatta Main Road.',
-    url: 'https://arccmediaproduction.com/',
+    url: 'https://www.arccmp.com/',
     siteName: 'ARCC Media Production',
     images: [
       {
@@ -78,14 +78,14 @@ const jsonLd = {
   '@graph': [
     {
       '@type': ['ProfessionalService', 'LocalBusiness'],
-      '@id': 'https://arccmediaproduction.com/#organization',
+      '@id': 'https://www.arccmp.com/#organization',
       name: 'ARCC Media Production',
-      image: 'https://arccmediaproduction.com/logo.png',
+      image: 'https://www.arccmp.com/logo.png',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://arccmediaproduction.com/logo.png',
+        url: 'https://www.arccmp.com/logo.png',
       },
-      url: 'https://arccmediaproduction.com/',
+      url: 'https://www.arccmp.com/',
       telephone: '+91-8248288388',
       email: 'info@arccmp.com',
       description:
@@ -139,23 +139,23 @@ const jsonLd = {
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://arccmediaproduction.com/#website',
-      url: 'https://arccmediaproduction.com/',
+      '@id': 'https://www.arccmp.com/#website',
+      url: 'https://www.arccmp.com/',
       name: 'ARCC Media Production',
       publisher: {
-        '@id': 'https://arccmediaproduction.com/#organization',
+        '@id': 'https://www.arccmp.com/#organization',
       },
     },
     {
       '@type': 'WebPage',
-      '@id': 'https://arccmediaproduction.com/#webpage',
-      url: 'https://arccmediaproduction.com/',
+      '@id': 'https://www.arccmp.com/#webpage',
+      url: 'https://www.arccmp.com/',
       name: 'Podcast Studio in Bangalore | ARCC Media Production',
       isPartOf: {
-        '@id': 'https://arccmediaproduction.com/#website',
+        '@id': 'https://www.arccmp.com/#website',
       },
       about: {
-        '@id': 'https://arccmediaproduction.com/#organization',
+        '@id': 'https://www.arccmp.com/#organization',
       },
       description:
         'Professional photography and podcast studio in Bangalore by ARCC Media Production for video podcasts, founder interviews, brand films, studio shoots, editing, and post-production near Bannerghatta Main Road.',
@@ -167,7 +167,7 @@ const jsonLd = {
           '@type': 'ListItem',
           position: 1,
           name: 'Home',
-          item: 'https://arccmediaproduction.com/',
+          item: 'https://www.arccmp.com/',
         },
       ],
     },

@@ -25,7 +25,7 @@ export function generateMetadata({ params }: ServicePageProps): Metadata {
     openGraph: {
       title: service.title + ' in Bangalore | ARCC Media Production',
       description: service.summary,
-      url: `https://arccmediaproduction.com/services/${params.slug}`,
+      url: `https://www.arccmp.com/services/${params.slug}`,
       siteName: 'ARCC Media Production',
       type: 'website',
       locale: 'en_IN',
@@ -45,9 +45,9 @@ export default function ServicePage({ params }: ServicePageProps) {
         '@type': 'Service',
         name: service.title,
         description: service.summary,
-        url: `https://arccmediaproduction.com/services/${service.slug}`,
+        url: `https://www.arccmp.com/services/${service.slug}`,
         provider: {
-          '@id': 'https://arccmediaproduction.com/#organization',
+          '@id': 'https://www.arccmp.com/#organization',
         },
         areaServed: {
           '@type': 'City',
@@ -74,13 +74,13 @@ export default function ServicePage({ params }: ServicePageProps) {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://arccmediaproduction.com/',
+            item: 'https://www.arccmp.com/',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: service.title,
-            item: `https://arccmediaproduction.com/services/${service.slug}`,
+            item: `https://www.arccmp.com/services/${service.slug}`,
           },
         ],
       },
